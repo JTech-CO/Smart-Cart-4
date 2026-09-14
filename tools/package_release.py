@@ -34,7 +34,7 @@ def release_files() -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=ROOT.parent / 'Smart-Cart-D4-Final.zip')
+    parser.add_argument('--output', type=Path, default=ROOT.parent / 'Smart-Cart-D4.2-Fixed.zip')
     args = parser.parse_args()
     output = args.output.resolve()
     if output.is_relative_to(ROOT):
@@ -85,7 +85,7 @@ def main() -> None:
     sidecar = output.with_name(output.name + '.sha256')
     sidecar.write_text(f'{zip_hash}  {output.name}\n', encoding='utf-8')
     check('External ZIP checksum matches final archive', sidecar.read_text().split('  ', 1)[0] == sha256_file(output))
-    report = {'package': output.name, 'version': 'D4.1', 'rootDirectory': ROOT.name,
+    report = {'package': output.name, 'version': 'D4.2', 'rootDirectory': ROOT.name,
               'sha256': zip_hash, 'bytes': output.stat().st_size, 'files': len(entries),
               'uncompressedBytes': sum(p.stat().st_size for p in entries),
               'scope': 'Final ZIP integrity and extraction, not hardware or deployed-site certification.', 'checks': checks}

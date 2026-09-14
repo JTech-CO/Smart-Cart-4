@@ -1,23 +1,57 @@
-# D4 CAD 사용 및 검증 범위
+# D4.2 FreeCAD 표시 결함 수정본
 
-`Smart-Cart-D4.FCStd`는 원본 프로토타입 262개 객체를 숨김 참조로 보존하고 D4 형상 998개 BRep 피처를 추가한 문서입니다. `Smart-Cart-D4.step`은 D4 형상 교환 파일입니다. 원본은 `source-prototype.FCStd`에도 그대로 보존합니다. 문서에는 기존 원본 구조와 별도 D4 조립체가 함께 있으므로 원본 그룹을 켜면 형상이 겹쳐 보일 수 있습니다.
+## 먼저 열 파일
 
-## 검증 구분
+**`Smart-Cart-D4-Only.FCStd`를 여세요.** 새 D4 조립체만 들어 있는 독립 문서입니다. 기존 프로토타입이 이 문서에 없으므로 원본과 새 모델을 혼동하지 않습니다. 원본과 함께 보관하려면 `Smart-Cart-D4.FCStd`를 사용합니다. 이 파일은 원본 262개 객체를 숨김 참조로 유지합니다. 순수 원본은 `source-prototype.FCStd`에 그대로 있습니다.
 
-[CAD 시험 기록](../docs/cad-qa.json)과 [전체 QA](../docs/QA.md)를 참조하세요. ZIP/XML 및 OpenCascade BRep/STEP 읽기·형상 유효성 검사와, 실제 FreeCAD GUI의 열기/다시 저장 검사는 서로 다릅니다. 실행하지 못한 시험을 통과로 간주하지 않습니다. 형상 유효성은 간섭 없음·힘 전달·안전성·제조 가능성을 의미하지 않습니다.
+이전 D4 문서를 닫은 뒤 새 파일을 엽니다. 수정본의 시작 카메라는 D4 전체 경계 중심을 향하도록 다시 계산했습니다. 별도 매크로는 직접 열기의 필수 조건이 아닙니다. 정상적으로 열렸지만 다른 시점으로 이동한 경우 `V`, `F`를 순서대로 눌러 전체 맞춤을 할 수 있습니다.
 
-## 재구성
+## 확인된 결함과 수정
 
-1. FreeCAD에서 `Rebuild-D4.FCMacro`를 실행합니다.
-2. `Smart-Cart-D4.FCStd`와 `assembly-manifest.json`이 들어 있는 `cad` 폴더를 선택합니다.
-3. 매크로는 새 문서에 D4 BRep만 불러오고 원본은 수정하지 않습니다. 저장 위치는 대화상자에서 선택하며 기존 파일 덮어쓰기는 확인 후 진행합니다.
+이전 FCStd에는 새 형상 998개의 BRep 바이트가 존재했지만, 그 ZIP 항목들이 `GuiDocument.xml`과 GUI 자료 뒤에 추가되어 있었습니다. FreeCAD의 `Base::XMLReader::readFiles`는 파일 이름을 매번 독립 검색하지 않고 등록 순서대로 한 방향으로 이동합니다. `GuiDocument.xml`에 도달할 때 아직 읽지 않은 새 형상을 건너뛰고 GUI 자료의 중첩 읽기로 들어갑니다.
 
-FCStd의 직접 읽기에서 오류가 나면 매크로 또는 STEP을 사용해 별도 문서에서 확인하고, 오류 로그를 보존하세요. 매크로 자체의 실제 FreeCAD 실행은 이 환경에서 확인하지 못했습니다. Python 구문·파일 참조·BRep 내용만 검사했습니다.
+소스와 같은 순차 읽기 절차를 재현한 결과 이전 파일은 새 D4 형상을 **0/998개** 읽었습니다. 수정본은 **998/998개** 읽습니다. 이전의 ZIP CRC, XML 참조 존재, 개별 BRep 유효성 검사로는 이 결함을 검출하지 못했습니다. 이전 검사 통과를 FreeCAD 호환성 승인으로 해석하면 안 됩니다.
 
-## 단위와 한계
+저장 순서를 아래처럼 수정했습니다.
 
-CAD: mm, X 전방 / Y 측방 / Z 상방. 웹: m, X 측방 / Y 상방 / Z 전방. 변환은 web = [CAD.Y, CAD.Z, CAD.X]/1000입니다. 원본 적재판 900×600×6mm와 D4 웹 적재판 602×14×901mm는 같은 치수라고 보증하지 않습니다. 실제 절단 길이·홀 위치·공차·용접·조향 링크 길이·부하·고정 상태는 미승인입니다. 스케치 기반 완전 파라메트릭 설계가 아니라 기본 형상의 Part::Feature 조립체입니다.
+```text
+Document.xml
+문서가 참조하는 모든 형상 및 형상 매핑 자료 (등록 순서)
+GuiDocument.xml
+썸네일
+GUI가 참조하는 재질·색상 자료 (등록 순서)
+나머지 비참조 부가 자료
+```
 
-## STEP 구성 명세
+형상을 다시 그리거나 치수를 바꾸지 않았습니다. 두 수정 FCStd의 D4 BRep 998개는 이전 파일의 바이트와 동일합니다. 원본을 포함한 파일의 전체 BRep 1,247개도 동일합니다. 수정 범위는 저장 순서, 파일 구분용 문서명, 시작 카메라, 썸네일 및 별도 D4-only 문서입니다. 썸네일은 기존 웹 모델 미리보기이며 FreeCAD 실행 화면 증거가 아닙니다.
 
-STEP은 전장 정비 상태로, 원본 프로토타입 및 숨겨진 `COVER` 그룹을 제외합니다. FCStd의 D4 전체에는 4,664 solids, 그중 커버 3개 피처에는 9 solids가 있으므로 STEP 기대값은 4,655 solids입니다. 단순한 두 파일 전체 solids 수 비교는 적절하지 않습니다. 회귀검사에서는 커버를 제외한 동일 범위의 부피·형상을 대조합니다. 원래 입력 STEP의 geometry는 변경하지 않았습니다.
+## 파일 구성
+
+| 파일 | 내용 |
+| --- | --- |
+| [Smart-Cart-D4-Only.FCStd](Smart-Cart-D4-Only.FCStd) | 새 D4만: 1,004개 문서 객체, 그중 998개 형상 피처 |
+| [Smart-Cart-D4.FCStd](Smart-Cart-D4.FCStd) | 원본 숨김 + D4: 1,267개 문서 객체 |
+| [Smart-Cart-D4.step](Smart-Cart-D4.step) | 기존 D4 정비 상태 STEP, 바이트 변경 없음 |
+| [source-prototype.FCStd](source-prototype.FCStd) | 초기 프로토타입 원본, 변경 없음 |
+| [Verify-D4-Native.FCMacro](Verify-D4-Native.FCMacro) | FreeCAD 안에서 실제 열기·검사·새 이름 저장·재열기 및 JSON 기록 |
+| [Rebuild-D4.FCMacro](Rebuild-D4.FCMacro) | BRep를 새 문서로 재구성하는 별도 복구 경로 |
+
+## 네이티브 검증 매크로
+
+`Verify-D4-Native.FCMacro`는 **현재 열려 있지 않은** 수정 FCStd 파일을 선택받습니다. FreeCAD가 실제로 복원한 998개 형상의 null/유효성, 4,664개 solid, 표시 상태를 검사합니다. 고유한 새 이름으로 저장하고 닫았다가 다시 열어 형상 수·부피·표시 상태를 비교합니다. 원본을 덮어쓰거나 기존에 열려 있던 다른 문서를 닫지 않습니다. 결과 JSON과 가능한 경우 뷰포트 PNG가 같은 폴더에 생성됩니다. 이 매크로는 사용자 실행용이며 이번 환경에서 실행한 것으로 기록하지 않았습니다.
+
+직접 열기 문제가 계속되는 경우 `Rebuild-D4.FCMacro`로 `cad` 폴더를 선택하면 FCStd의 자동 복원 경로를 거치지 않고 BRep를 읽어 새 문서를 만들 수 있습니다. 파일 참조에 필요한 `assembly-manifest.json`과 `Smart-Cart-D4.FCStd`를 같은 폴더에 두세요.
+
+## 검증의 경계
+
+실행한 검사: 순차 ZIP 로더 재현, 잘못된 순서의 실패 픽스처, XML/그룹/표시 참조, 형상 바이트 보존, OpenCascade BRep 유효성, 경계 치수, STEP 비교. [현재 QA](../docs/QA.md)와 [읽기 순서 결과](../docs/cad-loader-qa.json)에 있습니다.
+
+**이 환경에서는 FreeCAD 실행 파일·모듈을 확보하지 못했으므로 수정본을 FreeCAD 1.1.3 GUI에서 직접 열기·재저장한 시험은 아직 NOT_RUN입니다.** 파일 내 새 형상이 로더에서 건너뛰어지는 원인은 확인하고 수정했지만 GUI 실행 시험을 대신했다고 주장하지 않습니다. 사용자께서 확인한 네 가지 브라우저 항목은 사용자 검증으로 별도 기록했습니다.
+
+## 형상과 설계 범위
+
+D4에는 998개 형상 피처, 4,664개 solid가 있습니다. `COVER` 3개 피처의 9개 solid는 초기에는 숨겨져 있어 보이는 범위는 4,655개 solid입니다. STEP도 같은 커버 제외 범위이며, 원본 프로토타입은 STEP에 포함하지 않습니다. 서보·전방 ToF·프레임 전면 상단 LiDAR·하네스의 D4 형상은 모두 유지했습니다.
+
+CAD는 mm, X 전방 / Y 측방 / Z 상방입니다. 웹 좌표는 m 단위이며 `[CAD.Y, CAD.Z, CAD.X] / 1000`에 대응합니다. 기본 형상 기반의 `Part::Feature` 조립체이며 완전 구속된 스케치·가공 도면이 아닙니다. **ENGINEERING HOLD / JDRV OPEN**은 변경하지 않았습니다. 이번 수정은 통전, 강도, 간섭, 조향 및 제동 승인이 아닙니다.
+
+근거: [FreeCAD Reader.cpp](https://github.com/FreeCAD/FreeCAD/blob/main/src/Base/Reader.cpp)의 `readFiles`, `addFile` 구현.

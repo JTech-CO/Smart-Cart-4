@@ -1,0 +1,116 @@
+# Run inside FreeCAD GUI. Opens a CLOSED D4 FCStd, checks actual loaded Shapes,
+# saves a uniquely named copy, closes that copy, reopens it, and writes JSON.
+# It never overwrites the selected source or closes any pre-existing document.
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+import os
+import json
+import time
+import traceback
+try:
+    from PySide import QtWidgets
+except ImportError:
+    try:
+        from PySide2 import QtWidgets
+    except ImportError:
+        from PySide6 import QtWidgets
+
+
+def verify_d4_native():
+    source = QtWidgets.QFileDialog.getOpenFileName(
+        None, 'Choose a CLOSED D4 FCStd file to verify', '', 'FreeCAD (*.FCStd *.fcstd)')[0]
+    if not source:
+        return
+    source = os.path.abspath(source)
+    for opened in App.listDocuments().values():
+        if opened.FileName and os.path.normcase(os.path.abspath(opened.FileName)) == os.path.normcase(source):
+            QtWidgets.QMessageBox.information(
+                None, 'Close the source first',
+                'Please save any changes and close the selected document, then run this macro again.\n'
+                'Existing open documents will not be changed by this macro.')
+            return
+    suffix = time.strftime('%Y%m%d-%H%M%S') + '-' + str(time.time_ns() % 1000000)
+    stem = os.path.splitext(source)[0]
+    target = stem + '-Native-' + suffix + '.FCStd'
+    log_path = stem + '-Native-' + suffix + '.json'
+    screenshot = stem + '-Native-' + suffix + '.png'
+    report = {'source': source, 'saved_copy': target, 'FreeCAD_version': App.Version(),
+              'checks': [], 'hardware_approval': False,
+              'scope': 'Actual FreeCAD document load/save/reopen; not manufacturing or electrical approval.'}
+    created_name = None
+
+    def record(name, ok, detail=None):
+        report['checks'].append({'name': name, 'status': 'PASS' if ok else 'FAIL', 'detail': detail})
+        if not ok:
+            raise RuntimeError(name + ': ' + str(detail))
+
+    def inspect(document, phase):
+        features = [o for o in document.Objects if o.Name.startswith('D4_') and hasattr(o, 'Shape')]
+        record(phase + ': 998 D4 Part features', len(features) == 998, len(features))
+        null = [o.Name for o in features if o.Shape.isNull()]
+        record(phase + ': no null Shapes', not null, null)
+        invalid = [o.Name for o in features if not o.Shape.isValid()]
+        record(phase + ': all Shapes valid', not invalid, invalid)
+        solids = sum(len(o.Shape.Solids) for o in features)
+        record(phase + ': 4664 solids', solids == 4664, solids)
+        visible = sum(bool(o.ViewObject.Visibility) for o in features)
+        record(phase + ': visible D4 shapes', visible >= 990, visible)
+        original_visible = [o.Name for o in document.Objects if not o.Name.startswith('D4')
+                            and hasattr(o, 'Shape') and o.ViewObject and o.ViewObject.Visibility]
+        record(phase + ': original prototype is not visible', not original_visible, original_visible)
+        return {o.Name: {'solids': len(o.Shape.Solids), 'volume': o.Shape.Volume,
+                         'visible': bool(o.ViewObject.Visibility)} for o in features}
+
+    try:
+        document = App.openDocument(source)
+        created_name = document.Name
+        first = inspect(document, 'Direct open')
+        Gui.activeDocument().activeView().viewAxonometric()
+        Gui.activeDocument().activeView().fitAll()
+        Gui.updateGui()
+        # Saving this copy uses FreeCAD's own native serializer and view providers.
+        if os.path.exists(target):
+            raise RuntimeError('Output already exists; source has not been modified.')
+        document.recompute()
+        document.saveAs(target)
+        record('Native save created a nonempty FCStd copy', os.path.isfile(target) and os.path.getsize(target) > 0)
+        App.closeDocument(created_name)
+        created_name = None
+        document = App.openDocument(target)
+        created_name = document.Name
+        second = inspect(document, 'Reopen native copy')
+        mismatches = []
+        for name, item in first.items():
+            other = second.get(name)
+            if other is None or other['solids'] != item['solids'] or other['visible'] != item['visible']:
+                mismatches.append(name)
+            elif abs(other['volume'] - item['volume']) > max(1.0, abs(item['volume'])) * 1e-7:
+                mismatches.append(name)
+        record('Save/reopen retains shape inventory, volume and visibility', not mismatches, mismatches)
+        Gui.activeDocument().activeView().viewAxonometric()
+        Gui.activeDocument().activeView().fitAll()
+        Gui.updateGui()
+        try:
+            Gui.activeDocument().activeView().saveImage(screenshot, 1600, 1100, 'White')
+            report['viewport_image'] = screenshot
+        except Exception as exc:
+            report['viewport_image_error'] = str(exc)
+        report['result'] = 'PASS'
+        App.Console.PrintMessage('D4 native verification passed. JSON: ' + log_path + '\n')
+        QtWidgets.QMessageBox.information(None, 'D4 native verification passed',
+            '998 loaded D4 features and 4664 solids verified before and after native save.\n'
+            'The source file was not overwritten.\n\nReport: ' + log_path)
+    except Exception as exc:
+        report['result'] = 'FAIL'
+        report['exception'] = str(exc)
+        report['traceback'] = traceback.format_exc()
+        App.Console.PrintError(report['traceback'] + '\n')
+        QtWidgets.QMessageBox.critical(None, 'D4 native verification failed',
+            str(exc) + '\nThe source file was not overwritten.\nReport: ' + log_path)
+    finally:
+        # A failed newly opened document is left intact for diagnosis.
+        with open(log_path, 'w', encoding='utf-8') as stream:
+            json.dump(report, stream, ensure_ascii=False, indent=2)
+
+verify_d4_native()

@@ -1,4 +1,6 @@
-# Smart Cart D4.1
+# Smart Cart D4.2
+
+**D4.2 CAD fix:** Corrected the FCStd ZIP order that skipped all 998 new D4 shapes. Open [D4-only FCStd](cad/Smart-Cart-D4-Only.FCStd) for an unambiguous new assembly. See the [defect record](docs/CAD-DEFECT-D4.2-KR.md) and [current QA](docs/QA.md). Browser scenarios were user-confirmed; native FreeCAD execution of this repair remains unrun in this runtime.
 
 English | [한국어](README-KR.md)
 
@@ -31,6 +33,7 @@ python tools/sync_data.py
 node tests/static_regression.mjs
 python tests/package_regression.py
 python tests/browser_regression.py
+python tests/cad_loader_regression.py
 python tests/cad_regression.py
 python tests/shader_regression.py
 ```
@@ -41,4 +44,4 @@ Use `data/design.json` as the source of truth. `SHA256SUMS.txt` contains package
 
 The optional shader test uses Linux EGL/OpenGL ES for source compilation/linking and test-triangle pixel checks. It is not execution of the browser WebGL renderer or a full-scene visual certification.
 
-To rebuild the release after regression tests, run `python tools/package_release.py --output ../Smart-Cart-D4-Final.zip`. It writes an internal SHA-256 manifest, an external ZIP checksum and a separate archive-integrity report. See [QA](docs/QA.md) for 197 passed checks and five explicitly unexecuted environment-dependent checks; these are not fabrication or hardware-safety approval.
+To rebuild the release after regression tests, run `python tools/package_release.py --output ../Smart-Cart-D4.2-Fixed.zip`. It writes an internal SHA-256 manifest, an external ZIP checksum and a separate archive-integrity report. See [QA](docs/QA.md) for 197 passed checks and five explicitly unexecuted environment-dependent checks; these are not fabrication or hardware-safety approval.

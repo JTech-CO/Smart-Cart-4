@@ -1,4 +1,6 @@
-# Smart Cart D4.1
+# Smart Cart D4.2
+
+**D4.2 CAD 수정:** 기존 FCStd의 내부 ZIP 순서 때문에 새 형상 998개가 로드되지 않던 결함을 수정했습니다. 새 모델만 보려면 [D4-only FCStd](cad/Smart-Cart-D4-Only.FCStd)를 여세요. [원인과 수정](docs/CAD-DEFECT-D4.2-KR.md), [현재 검증 범위](docs/QA.md)를 확인하세요. 네 가지 브라우저 항목은 사용자 확인으로 기록했으며, 수정 FCStd의 네이티브 FreeCAD 실행은 이 환경에서 아직 미실행입니다.
 
 [English](README.md) | 한국어
 
@@ -44,6 +46,7 @@ python tools/sync_data.py
 node tests/static_regression.mjs
 python tests/package_regression.py
 python tests/browser_regression.py
+python tests/cad_loader_regression.py
 python tests/cad_regression.py
 python tests/shader_regression.py
 ```
@@ -56,4 +59,4 @@ python tests/shader_regression.py
 
 셰이더 추가 검사에는 Linux EGL/OpenGL ES 라이브러리가 필요합니다. 이는 GLSL ES 소스의 별도 컴파일·링크·시험 픽셀 검사이며, 브라우저 WebGL 전체 장면 렌더링 시험을 대신하지 않습니다.
 
-최종 ZIP을 다시 만들려면 `python tools/package_release.py --output ../Smart-Cart-D4-Final.zip`을 실행합니다. 내부 SHA-256 목록과 외부 ZIP 체크섬, 별도 ZIP 검증 JSON을 생성합니다. 파일 수정 후에는 먼저 필요한 회귀검사를 다시 실행하세요.
+최종 ZIP을 다시 만들려면 `python tools/package_release.py --output ../Smart-Cart-D4.2-Fixed.zip`을 실행합니다. 내부 SHA-256 목록과 외부 ZIP 체크섬, 별도 ZIP 검증 JSON을 생성합니다. 파일 수정 후에는 먼저 필요한 회귀검사를 다시 실행하세요.
