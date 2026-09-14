@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-14",
+  "scope": "Static software/graph/mesh only. Not physical electrical safety validation.",
+  "components": 55,
+  "connections": 131,
+  "triangles": 125806,
+  "batches": 430,
+  "glbBytes": 9057800,
+  "tests": [
+    {
+      "name": "55 component references / 131 point-to-point records",
+      "result": "PASS"
+    },
+    {
+      "name": "unique component and connection IDs",
+      "result": "PASS"
+    },
+    {
+      "name": "every connection endpoint exists and has the same NET",
+      "result": "PASS"
+    },
+    {
+      "name": "every electrical component has a 3D object",
+      "result": "PASS"
+    },
+    {
+      "name": "every connection has 3D path with exact shared endpoint anchors",
+      "result": "PASS"
+    },
+    {
+      "name": "finite mesh positions and normals, aligned triangle records",
+      "result": "PASS"
+    },
+    {
+      "name": "upper LiDAR only, scan centre 1.15 m",
+      "result": "PASS"
+    },
+    {
+      "name": "two downward ToF units / one mux / isolated user tag",
+      "result": "PASS"
+    },
+    {
+      "name": "motor A/B not fixed ground, power outputs not 3.3V",
+      "result": "PASS"
+    },
+    {
+      "name": "contactors in series; precharge downstream of both contactors",
+      "result": "PASS"
+    },
+    {
+      "name": "local clamp and bleeder on each driver link, not only upstream",
+      "result": "PASS"
+    },
+    {
+      "name": "six schematic sheets render and cover all 131 IDs",
+      "result": "PASS"
+    },
+    {
+      "name": "schematic modules fit within each page without overlapping bodies",
+      "result": "PASS"
+    },
+    {
+      "name": "HOLD release and ten unresolved gates cannot be auto-approved",
+      "result": "PASS"
+    },
+    {
+      "name": "plain local scripts / no CDN or root-absolute asset paths",
+      "result": "PASS"
+    },
+    {
+      "name": "routed schematic wires do not pass through unrelated module bodies",
+      "result": "PASS"
+    },
+    {
+      "name": "authored outward normals match mesh winding",
+      "result": "PASS"
+    },
+    {
+      "name": "GLB magic, version, length, schema, mesh references",
+      "result": "PASS"
+    }
+  ]
+}

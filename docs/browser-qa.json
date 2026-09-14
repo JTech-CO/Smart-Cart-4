@@ -1,0 +1,185 @@
+{
+  "date": "2026-09-14",
+  "browser": "Chromium /usr/bin/chromium (headless)",
+  "navigationMethod": "Actual files loaded with set_content + local scripts. Managed URLBlocklist blocked normal HTTP/file navigation. No policy changed.",
+  "rendererTested": "Canvas 2D software 3D",
+  "initialSoftwareRenderMs": 262,
+  "nativeStorageAvailableAtTestOrigin": false,
+  "webglRuntimeVerified": false,
+  "scopeLimits": [
+    "No actual hardware, battery, motor, temperature, stopping or EMC tests.",
+    "No GPU rendering assertion when WebGL context was unavailable.",
+    "No native HTTP-origin localStorage persistence or OS download completion assertion. Generated export payloads were tested via interception.",
+    "Touch layout and controls checked at mobile/tablet sizes; no physical touchscreen device tested."
+  ],
+  "checks": [
+    {
+      "name": "wiring initial render and 131 table rows",
+      "result": "PASS"
+    },
+    {
+      "name": "desktop wiring no horizontal page overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: overview",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: power",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: safety",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: usb",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: sensor",
+      "result": "PASS"
+    },
+    {
+      "name": "click schematic sheet: signal",
+      "result": "PASS"
+    },
+    {
+      "name": "keyboard selection inspects W099 endpoint",
+      "result": "PASS"
+    },
+    {
+      "name": "schematic zoom changes viewBox",
+      "result": "PASS"
+    },
+    {
+      "name": "wire labels toggle",
+      "result": "PASS"
+    },
+    {
+      "name": "point-to-point search",
+      "result": "PASS"
+    },
+    {
+      "name": "USB filter produces 6 cable-assembly records",
+      "result": "PASS"
+    },
+    {
+      "name": "local checklist progress without approving gates",
+      "result": "PASS"
+    },
+    {
+      "name": "inspection JSON serializer keeps HOLD",
+      "result": "PASS"
+    },
+    {
+      "name": "checklist reset confirmation",
+      "result": "PASS"
+    },
+    {
+      "name": "all ten hold gates visible",
+      "result": "PASS"
+    },
+    {
+      "name": "13 source links visible",
+      "result": "PASS"
+    },
+    {
+      "name": "SVG serializer includes root SVG and HOLD",
+      "result": "PASS"
+    },
+    {
+      "name": "3D renderer initialized rather than error placeholder",
+      "result": "PASS"
+    },
+    {
+      "name": "desktop 3D no horizontal page overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: electrical",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: top",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: front",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: under",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: sensor",
+      "result": "PASS"
+    },
+    {
+      "name": "3D camera preset: home",
+      "result": "PASS"
+    },
+    {
+      "name": "LiDAR marker focuses upper sensor",
+      "result": "PASS"
+    },
+    {
+      "name": "3D component search",
+      "result": "PASS"
+    },
+    {
+      "name": "3D component inspector has functional terminals",
+      "result": "PASS"
+    },
+    {
+      "name": "shared wire ID selection shows route in 3D",
+      "result": "PASS"
+    },
+    {
+      "name": "exploded mode hides and locks fixed harness drawing",
+      "result": "PASS"
+    },
+    {
+      "name": "cover visibility control",
+      "result": "PASS"
+    },
+    {
+      "name": "PNG export produces a binary image blob",
+      "result": "PASS"
+    },
+    {
+      "name": "GLB export handler produces an actual binary model",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile page has no horizontal overflow: wiring.html",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile tabs and zoom work",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile page has no horizontal overflow: index.html",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile parts panel and selection",
+      "result": "PASS"
+    },
+    {
+      "name": "tablet 3D no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "no uncaught browser exceptions",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "WebGL 2 unavailable; interactive CPU 3D fallback enabled. WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+  ]
+}

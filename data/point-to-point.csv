@@ -1,0 +1,180 @@
+﻿id,from,to,net,kind,sheet,gauge,note,status
+W001,BT1:+,F0:IN,BAT+,power,power,실측 후 선정,,hold
+W002,F0:OUT,S0:IN,BAT_FUSED,power,power,실측 후 선정,,hold
+W003,S0:OUT,X24:IN,BUS24,power,power,실측 후 선정,,hold
+W004,BT1:-,X0:BAT,0V,return,power,실측 후 선정,,hold
+W005,X24:DRIVE,K1:L1,BUS24,power,power,실측 후 선정,,hold
+W006,K1:T1,K2:L1,K_MID,power,power,실측 후 선정,,hold
+W007,K2:T1,F1:IN,DRIVE24,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W008,F1:OUT,PPL:IN+,FUSED_L,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W009,PPL:OUT+,MDL:VIN,LINK_L,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W010,MDL:VIN,CLL:+,LINK_L,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W011,MDL:VIN,RBL:+,LINK_L,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W012,X0:ML,MDL:GND,0V,return,power,실측 후 선정,,hold
+W013,MDL:GND,CLL:-,0V,return,power,실측 후 선정,,hold
+W014,MDL:GND,RBL:-,0V,return,power,실측 후 선정,,hold
+W015,MDL:GND,PPL:0V,0V,return,power,실측 후 선정,,hold
+W016,MDL:OUTA,ML:A,ML_A,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W017,MDL:OUTB,ML:B,ML_B,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W018,ML:A,CML:1,ML_A,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W019,ML:B,CML:2,ML_B,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W020,K2:T1,F2:IN,DRIVE24,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W021,F2:OUT,PPR:IN+,FUSED_R,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W022,PPR:OUT+,MDR:VIN,LINK_R,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W023,MDR:VIN,CLR:+,LINK_R,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W024,MDR:VIN,RBR:+,LINK_R,power,power,실측 후 선정,CL/RB는 드라이버 동일 로컬 링크에 병렬,hold
+W025,X0:MR,MDR:GND,0V,return,power,실측 후 선정,,hold
+W026,MDR:GND,CLR:-,0V,return,power,실측 후 선정,,hold
+W027,MDR:GND,RBR:-,0V,return,power,실측 후 선정,,hold
+W028,MDR:GND,PPR:0V,0V,return,power,실측 후 선정,,hold
+W029,MDR:OUTA,MR:A,MR_A,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W030,MDR:OUTB,MR:B,MR_B,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W031,MR:A,CMR:1,MR_A,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W032,MR:B,CMR:2,MR_B,motor,power,실측 후 선정,A/B 모두 부동 H브리지 출력. 0V 연결 금지.,hold
+W033,X24:AUX24,F3:IN,BUS24,power,power,실측 후 선정,,hold
+W034,F3:OUT,DC1:IN+,DC1_IN,power,power,실측 후 선정,,hold
+W035,DC1:OUT+,F9:IN,SAFE24,safety,power,실측 후 선정,,hold
+W036,F9:OUT,SR1:24V,SAFE24_F,safety,power,실측 후 선정,,hold
+W037,F9:OUT,SR1:O1_FEED,SAFE24_F,safety,power,실측 후 선정,,hold
+W038,F9:OUT,SR1:O2_FEED,SAFE24_F,safety,power,실측 후 선정,,hold
+W039,X24:AUX5,F4:IN,BUS24,power,power,실측 후 선정,,hold
+W040,F4:OUT,DC2:IN+,DC2_IN,power,power,실측 후 선정,,hold
+W041,DC2:OUT+,OV5:IN+,5V_RAW,logic,power,실측 후 선정,,hold
+W042,OV5:OUT+,F7:IN,5V_PROT,logic,power,실측 후 선정,,hold
+W043,OV5:OUT+,F8:IN,5V_PROT,logic,power,실측 후 선정,,hold
+W044,F7:OUT,OP1:PWR5,OPI5,logic,power,실측 후 선정,,hold
+W045,F8:OUT,H1:DC5,HUB5,logic,power,실측 후 선정,,hold
+W046,X0:DC1,DC1:IN-,0V,return,power,실측 후 선정,,hold
+W047,DC1:IN-,DC1:OUT-,0V,return,power,실측 후 선정,,hold
+W048,X0:DC2,DC2:IN-,0V,return,power,실측 후 선정,,hold
+W049,DC2:IN-,DC2:OUT-,0V,return,power,실측 후 선정,,hold
+W050,DC2:OUT-,OV5:0V,0V,return,power,실측 후 선정,,hold
+W051,DC2:OUT-,OP1:PWR0,0V,return,power,실측 후 선정,,hold
+W052,DC2:OUT-,H1:DC0,0V,return,power,실측 후 선정,,hold
+W053,X0:SR,SR1:0V,0V,return,power,실측 후 선정,,hold
+W054,SR1:TEST_A,S1:A_IN,ESTOP_A_OUT,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W055,S1:A_OUT,SR1:RETURN_A,ESTOP_A_IN,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W056,SR1:TEST_B,S1:B_IN,ESTOP_B_OUT,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W057,S1:B_OUT,SR1:RETURN_B,ESTOP_B_IN,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W058,SR1:RESET_OUT,S2:IN,RESET_OUT,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W059,S2:OUT,SR1:RESET_IN,RESET_IN,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W060,SR1:EDM_OUT,K1:EDM_IN,EDM_START,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W061,K1:EDM_OUT,K2:EDM_IN,EDM_MID,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W062,K2:EDM_OUT,SR1:EDM_IN,EDM_END,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W063,SR1:O1,K1:A1,K1_COIL,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W064,SR1:O2,K2:A1,K2_COIL,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W065,K1:A1,Z1:+,K1_COIL,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W066,K2:A1,Z2:+,K2_COIL,safety,safety,실측 후 선정,SR1/EDMは실단자 매핑 미확정,hold
+W067,X0:K1,K1:A2,0V,return,safety,실측 후 선정,,hold
+W068,K1:A2,Z1:-,0V,return,safety,실측 후 선정,,hold
+W069,X0:K2,K2:A2,0V,return,safety,실측 후 선정,,hold
+W070,K2:A2,Z2:-,0V,return,safety,실측 후 선정,,hold
+W071,OP1:HOST,H1:UP,USB_UP,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,hold
+W072,H1:P1,U1:USB,USB_ESP,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,hold
+W073,H1:P2,A1:USB,USB_LIDAR,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,hold
+W074,H1:P3,UWL:USB_RANGE,USB_UWL,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,hold
+W075,H1:P4,UWR:USB_RANGE,USB_UWR,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,hold
+W076,A1:HARNESS,LD1:HARNESS,C1_HARNESS,usb,signal,제조사 케이블,완성 케이블. USB: VBUS/D-/D+/GND; C1: 전용 5V/GND/TX/RX 하네스.,review
+W077,U1:J2.1_3V3,X3:3V3_IN,3V3,logic,sensor,신호전류/거리 검토,,review
+W078,U1:J2.14_GND,X3:0V_IN,0V,return,sensor,신호전류/거리 검토,,review
+W079,X3:3V3_IMU,IMU1:VIN,3V3,logic,sensor,실측 후 선정,,review
+W080,X3:0V_IMU,IMU1:GND,0V,return,sensor,실측 후 선정,,review
+W081,X3:3V3_MUX,MUX1:VCC,3V3,logic,sensor,실측 후 선정,,review
+W082,X3:0V_MUX,MUX1:GND,0V,return,sensor,실측 후 선정,,review
+W083,X3:3V3_T1,TOF1:VIN,3V3,logic,sensor,실측 후 선정,,review
+W084,X3:0V_T1,TOF1:GND,0V,return,sensor,실측 후 선정,,review
+W085,X3:3V3_T2,TOF2:VIN,3V3,logic,sensor,실측 후 선정,,review
+W086,X3:0V_T2,TOF2:GND,0V,return,sensor,실측 후 선정,,review
+W087,X3:3V3_ISO_L,ISOL:VCCA,3V3,logic,sensor,실측 후 선정,,hold
+W088,X3:0V_ISO_L,ISOL:GNDA,0V,return,sensor,실측 후 선정,,hold
+W089,X3:3V3_ISO_R,ISOR:VCCA,3V3,logic,sensor,실측 후 선정,,hold
+W090,X3:0V_ISO_R,ISOR:GNDA,0V,return,sensor,실측 후 선정,,hold
+W091,U1:J3.9_IO18,IMU1:SCL_SCK,IMU_SCK,signal,sensor,짧은 3.3V 신호 하네스,,review
+W092,U1:J3.2_IO23,IMU1:DI_MOSI,IMU_MOSI,signal,sensor,짧은 3.3V 신호 하네스,,review
+W093,U1:J3.8_IO19,IMU1:SDA_MISO,IMU_MISO,signal,sensor,짧은 3.3V 신호 하네스,,review
+W094,U1:J2.11_IO27,IMU1:CS,IMU_CS,signal,sensor,짧은 3.3V 신호 하네스,,review
+W095,U1:J2.5_IO34,IMU1:INT,IMU_INT,signal,sensor,짧은 3.3V 신호 하네스,,review
+W096,U1:J2.7_IO32,IMU1:RST,IMU_RST,signal,sensor,짧은 3.3V 신호 하네스,,review
+W097,U1:J3.6_IO21,MUX1:SDA,SDA,signal,sensor,짧은 3.3V 신호 하네스,,review
+W098,U1:J3.3_IO22,MUX1:SCL,SCL,signal,sensor,짧은 3.3V 신호 하네스,,review
+W099,U1:J2.8_IO33,MUX1:RESET,MUX_RST,signal,sensor,짧은 3.3V 신호 하네스,,review
+W100,IMU1:VIN,IMU1:P0,3V3,logic,sensor,실측 후 선정,,review
+W101,IMU1:VIN,IMU1:P1,3V3,logic,sensor,실측 후 선정,,review
+W102,MUX1:GND,MUX1:A0,0V,return,sensor,실측 후 선정,,review
+W103,MUX1:GND,MUX1:A1,0V,return,sensor,실측 후 선정,,review
+W104,MUX1:GND,MUX1:A2,0V,return,sensor,실측 후 선정,,review
+W105,MUX1:SD0,TOF1:SDA,SDA_T1,signal,sensor,실측 후 선정,같은 0x29 주소: 한 채널씩 활성화,review
+W106,MUX1:SC0,TOF1:SCL,SCL_T1,signal,sensor,실측 후 선정,같은 0x29 주소: 한 채널씩 활성화,review
+W107,MUX1:SD1,TOF2:SDA,SDA_T2,signal,sensor,실측 후 선정,같은 0x29 주소: 한 채널씩 활성화,review
+W108,MUX1:SC1,TOF2:SCL,SCL_T2,signal,sensor,실측 후 선정,같은 0x29 주소: 한 채널씩 활성화,review
+W109,X3:3V3_IN,RP_SDA:1,3V3,logic,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W110,RP_SDA:2,MUX1:SDA,SDA,signal,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W111,X3:3V3_IN,RP_SCL:1,3V3,logic,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W112,RP_SCL:2,MUX1:SCL,SCL,signal,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W113,X3:3V3_IN,RP_RST:1,3V3,logic,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W114,RP_RST:2,MUX1:RESET,MUX_RST,signal,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W115,X3:3V3_IN,RP_INT:1,3V3,logic,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W116,RP_INT:2,IMU1:INT,IMU_INT,signal,sensor,실측 후 선정,온보드 중복 저항 확인,review
+W117,U1:J3.11_IO17,ISOL:A_IN,L_A_TX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W118,ISOL:A_OUT,U1:J3.12_IO16,L_A_RX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W119,ISOL:B_OUT,MDL:RX,UART_L_RX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W120,MDL:TX,ISOL:B_IN,UART_L_TX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W121,MDL:3V3_BEC,ISOL:VCCB,DRV_L_3V3,logic,signal,실측 후 선정,드라이버 측 전원. ESP 3V3와 병렬 접속 금지,hold
+W122,MDL:GND,ISOL:GNDB,0V,return,signal,실측 후 선정,,hold
+W123,U1:J2.9_IO25,ISOR:A_IN,R_A_TX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W124,ISOR:A_OUT,U1:J2.10_IO26,R_A_RX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W125,ISOR:B_OUT,MDR:RX,UART_R_RX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W126,MDR:TX,ISOR:B_IN,UART_R_TX,signal,signal,실측 후 선정,"전원분리 UART, 하드웨어 안전정지 대체 아님",hold
+W127,MDR:3V3_BEC,ISOR:VCCB,DRV_R_3V3,logic,signal,실측 후 선정,드라이버 측 전원. ESP 3V3와 병렬 접속 금지,hold
+W128,MDR:GND,ISOR:GNDB,0V,return,signal,실측 후 선정,,hold
+W129,BT1:CHG+,FCH:IN,CHG+,charge,power,실측 후 선정,실제 BMS 지정 충전 포트 확정 전 결선 금지,hold
+W130,FCH:OUT,CH1:+,CHG_FUSED,charge,power,실측 후 선정,실제 BMS 지정 충전 포트 확정 전 결선 금지,hold
+W131,BT1:CHG-,CH1:-,CHG-,charge,power,실측 후 선정,실제 BMS 지정 충전 포트 확정 전 결선 금지,hold
+W132,K2:T1,F11:IN,DRIVE24,power,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W133,F11:OUT,DC3:IN+,STEER_IN,power,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W134,X0:STEER,DC3:IN-,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W135,DC3:IN-,DC3:OUT-,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W136,DC3:OUT+,OV12:IN+,12V_RAW,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W137,DC3:OUT-,OV12:0V,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W138,OV12:OUT+,X12:IN,12V_STEER,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W139,DC3:OUT-,X12:RETURN,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W140,X12:ABS+,CL12:+,12V_STEER,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W141,X12:ABS-,CL12:-,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W142,X12:L,F5:IN,12V_STEER,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W143,X12:R,F6:IN,12V_STEER,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W144,F5:OUT,JSL:PWR,SVL_12,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W145,F6:OUT,JSR:PWR,SVR_12,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W146,X12:L0,JSL:GND,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W147,X12:R0,JSR:GND,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W148,JSL:PWR,SVL:V+,SVL_12,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W149,JSL:GND,SVL:GND,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W150,JSR:PWR,SVR:V+,SVR_12,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W151,JSR:GND,SVR:GND,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W152,X12:LOGIC,F10:IN,12V_STEER,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W153,F10:OUT,DC4:IN+,PWM_SUP_IN,steerpower,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W154,X12:LOGIC0,DC4:IN-,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W155,DC4:IN-,DC4:OUT-,0V,return,steering,정격·실측 후 선정,D3 전륜 서보 추가 연결. 실물 핀맵/극성/정격 확인.,hold
+W156,X3:3V3_PWM,U2:1_VCC1,3V3,logic,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W157,X3:0V_PWM,U2:4_GND1,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W158,DC4:OUT+,U2:8_VCC2,5V_SERVO_IO,logic,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W159,DC4:OUT-,U2:5_GND2,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W160,U1:J2.15_IO13,U2:2_INA,PWM_L_3V3,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W161,U1:J2.12_IO14,U2:3_INB,PWM_R_3V3,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W162,U2:2_INA,R21:1,PWM_L_3V3,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W163,R21:2,U2:4_GND1,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W164,U2:3_INB,R22:1,PWM_R_3V3,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W165,R22:2,U2:4_GND1,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W166,U2:7_OUTA,R23:1,PWM_L_5V,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W167,U2:6_OUTB,R24:1,PWM_R_5V,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W168,R23:2,JSL:SIG,SVL_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W169,R24:2,JSR:SIG,SVR_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W170,JSL:SIG,R25:1,SVL_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W171,R25:2,JSL:GND,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W172,JSR:SIG,R26:1,SVR_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W173,R26:2,JSR:GND,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W174,JSL:SIG,SVL:PWM,SVL_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W175,JSR:SIG,SVR:PWM,SVR_PWM,signal,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W176,U2:1_VCC1,C21:+,3V3,logic,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W177,C21:-,U2:4_GND1,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W178,U2:8_VCC2,C22:+,5V_SERVO_IO,logic,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold
+W179,C22:-,U2:5_GND2,0V,return,pwm,짧은 신호 하네스 / 파형 확인,3.3V 입력측과 5V 출력측 양극을 절대 묶지 않음. 서보 전력귀환은 별도 선로.,hold

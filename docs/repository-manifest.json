@@ -1,0 +1,21 @@
+{
+  "reviewed": "2026-09-14",
+  "deliveryRevision": "D2",
+  "remoteWritePerformed": false,
+  "sources": [
+    {
+      "repository": "JTech-CO/Smart-Cart",
+      "commit": "2b4b8fea6909e4f76b4a52b02c5075c3f478097b"
+    },
+    {
+      "repository": "JTech-CO/Smart-Cart-Wiring",
+      "commit": "3ac3f1d793caba6494d27df6f0b9ba2eee8606d5"
+    },
+    {
+      "repository": "JTech-CO/Smart-Cart-BOM",
+      "commit": "26c5061ff08912abb77f7fafcdc5e83a1018ac98"
+    }
+  ],
+  "units": "m",
+  "engineeringRelease": "HOLD"
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-14",
+  "scope": "Self-contained HTML executed with set_content. No normal file/HTTP navigation or GPU availability assertion.",
+  "checks": [
+    {
+      "name": "Smart-Cart-3D-D2.html: no external script/style resources",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-3D-D2.html: shared data intact",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-3D-D2.html: interactive renderer ready",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-3D-D2.html: upper LiDAR selection",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-3D-D2.html: embedded review document opens",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-3D-D2.html: pair navigation uses bundled file names",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: no external script/style resources",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: shared data intact",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: all connection rows rendered",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: power sheet control",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: embedded review document opens",
+      "result": "PASS"
+    },
+    {
+      "name": "Smart-Cart-Wiring-D2.html: pair navigation uses bundled file names",
+      "result": "PASS"
+    },
+    {
+      "name": "no uncaught bundle exceptions",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}
