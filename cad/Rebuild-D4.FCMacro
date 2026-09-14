@@ -1,0 +1,73 @@
+# FreeCAD GUI macro: imports the packaged D4 BReps into a NEW document.
+# Does not modify the source document or overwrite an existing file silently.
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+import json
+import os
+import tempfile
+import zipfile
+try:
+    from PySide import QtWidgets
+except ImportError:
+    from PySide2 import QtWidgets
+
+def rebuild_d4():
+    base = QtWidgets.QFileDialog.getExistingDirectory(None, 'Select the extracted cad folder')
+    if not base:
+        return
+    manifest_path = os.path.join(base, 'assembly-manifest.json')
+    source_path = os.path.join(base, 'Smart-Cart-D4.FCStd')
+    doc = None
+    try:
+        with open(manifest_path, encoding='utf-8') as f:
+            info = json.load(f)
+        if not isinstance(info.get('features'), list) or not info['features']:
+            raise ValueError('No features found in assembly-manifest.json')
+        doc = App.newDocument('SmartCartD4Rebuilt')
+        doc.Label = 'Smart Cart D4 - placement review / HOLD'
+        root = doc.addObject('App::DocumentObjectGroup', 'D4_Assembly')
+        groups = {}
+        with zipfile.ZipFile(source_path) as archive, tempfile.TemporaryDirectory() as tmp:
+            for feature in info['features']:
+                member = feature['file']
+                if os.path.basename(member) != member or not member.endswith('.brp'):
+                    raise ValueError('Unexpected BRep member path: ' + member)
+                path = os.path.join(tmp, member)
+                with open(path, 'wb') as f:
+                    f.write(archive.read(member))
+                shape = Part.Shape()
+                shape.read(path)
+                if shape.isNull() or not shape.isValid():
+                    raise ValueError('Invalid BRep: ' + member)
+                ref = feature['ref']
+                if ref not in groups:
+                    group = doc.addObject('App::DocumentObjectGroup', 'Group_' + ref)
+                    group.Label = ref
+                    root.addObject(group)
+                    groups[ref] = group
+                obj = doc.addObject('Part::Feature', feature['name'])
+                obj.Shape = shape
+                obj.Label = ref
+                obj.addProperty('App::PropertyString', 'Reference').Reference = ref
+                obj.addProperty('App::PropertyString', 'Release').Release = 'ENGINEERING HOLD'
+                obj.ViewObject.ShapeColor = tuple(feature['color'])
+                obj.ViewObject.Transparency = round((1 - feature['alpha']) * 100)
+                obj.ViewObject.Visibility = ref != 'COVER'
+                groups[ref].addObject(obj)
+        doc.recompute()
+        Gui.activeDocument().activeView().viewAxonometric()
+        Gui.activeDocument().activeView().fitAll()
+        target = QtWidgets.QFileDialog.getSaveFileName(None, 'Save new D4 document', os.path.join(base, 'Smart-Cart-D4-Rebuilt.FCStd'), 'FreeCAD (*.FCStd)')[0]
+        if target:
+            if not target.lower().endswith('.fcstd'):
+                target += '.FCStd'
+            if os.path.abspath(target) == os.path.abspath(source_path):
+                raise ValueError('Choose a new filename; the packaged source must be preserved.')
+            doc.saveAs(target)
+        App.Console.PrintMessage('D4 rebuild completed in a new document. Geometry review only; no fabrication or energization approval.\n')
+    except Exception as exc:
+        App.Console.PrintError('D4 rebuild failed: ' + str(exc) + '\n')
+        QtWidgets.QMessageBox.critical(None, 'D4 rebuild', str(exc) + '\nThe source file was not modified. Any new partial document remains open for diagnosis.')
+
+rebuild_d4()

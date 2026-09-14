@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+node_modules/
+*.FCStd1
+*.FCBak
+.DS_Store

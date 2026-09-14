@@ -1,0 +1,17 @@
+{
+  "os": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "node": "v22.16.0",
+  "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+  "pythonPackages": {
+    "playwright": "1.57.0",
+    "Pillow": "12.3.0",
+    "cadquery": "2.8.0",
+    "cadquery-ocp": "7.9.3.1.1"
+  },
+  "freecadInstalled": false,
+  "browserWebGL2Context": false,
+  "browserFixture": true,
+  "EGL": "OpenGL ES 3.2 Mesa 25.0.7-2 / llvmpipe LLVM 19.1.7, 256 bits",
+  "restrictions": "Managed Chromium disallows HTTP/file navigation; browser DOM tests use unchanged scripts/styles in an about:blank fixture and explicit storage/download boundary adapters. No management policies changed."
+}

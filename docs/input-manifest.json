@@ -1,0 +1,83 @@
+{
+  "source_docx": "스마트카트_8종_부품상세사양_ESP수정.docx",
+  "sha256": "92a1091dc8cb041f39fd6429ef7bbaa1507875f538ac2b4754fb2b5bee37b5f4",
+  "image_extraction": [
+    {
+      "file": "assets/reference/doc-01.webp",
+      "source_media": "media/image1.png",
+      "order_in_document": 1
+    },
+    {
+      "file": "assets/reference/doc-02.webp",
+      "source_media": "media/image2.png",
+      "order_in_document": 2
+    },
+    {
+      "file": "assets/reference/doc-03.webp",
+      "source_media": "media/image3.png",
+      "order_in_document": 3
+    },
+    {
+      "file": "assets/reference/doc-04.webp",
+      "source_media": "media/image2.png",
+      "order_in_document": 4
+    },
+    {
+      "file": "assets/reference/doc-05.webp",
+      "source_media": "media/image4.png",
+      "order_in_document": 5
+    },
+    {
+      "file": "assets/reference/doc-06.webp",
+      "source_media": "media/image5.png",
+      "order_in_document": 6
+    },
+    {
+      "file": "assets/reference/doc-07.webp",
+      "source_media": "media/image6.png",
+      "order_in_document": 7
+    },
+    {
+      "file": "assets/reference/doc-08.webp",
+      "source_media": "media/image7.png",
+      "order_in_document": 8
+    },
+    {
+      "file": "assets/reference/doc-09.webp",
+      "source_media": "media/image8.png",
+      "order_in_document": 9
+    },
+    {
+      "file": "assets/reference/doc-10.webp",
+      "source_media": "media/image9.png",
+      "order_in_document": 10
+    },
+    {
+      "file": "assets/reference/doc-11.webp",
+      "source_media": "media/image10.png",
+      "order_in_document": 11
+    },
+    {
+      "file": "assets/reference/doc-12.webp",
+      "source_media": "media/image10.png",
+      "order_in_document": 12
+    },
+    {
+      "file": "assets/reference/doc-13.webp",
+      "source_media": "media/image11.png",
+      "order_in_document": 13
+    },
+    {
+      "file": "assets/reference/doc-14.webp",
+      "source_media": "media/image12.png",
+      "order_in_document": 14
+    }
+  ],
+  "note": "Image-only extraction from user-provided DOCX; source DOCX not modified. Images retain third-party rights.",
+  "sourcePrototype": {
+    "name": "Full-scale concept.FCStd",
+    "sha256": "605f729e3bfc63725ada0d960951355f0240d7c3bc61d402db2722d40c8dcf29",
+    "packagedAs": "cad/source-prototype.FCStd"
+  },
+  "inputD4DesignSha256": "95c20a6cc955085c2faba114a9364c974dd8d3774f709711250de91449b0f5ce"
+}

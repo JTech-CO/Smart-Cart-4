@@ -1,294 +1,380 @@
-﻿Reference,Port,Net,Basis
-BT1,+,BAT+,기능 포트. 실물 모델·핀순서 확인
-BT1,-,0V,기능 포트. 실물 모델·핀순서 확인
-BT1,CHG+,CHG+,기능 포트. 실물 모델·핀순서 확인
-BT1,CHG-,CHG-,기능 포트. 실물 모델·핀순서 확인
-F0,IN,BAT+,기능 포트. 실물 모델·핀순서 확인
-F0,OUT,BAT_FUSED,기능 포트. 실물 모델·핀순서 확인
-S0,IN,BAT_FUSED,기능 포트. 실물 모델·핀순서 확인
-S0,OUT,BUS24,기능 포트. 실물 모델·핀순서 확인
-X24,IN,BUS24,기능 포트. 실물 모델·핀순서 확인
-X24,DRIVE,BUS24,기능 포트. 실물 모델·핀순서 확인
-X24,AUX24,BUS24,기능 포트. 실물 모델·핀순서 확인
-X24,AUX5,BUS24,기능 포트. 실물 모델·핀순서 확인
-X0,BAT,0V,기능 포트. 실물 모델·핀순서 확인
-X0,ML,0V,기능 포트. 실물 모델·핀순서 확인
-X0,MR,0V,기능 포트. 실물 모델·핀순서 확인
-X0,DC1,0V,기능 포트. 실물 모델·핀순서 확인
-X0,DC2,0V,기능 포트. 실물 모델·핀순서 확인
-X0,SR,0V,기능 포트. 실물 모델·핀순서 확인
-X0,K1,0V,기능 포트. 실물 모델·핀순서 확인
-X0,K2,0V,기능 포트. 실물 모델·핀순서 확인
-X0,STEER,0V,기능 포트. 실물 모델·핀순서 확인
-K1,L1,BUS24,기능 포트. 실물 모델·핀순서 확인
-K1,T1,K_MID,기능 포트. 실물 모델·핀순서 확인
-K1,A1,K1_COIL,기능 포트. 실물 모델·핀순서 확인
-K1,A2,0V,기능 포트. 실물 모델·핀순서 확인
-K1,EDM_IN,EDM_START,기능 포트. 실물 모델·핀순서 확인
-K1,EDM_OUT,EDM_MID,기능 포트. 실물 모델·핀순서 확인
-Z1,+,K1_COIL,기능 포트. 실물 모델·핀순서 확인
-Z1,-,0V,기능 포트. 실물 모델·핀순서 확인
-K2,L1,K_MID,기능 포트. 실물 모델·핀순서 확인
-K2,T1,DRIVE24,기능 포트. 실물 모델·핀순서 확인
-K2,A1,K2_COIL,기능 포트. 실물 모델·핀순서 확인
-K2,A2,0V,기능 포트. 실물 모델·핀순서 확인
-K2,EDM_IN,EDM_MID,기능 포트. 실물 모델·핀순서 확인
-K2,EDM_OUT,EDM_END,기능 포트. 실물 모델·핀순서 확인
-Z2,+,K2_COIL,기능 포트. 실물 모델·핀순서 확인
-Z2,-,0V,기능 포트. 실물 모델·핀순서 확인
-F1,IN,DRIVE24,기능 포트. 실물 모델·핀순서 확인
-F1,OUT,FUSED_L,기능 포트. 실물 모델·핀순서 확인
-PPL,IN+,FUSED_L,기능 포트. 실물 모델·핀순서 확인
-PPL,OUT+,LINK_L,기능 포트. 실물 모델·핀순서 확인
-PPL,0V,0V,기능 포트. 실물 모델·핀순서 확인
-MDL,VIN,LINK_L,기능 포트. 실물 모델·핀순서 확인
-MDL,GND,0V,기능 포트. 실물 모델·핀순서 확인
-MDL,OUTA,ML_A,기능 포트. 실물 모델·핀순서 확인
-MDL,OUTB,ML_B,기능 포트. 실물 모델·핀순서 확인
-MDL,RX,UART_L_RX,기능 포트. 실물 모델·핀순서 확인
-MDL,TX,UART_L_TX,기능 포트. 실물 모델·핀순서 확인
-MDL,3V3_BEC,DRV_L_3V3,기능 포트. 실물 모델·핀순서 확인
-CLL,+,LINK_L,기능 포트. 실물 모델·핀순서 확인
-CLL,-,0V,기능 포트. 실물 모델·핀순서 확인
-RBL,+,LINK_L,기능 포트. 실물 모델·핀순서 확인
-RBL,-,0V,기능 포트. 실물 모델·핀순서 확인
-ML,A,ML_A,기능 포트. 실물 모델·핀순서 확인
-ML,B,ML_B,기능 포트. 실물 모델·핀순서 확인
-CML,1,ML_A,기능 포트. 실물 모델·핀순서 확인
-CML,2,ML_B,기능 포트. 실물 모델·핀순서 확인
-F2,IN,DRIVE24,기능 포트. 실물 모델·핀순서 확인
-F2,OUT,FUSED_R,기능 포트. 실물 모델·핀순서 확인
-PPR,IN+,FUSED_R,기능 포트. 실물 모델·핀순서 확인
-PPR,OUT+,LINK_R,기능 포트. 실물 모델·핀순서 확인
-PPR,0V,0V,기능 포트. 실물 모델·핀순서 확인
-MDR,VIN,LINK_R,기능 포트. 실물 모델·핀순서 확인
-MDR,GND,0V,기능 포트. 실물 모델·핀순서 확인
-MDR,OUTA,MR_A,기능 포트. 실물 모델·핀순서 확인
-MDR,OUTB,MR_B,기능 포트. 실물 모델·핀순서 확인
-MDR,RX,UART_R_RX,기능 포트. 실물 모델·핀순서 확인
-MDR,TX,UART_R_TX,기능 포트. 실물 모델·핀순서 확인
-MDR,3V3_BEC,DRV_R_3V3,기능 포트. 실물 모델·핀순서 확인
-CLR,+,LINK_R,기능 포트. 실물 모델·핀순서 확인
-CLR,-,0V,기능 포트. 실물 모델·핀순서 확인
-RBR,+,LINK_R,기능 포트. 실물 모델·핀순서 확인
-RBR,-,0V,기능 포트. 실물 모델·핀순서 확인
-MR,A,MR_A,기능 포트. 실물 모델·핀순서 확인
-MR,B,MR_B,기능 포트. 실물 모델·핀순서 확인
-CMR,1,MR_A,기능 포트. 실물 모델·핀순서 확인
-CMR,2,MR_B,기능 포트. 실물 모델·핀순서 확인
-F3,IN,BUS24,기능 포트. 실물 모델·핀순서 확인
-F3,OUT,DC1_IN,기능 포트. 실물 모델·핀순서 확인
-DC1,IN+,DC1_IN,기능 포트. 실물 모델·핀순서 확인
-DC1,IN-,0V,기능 포트. 실물 모델·핀순서 확인
-DC1,OUT+,SAFE24,기능 포트. 실물 모델·핀순서 확인
-DC1,OUT-,0V,기능 포트. 실물 모델·핀순서 확인
-F9,IN,SAFE24,기능 포트. 실물 모델·핀순서 확인
-F9,OUT,SAFE24_F,기능 포트. 실물 모델·핀순서 확인
-SR1,24V,SAFE24_F,기능 포트. 실물 모델·핀순서 확인
-SR1,0V,0V,기능 포트. 실물 모델·핀순서 확인
-SR1,TEST_A,ESTOP_A_OUT,기능 포트. 실물 모델·핀순서 확인
-SR1,RETURN_A,ESTOP_A_IN,기능 포트. 실물 모델·핀순서 확인
-SR1,TEST_B,ESTOP_B_OUT,기능 포트. 실물 모델·핀순서 확인
-SR1,RETURN_B,ESTOP_B_IN,기능 포트. 실물 모델·핀순서 확인
-SR1,RESET_OUT,RESET_OUT,기능 포트. 실물 모델·핀순서 확인
-SR1,RESET_IN,RESET_IN,기능 포트. 실물 모델·핀순서 확인
-SR1,EDM_OUT,EDM_START,기능 포트. 실물 모델·핀순서 확인
-SR1,EDM_IN,EDM_END,기능 포트. 실물 모델·핀순서 확인
-SR1,O1_FEED,SAFE24_F,기능 포트. 실물 모델·핀순서 확인
-SR1,O1,K1_COIL,기능 포트. 실물 모델·핀순서 확인
-SR1,O2_FEED,SAFE24_F,기능 포트. 실물 모델·핀순서 확인
-SR1,O2,K2_COIL,기능 포트. 실물 모델·핀순서 확인
-S1,A_IN,ESTOP_A_OUT,기능 포트. 실물 모델·핀순서 확인
-S1,A_OUT,ESTOP_A_IN,기능 포트. 실물 모델·핀순서 확인
-S1,B_IN,ESTOP_B_OUT,기능 포트. 실물 모델·핀순서 확인
-S1,B_OUT,ESTOP_B_IN,기능 포트. 실물 모델·핀순서 확인
-S2,IN,RESET_OUT,기능 포트. 실물 모델·핀순서 확인
-S2,OUT,RESET_IN,기능 포트. 실물 모델·핀순서 확인
-F4,IN,BUS24,기능 포트. 실물 모델·핀순서 확인
-F4,OUT,DC2_IN,기능 포트. 실물 모델·핀순서 확인
-DC2,IN+,DC2_IN,기능 포트. 실물 모델·핀순서 확인
-DC2,IN-,0V,기능 포트. 실물 모델·핀순서 확인
-DC2,OUT+,5V_RAW,기능 포트. 실물 모델·핀순서 확인
-DC2,OUT-,0V,기능 포트. 실물 모델·핀순서 확인
-OV5,IN+,5V_RAW,기능 포트. 실물 모델·핀순서 확인
-OV5,OUT+,5V_PROT,기능 포트. 실물 모델·핀순서 확인
-OV5,0V,0V,기능 포트. 실물 모델·핀순서 확인
-F7,IN,5V_PROT,기능 포트. 실물 모델·핀순서 확인
-F7,OUT,OPI5,기능 포트. 실물 모델·핀순서 확인
-F8,IN,5V_PROT,기능 포트. 실물 모델·핀순서 확인
-F8,OUT,HUB5,기능 포트. 실물 모델·핀순서 확인
-OP1,PWR5,OPI5,기능 포트. 실물 모델·핀순서 확인
-OP1,PWR0,0V,기능 포트. 실물 모델·핀순서 확인
-OP1,HOST,USB_UP,기능 포트. 실물 모델·핀순서 확인
-H1,DC5,HUB5,기능 포트. 실물 모델·핀순서 확인
-H1,DC0,0V,기능 포트. 실물 모델·핀순서 확인
-H1,UP,USB_UP,기능 포트. 실물 모델·핀순서 확인
-H1,P1,USB_ESP,기능 포트. 실물 모델·핀순서 확인
-H1,P2,USB_LIDAR,기능 포트. 실물 모델·핀순서 확인
-H1,P3,USB_UWL,기능 포트. 실물 모델·핀순서 확인
-H1,P4,USB_UWR,기능 포트. 실물 모델·핀순서 확인
-U1,USB,USB_ESP,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.1_3V3,3V3,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.14_GND,0V,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.11_IO17,L_A_TX,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.12_IO16,L_A_RX,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.9_IO25,R_A_TX,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.10_IO26,R_A_RX,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.9_IO18,IMU_SCK,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.2_IO23,IMU_MOSI,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.8_IO19,IMU_MISO,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.11_IO27,IMU_CS,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.5_IO34,IMU_INT,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.7_IO32,IMU_RST,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.6_IO21,SDA,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J3.3_IO22,SCL,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.8_IO33,MUX_RST,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.15_IO13,PWM_L_3V3,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-U1,J2.12_IO14,PWM_R_3V3,Espressif V4 J2/J3 표 기준 (클론/다른 보드 제외)
-ISOL,VCCA,3V3,기능 포트. 실물 모델·핀순서 확인
-ISOL,GNDA,0V,기능 포트. 실물 모델·핀순서 확인
-ISOL,A_IN,L_A_TX,기능 포트. 실물 모델·핀순서 확인
-ISOL,A_OUT,L_A_RX,기능 포트. 실물 모델·핀순서 확인
-ISOL,VCCB,DRV_L_3V3,기능 포트. 실물 모델·핀순서 확인
-ISOL,GNDB,0V,기능 포트. 실물 모델·핀순서 확인
-ISOL,B_OUT,UART_L_RX,기능 포트. 실물 모델·핀순서 확인
-ISOL,B_IN,UART_L_TX,기능 포트. 실물 모델·핀순서 확인
-ISOR,VCCA,3V3,기능 포트. 실물 모델·핀순서 확인
-ISOR,GNDA,0V,기능 포트. 실물 모델·핀순서 확인
-ISOR,A_IN,R_A_TX,기능 포트. 실물 모델·핀순서 확인
-ISOR,A_OUT,R_A_RX,기능 포트. 실물 모델·핀순서 확인
-ISOR,VCCB,DRV_R_3V3,기능 포트. 실물 모델·핀순서 확인
-ISOR,GNDB,0V,기능 포트. 실물 모델·핀순서 확인
-ISOR,B_OUT,UART_R_RX,기능 포트. 실물 모델·핀순서 확인
-ISOR,B_IN,UART_R_TX,기능 포트. 실물 모델·핀순서 확인
-A1,USB,USB_LIDAR,기능 포트. 실물 모델·핀순서 확인
-A1,HARNESS,C1_HARNESS,기능 포트. 실물 모델·핀순서 확인
-LD1,HARNESS,C1_HARNESS,기능 포트. 실물 모델·핀순서 확인
-UWL,USB_RANGE,USB_UWL,기능 포트. 실물 모델·핀순서 확인
-UWR,USB_RANGE,USB_UWR,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_IN,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_IN,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_IMU,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_IMU,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_MUX,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_MUX,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_T1,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_T1,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_T2,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_T2,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_ISO_L,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_ISO_L,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_ISO_R,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_ISO_R,0V,기능 포트. 실물 모델·핀순서 확인
-X3,3V3_PWM,3V3,기능 포트. 실물 모델·핀순서 확인
-X3,0V_PWM,0V,기능 포트. 실물 모델·핀순서 확인
-IMU1,VIN,3V3,기능 포트. 실물 모델·핀순서 확인
-IMU1,GND,0V,기능 포트. 실물 모델·핀순서 확인
-IMU1,SCL_SCK,IMU_SCK,기능 포트. 실물 모델·핀순서 확인
-IMU1,DI_MOSI,IMU_MOSI,기능 포트. 실물 모델·핀순서 확인
-IMU1,SDA_MISO,IMU_MISO,기능 포트. 실물 모델·핀순서 확인
-IMU1,CS,IMU_CS,기능 포트. 실물 모델·핀순서 확인
-IMU1,INT,IMU_INT,기능 포트. 실물 모델·핀순서 확인
-IMU1,RST,IMU_RST,기능 포트. 실물 모델·핀순서 확인
-IMU1,P0,3V3,기능 포트. 실물 모델·핀순서 확인
-IMU1,P1,3V3,기능 포트. 실물 모델·핀순서 확인
-MUX1,VCC,3V3,기능 포트. 실물 모델·핀순서 확인
-MUX1,GND,0V,기능 포트. 실물 모델·핀순서 확인
-MUX1,SDA,SDA,기능 포트. 실물 모델·핀순서 확인
-MUX1,SCL,SCL,기능 포트. 실물 모델·핀순서 확인
-MUX1,SD0,SDA_T1,기능 포트. 실물 모델·핀순서 확인
-MUX1,SC0,SCL_T1,기능 포트. 실물 모델·핀순서 확인
-MUX1,SD1,SDA_T2,기능 포트. 실물 모델·핀순서 확인
-MUX1,SC1,SCL_T2,기능 포트. 실물 모델·핀순서 확인
-MUX1,A0,0V,기능 포트. 실물 모델·핀순서 확인
-MUX1,A1,0V,기능 포트. 실물 모델·핀순서 확인
-MUX1,A2,0V,기능 포트. 실물 모델·핀순서 확인
-MUX1,RESET,MUX_RST,기능 포트. 실물 모델·핀순서 확인
-TOF1,VIN,3V3,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF1,GND,0V,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF1,SDA,SDA_T1,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF1,SCL,SCL_T1,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF2,VIN,3V3,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF2,GND,0V,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF2,SDA,SDA_T2,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-TOF2,SCL,SCL_T2,Pololu #3415 실크 이름. 커넥터 방향 실물 대조
-RP_SDA,1,3V3,기능 포트. 실물 모델·핀순서 확인
-RP_SDA,2,SDA,기능 포트. 실물 모델·핀순서 확인
-RP_SCL,1,3V3,기능 포트. 실물 모델·핀순서 확인
-RP_SCL,2,SCL,기능 포트. 실물 모델·핀순서 확인
-RP_RST,1,3V3,기능 포트. 실물 모델·핀순서 확인
-RP_RST,2,MUX_RST,기능 포트. 실물 모델·핀순서 확인
-RP_INT,1,3V3,기능 포트. 실물 모델·핀순서 확인
-RP_INT,2,IMU_INT,기능 포트. 실물 모델·핀순서 확인
-CH1,+,CHG_FUSED,기능 포트. 실물 모델·핀순서 확인
-CH1,-,CHG-,기능 포트. 실물 모델·핀순서 확인
-FCH,IN,CHG+,기능 포트. 실물 모델·핀순서 확인
-FCH,OUT,CHG_FUSED,기능 포트. 실물 모델·핀순서 확인
-F11,IN,DRIVE24,기능 포트. 실물 모델·핀순서 확인
-F11,OUT,STEER_IN,기능 포트. 실물 모델·핀순서 확인
-DC3,IN+,STEER_IN,기능 포트. 실물 모델·핀순서 확인
-DC3,IN-,0V,기능 포트. 실물 모델·핀순서 확인
-DC3,OUT+,12V_RAW,기능 포트. 실물 모델·핀순서 확인
-DC3,OUT-,0V,기능 포트. 실물 모델·핀순서 확인
-OV12,IN+,12V_RAW,기능 포트. 실물 모델·핀순서 확인
-OV12,OUT+,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-OV12,0V,0V,기능 포트. 실물 모델·핀순서 확인
-X12,IN,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-X12,L,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-X12,R,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-X12,LOGIC,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-X12,ABS+,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-X12,RETURN,0V,기능 포트. 실물 모델·핀순서 확인
-X12,L0,0V,기능 포트. 실물 모델·핀순서 확인
-X12,R0,0V,기능 포트. 실물 모델·핀순서 확인
-X12,LOGIC0,0V,기능 포트. 실물 모델·핀순서 확인
-X12,SIG0,0V,기능 포트. 실물 모델·핀순서 확인
-X12,ABS-,0V,기능 포트. 실물 모델·핀순서 확인
-CL12,+,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-CL12,-,0V,기능 포트. 실물 모델·핀순서 확인
-F5,IN,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-F5,OUT,SVL_12,기능 포트. 실물 모델·핀순서 확인
-SVL,V+,SVL_12,기능 포트. 실물 모델·핀순서 확인
-SVL,GND,0V,기능 포트. 실물 모델·핀순서 확인
-SVL,PWM,SVL_PWM,기능 포트. 실물 모델·핀순서 확인
-JSL,PWR,SVL_12,기능 포트. 실물 모델·핀순서 확인
-JSL,GND,0V,기능 포트. 실물 모델·핀순서 확인
-JSL,SIG,SVL_PWM,기능 포트. 실물 모델·핀순서 확인
-F6,IN,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-F6,OUT,SVR_12,기능 포트. 실물 모델·핀순서 확인
-SVR,V+,SVR_12,기능 포트. 실물 모델·핀순서 확인
-SVR,GND,0V,기능 포트. 실물 모델·핀순서 확인
-SVR,PWM,SVR_PWM,기능 포트. 실물 모델·핀순서 확인
-JSR,PWR,SVR_12,기능 포트. 실물 모델·핀순서 확인
-JSR,GND,0V,기능 포트. 실물 모델·핀순서 확인
-JSR,SIG,SVR_PWM,기능 포트. 실물 모델·핀순서 확인
-F10,IN,12V_STEER,기능 포트. 실물 모델·핀순서 확인
-F10,OUT,PWM_SUP_IN,기능 포트. 실물 모델·핀순서 확인
-DC4,IN+,PWM_SUP_IN,기능 포트. 실물 모델·핀순서 확인
-DC4,IN-,0V,기능 포트. 실물 모델·핀순서 확인
-DC4,OUT+,5V_SERVO_IO,기능 포트. 실물 모델·핀순서 확인
-DC4,OUT-,0V,기능 포트. 실물 모델·핀순서 확인
-U2,1_VCC1,3V3,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,2_INA,PWM_L_3V3,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,3_INB,PWM_R_3V3,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,4_GND1,0V,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,5_GND2,0V,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,6_OUTB,PWM_R_5V,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,7_OUTA,PWM_L_5V,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-U2,8_VCC2,5V_SERVO_IO,TI ISO7720F SOIC-8 D/DWV 실칩. 모듈 헤더는 별도 대조
-R21,1,PWM_L_3V3,기능 포트. 실물 모델·핀순서 확인
-R21,2,0V,기능 포트. 실물 모델·핀순서 확인
-R22,1,PWM_R_3V3,기능 포트. 실물 모델·핀순서 확인
-R22,2,0V,기능 포트. 실물 모델·핀순서 확인
-R23,1,PWM_L_5V,기능 포트. 실물 모델·핀순서 확인
-R23,2,SVL_PWM,기능 포트. 실물 모델·핀순서 확인
-R24,1,PWM_R_5V,기능 포트. 실물 모델·핀순서 확인
-R24,2,SVR_PWM,기능 포트. 실물 모델·핀순서 확인
-R25,1,SVL_PWM,기능 포트. 실물 모델·핀순서 확인
-R25,2,0V,기능 포트. 실물 모델·핀순서 확인
-R26,1,SVR_PWM,기능 포트. 실물 모델·핀순서 확인
-R26,2,0V,기능 포트. 실물 모델·핀순서 확인
-C21,+,3V3,기능 포트. 실물 모델·핀순서 확인
-C21,-,0V,기능 포트. 실물 모델·핀순서 확인
-C22,+,5V_SERVO_IO,기능 포트. 실물 모델·핀순서 확인
-C22,-,0V,기능 포트. 실물 모델·핀순서 확인
+﻿Component,Terminal,Net
+BT1,+,BAT+
+BT1,-,0V
+BT1,CHG+,CHG+
+BT1,CHG-,CHG-
+F0,IN,BAT+
+F0,OUT,BAT_FUSED
+S0,IN,BAT_FUSED
+S0,OUT,BUS24
+X24,IN,BUS24
+X24,DRIVE,BUS24
+X24,AUX24,BUS24
+X24,AUX5,BUS24
+X0,BAT,0V
+X0,ML,0V
+X0,MR,0V
+X0,DC1,0V
+X0,DC2,0V
+X0,SR,0V
+X0,K1,0V
+X0,K2,0V
+X0,STEER,0V
+K1,L1,BUS24
+K1,T1,K_MID
+K1,A1,K1_COIL
+K1,A2,0V
+K1,EDM_IN,EDM_START
+K1,EDM_OUT,EDM_MID
+Z1,+,K1_COIL
+Z1,-,0V
+K2,L1,K_MID
+K2,T1,DRIVE24
+K2,A1,K2_COIL
+K2,A2,0V
+K2,EDM_IN,EDM_MID
+K2,EDM_OUT,EDM_END
+Z2,+,K2_COIL
+Z2,-,0V
+F1,IN,IBT_BUS
+F1,OUT,FUSED_L
+PPL,IN+,FUSED_L
+PPL,OUT+,LINK_L
+PPL,0V,0V
+MDL,B+,LINK_L
+MDL,B-,0V
+MDL,M+,ML_A
+MDL,M-,ML_B
+MDL,VCC,5V_MOTOR_IO
+MDL,GND,0V
+MDL,RPWM,MDL_RPWM
+MDL,LPWM,MDL_LPWM
+MDL,R_EN,MDL_REN
+MDL,L_EN,MDL_LEN
+CLL,+,LINK_L
+CLL,-,0V
+RBL,+,LINK_L
+RBL,-,0V
+ML,A,ML_A
+ML,B,ML_B
+CML,1,ML_A
+CML,2,ML_B
+F2,IN,IBT_BUS
+F2,OUT,FUSED_R
+PPR,IN+,FUSED_R
+PPR,OUT+,LINK_R
+PPR,0V,0V
+MDR,B+,LINK_R
+MDR,B-,0V
+MDR,M+,MR_A
+MDR,M-,MR_B
+MDR,VCC,5V_MOTOR_IO
+MDR,GND,0V
+MDR,RPWM,MDR_RPWM
+MDR,LPWM,MDR_LPWM
+MDR,R_EN,MDR_REN
+MDR,L_EN,MDR_LEN
+CLR,+,LINK_R
+CLR,-,0V
+RBR,+,LINK_R
+RBR,-,0V
+MR,A,MR_A
+MR,B,MR_B
+CMR,1,MR_A
+CMR,2,MR_B
+F3,IN,BUS24
+F3,OUT,DC1_IN
+DC1,IN+,DC1_IN
+DC1,IN-,0V
+DC1,OUT+,SAFE24
+DC1,OUT-,0V
+F9,IN,SAFE24
+F9,OUT,SAFE24_F
+SR1,24V,SAFE24_F
+SR1,0V,0V
+SR1,TEST_A,ESTOP_A_OUT
+SR1,RETURN_A,ESTOP_A_IN
+SR1,TEST_B,ESTOP_B_OUT
+SR1,RETURN_B,ESTOP_B_IN
+SR1,RESET_OUT,RESET_OUT
+SR1,RESET_IN,RESET_IN
+SR1,EDM_OUT,EDM_START
+SR1,EDM_IN,EDM_END
+SR1,O1_FEED,SAFE24_F
+SR1,O1,K1_COIL
+SR1,O2_FEED,SAFE24_F
+SR1,O2,K2_COIL
+S1,A_IN,ESTOP_A_OUT
+S1,A_OUT,ESTOP_A_IN
+S1,B_IN,ESTOP_B_OUT
+S1,B_OUT,ESTOP_B_IN
+S2,IN,RESET_OUT
+S2,OUT,RESET_IN
+F4,IN,BUS24
+F4,OUT,DC2_IN
+DC2,IN+,DC2_IN
+DC2,IN-,0V
+DC2,OUT+,5V_RAW
+DC2,OUT-,0V
+OV5,IN+,5V_RAW
+OV5,OUT+,5V_PROT
+OV5,0V,0V
+F7,IN,5V_PROT
+F7,OUT,OPI5
+F8,IN,5V_PROT
+F8,OUT,HUB5
+OP1,PWR5,OPI5
+OP1,PWR0,0V
+OP1,HOST,USB_UP
+H1,DC5,HUB5
+H1,DC0,0V
+H1,UP,USB_UP
+H1,P1,USB_ESP
+H1,P2,USB_LIDAR
+H1,P3,USB_UWL
+H1,P4,USB_UWR
+U1,USB,USB_ESP
+U1,3V3_OUT,3V3
+U1,GND_VERIFIED,0V
+U1,GPIO17,PWM_ML_R_3V3
+U1,GPIO16,PWM_ML_L_3V3
+U1,GPIO25,PWM_MR_R_3V3
+U1,GPIO26,PWM_MR_L_3V3
+U1,GPIO18,IMU_SCK
+U1,GPIO23,IMU_MOSI
+U1,GPIO19,IMU_MISO
+U1,GPIO27,IMU_CS
+U1,GPIO34,IMU_INT
+U1,GPIO32,IMU_RST
+U1,GPIO21,SDA
+U1,GPIO22,SCL
+U1,GPIO33,MUX_RST
+U1,GPIO13,PWM_L_3V3
+U1,GPIO14,PWM_R_3V3
+U1,GPIO4,DRIVE_ARM_3V3
+A1,USB,USB_LIDAR
+A1,HARNESS,C1_HARNESS
+LD1,HARNESS,C1_HARNESS
+UWL,USB_RANGE,USB_UWL
+UWR,USB_RANGE,USB_UWR
+X3,3V3_IN,3V3
+X3,0V_IN,0V
+X3,3V3_IMU,3V3
+X3,0V_IMU,0V
+X3,3V3_MUX,3V3
+X3,0V_MUX,0V
+X3,3V3_T1,3V3
+X3,0V_T1,0V
+X3,3V3_T2,3V3
+X3,0V_T2,0V
+X3,3V3_PWM,3V3
+X3,0V_PWM,0V
+IMU1,VIN,3V3
+IMU1,GND,0V
+IMU1,SCL_SCK,IMU_SCK
+IMU1,DI_MOSI,IMU_MOSI
+IMU1,SDA_MISO,IMU_MISO
+IMU1,CS,IMU_CS
+IMU1,INT,IMU_INT
+IMU1,RST,IMU_RST
+IMU1,P0,3V3
+IMU1,P1,3V3
+MUX1,VCC,3V3
+MUX1,GND,0V
+MUX1,SDA,SDA
+MUX1,SCL,SCL
+MUX1,SD0,SDA_T1
+MUX1,SC0,SCL_T1
+MUX1,SD1,SDA_T2
+MUX1,SC1,SCL_T2
+MUX1,A0,0V
+MUX1,A1,0V
+MUX1,A2,0V
+MUX1,RESET,MUX_RST
+TOF1,VIN,3V3
+TOF1,GND,0V
+TOF1,SDA,SDA_T1
+TOF1,SCL,SCL_T1
+TOF2,VIN,3V3
+TOF2,GND,0V
+TOF2,SDA,SDA_T2
+TOF2,SCL,SCL_T2
+RP_SDA,1,3V3
+RP_SDA,2,SDA
+RP_SCL,1,3V3
+RP_SCL,2,SCL
+RP_RST,1,3V3
+RP_RST,2,MUX_RST
+RP_INT,1,3V3
+RP_INT,2,IMU_INT
+CH1,+,CHG_FUSED
+CH1,-,CHG-
+FCH,IN,CHG+
+FCH,OUT,CHG_FUSED
+F11,IN,DRIVE24
+F11,OUT,STEER_IN
+DC3,IN+,STEER_IN
+DC3,IN-,0V
+DC3,OUT+,12V_RAW
+DC3,OUT-,0V
+OV12,IN+,12V_RAW
+OV12,OUT+,12V_STEER
+OV12,0V,0V
+X12,IN,12V_STEER
+X12,L,12V_STEER
+X12,R,12V_STEER
+X12,LOGIC,12V_STEER
+X12,ABS+,12V_STEER
+X12,RETURN,0V
+X12,L0,0V
+X12,R0,0V
+X12,LOGIC0,0V
+X12,SIG0,0V
+X12,ABS-,0V
+CL12,+,12V_STEER
+CL12,-,0V
+F5,IN,12V_STEER
+F5,OUT,SVL_12
+SVL,V+,SVL_12
+SVL,GND,0V
+SVL,PWM,SVL_PWM
+JSL,PWR,SVL_12
+JSL,GND,0V
+JSL,SIG,SVL_PWM
+F6,IN,12V_STEER
+F6,OUT,SVR_12
+SVR,V+,SVR_12
+SVR,GND,0V
+SVR,PWM,SVR_PWM
+JSR,PWR,SVR_12
+JSR,GND,0V
+JSR,SIG,SVR_PWM
+F10,IN,12V_STEER
+F10,OUT,PWM_SUP_IN
+DC4,IN+,PWM_SUP_IN
+DC4,IN-,0V
+DC4,OUT+,5V_SERVO_IO
+DC4,OUT-,0V
+U2,1_VCC1,3V3
+U2,2_INA,PWM_L_3V3
+U2,3_INB,PWM_R_3V3
+U2,4_GND1,0V
+U2,5_GND2,0V
+U2,6_OUTB,PWM_R_5V
+U2,7_OUTA,PWM_L_5V
+U2,8_VCC2,5V_SERVO_IO
+R21,1,PWM_L_3V3
+R21,2,0V
+R22,1,PWM_R_3V3
+R22,2,0V
+R23,1,PWM_L_5V
+R23,2,SVL_PWM
+R24,1,PWM_R_5V
+R24,2,SVR_PWM
+R25,1,SVL_PWM
+R25,2,0V
+R26,1,SVR_PWM
+R26,2,0V
+C21,+,3V3
+C21,-,0V
+C22,+,5V_SERVO_IO
+C22,-,0V
+JDRV,IN,DRIVE24
+JDRV,OUT,IBT_BUS
+F12,IN,5V_PROT
+F12,OUT,5V_MOTOR_IO
+X5,IN,5V_MOTOR_IO
+X5,0V,0V
+X5,L,5V_MOTOR_IO
+X5,R,5V_MOTOR_IO
+X5,BL,5V_MOTOR_IO
+X5,BR,5V_MOTOR_IO
+X5,OE_L,5V_MOTOR_IO
+X5,OE_R,5V_MOTOR_IO
+X5,CAP_L,5V_MOTOR_IO
+X5,CAP_R,5V_MOTOR_IO
+QEN,B,QEN_BASE
+QEN,C,MOTOR_OE_N
+QEN,E,0V
+RBE,1,QEN_BASE
+RBE,2,0V
+RARM,1,DRIVE_ARM_3V3
+RARM,2,QEN_BASE
+RARM_PD,1,DRIVE_ARM_3V3
+RARM_PD,2,0V
+U3,1_OE,MOTOR_OE_N
+U3,2_A1,PWM_ML_R_3V3
+U3,3_Y1,MDL_RPWM_RAW
+U3,4_OE,MOTOR_OE_N
+U3,5_A2,PWM_ML_L_3V3
+U3,6_Y2,MDL_LPWM_RAW
+U3,7_GND,0V
+U3,8_Y3,MDL_REN_RAW
+U3,9_A3,3V3
+U3,10_OE,MOTOR_OE_N
+U3,11_Y4,MDL_LEN_RAW
+U3,12_A4,3V3
+U3,13_OE,MOTOR_OE_N
+U3,14_VCC,5V_MOTOR_IO
+COL,+,5V_MOTOR_IO
+COL,-,0V
+ROL,1,5V_MOTOR_IO
+ROL,2,MOTOR_OE_N
+RSL1,1,MDL_RPWM_RAW
+RSL1,2,MDL_RPWM
+RDL1,1,MDL_RPWM
+RDL1,2,0V
+RSL2,1,MDL_LPWM_RAW
+RSL2,2,MDL_LPWM
+RDL2,1,MDL_LPWM
+RDL2,2,0V
+RSL3,1,MDL_REN_RAW
+RSL3,2,MDL_REN
+RDL3,1,MDL_REN
+RDL3,2,0V
+RSL4,1,MDL_LEN_RAW
+RSL4,2,MDL_LEN
+RDL4,1,MDL_LEN
+RDL4,2,0V
+RIL1,1,PWM_ML_R_3V3
+RIL1,2,0V
+RIL2,1,PWM_ML_L_3V3
+RIL2,2,0V
+U4,1_OE,MOTOR_OE_N
+U4,2_A1,PWM_MR_R_3V3
+U4,3_Y1,MDR_RPWM_RAW
+U4,4_OE,MOTOR_OE_N
+U4,5_A2,PWM_MR_L_3V3
+U4,6_Y2,MDR_LPWM_RAW
+U4,7_GND,0V
+U4,8_Y3,MDR_REN_RAW
+U4,9_A3,3V3
+U4,10_OE,MOTOR_OE_N
+U4,11_Y4,MDR_LEN_RAW
+U4,12_A4,3V3
+U4,13_OE,MOTOR_OE_N
+U4,14_VCC,5V_MOTOR_IO
+COR,+,5V_MOTOR_IO
+COR,-,0V
+ROR,1,5V_MOTOR_IO
+ROR,2,MOTOR_OE_N
+RSR1,1,MDR_RPWM_RAW
+RSR1,2,MDR_RPWM
+RDR1,1,MDR_RPWM
+RDR1,2,0V
+RSR2,1,MDR_LPWM_RAW
+RSR2,2,MDR_LPWM
+RDR2,1,MDR_LPWM
+RDR2,2,0V
+RSR3,1,MDR_REN_RAW
+RSR3,2,MDR_REN
+RDR3,1,MDR_REN
+RDR3,2,0V
+RSR4,1,MDR_LEN_RAW
+RSR4,2,MDR_LEN
+RDR4,1,MDR_LEN
+RDR4,2,0V
+RIR1,1,PWM_MR_R_3V3
+RIR1,2,0V
+RIR2,1,PWM_MR_L_3V3
+RIR2,2,0V

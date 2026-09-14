@@ -1,0 +1,98 @@
+{
+  "scope": "FCStd archive/XML and OpenCascade shape / STEP import checks; no manufacturing, collision, stress or native GUI approval.",
+  "seconds": 37.09,
+  "checks": [
+    {
+      "name": "FCStd ZIP CRC",
+      "status": "PASS",
+      "detail": 3079
+    },
+    {
+      "name": "Document and GuiDocument XML parse",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Document object declarations/data count",
+      "status": "PASS",
+      "detail": {
+        "objects": 1267,
+        "data": 1267
+      }
+    },
+    {
+      "name": "D4 feature inventory",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All D4 BRep entries present",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "All D4 object records present",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "FCStd Document payload references",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "OpenCascade: all 998 BReps valid",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "BRep bounds match assembly manifest within 0.01mm",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "BRep solid inventory matches manifest",
+      "status": "PASS",
+      "detail": 4664
+    },
+    {
+      "name": "CAD covers all 108 components and 246 harness IDs",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "STEP read status",
+      "status": "PASS",
+      "detail": "IFSelect_ReturnStatus.IFSelect_RetDone"
+    },
+    {
+      "name": "STEP transferred roots",
+      "status": "PASS",
+      "detail": 1
+    },
+    {
+      "name": "STEP valid compound",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "STEP / visible BRep solid count agreement (COVER excluded)",
+      "status": "PASS",
+      "detail": {
+        "STEP": 4655,
+        "visibleBRep": 4655,
+        "allBRep": 4664
+      }
+    },
+    {
+      "name": "STEP / visible BRep volume agreement (1e-6 relative, COVER excluded)",
+      "status": "PASS",
+      "detail": 2.479861979164994e-13
+    },
+    {
+      "name": "Native FreeCAD GUI open/save",
+      "status": "NOT_RUN",
+      "detail": "FreeCAD executable not installed in this runtime; OpenCascade validation does not replace this test."
+    }
+  ]
+}

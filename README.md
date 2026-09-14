@@ -1,53 +1,44 @@
-# Smart Cart D2 - Wiring and Integrated 3D Assembly
+# Smart Cart D4.1
 
-**English** | [한국어](README-KR.md)
+English | [한국어](README-KR.md)
 
-> **ENGINEERING HOLD. Do not energize from these illustrations.**
-> This is a functional wiring and spatial review package, not a fabrication release, a certified safety circuit, manufacturer CAD, or a physically tested vehicle.
+A self-contained static 3D assembly viewer, illustrated wiring viewer, data registers and placement-review CAD. Built from the supplied D4 files, the eight-part specification, servo photographs and prototype FreeCAD document. D4.1 restores missing runtime assets and documentation, removes stale counters, and adds reproducible regression checks. It does not approve fabrication or energization.
 
-![D2 assembly preview](assets/previews/3d-desktop.png)
+**Engineering release remains HOLD. The JDRV link remains physically OPEN pending power compatibility review.**
 
-Open **`index.html`** for the detailed cart assembly and **`wiring.html`** for the interactive wiring workbench. Both pages use the same dataset: 55 electrical reference IDs and 131 connection records. USB/OEM cable assemblies are single logical records, not individual conductor counts.
+## Run
 
-The original differential drive, passive front casters, approximate chassis proportions, and two downward ToF units are retained. The low LiDAR is removed; a mast places the proposed scan centre at **1.15 m**. Added electrical envelopes and harness routes are approximate. The old battery box is not proof that a real 108 Ah battery fits.
-
-## Run / publish
+Extract the package, enter the folder containing `index.html`, then run:
 
 ```sh
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000/` or `/wiring.html`. No npm, bundler, CDN, API key, backend, hardware-control APIs, or ROS runtime is required. Publish the **contents** of this folder at the repository root with `.nojekyll`; keep all relative paths. The package has not been committed, pushed, or deployed to the remote repository.
+Open `http://localhost:8000/index.html` (3D assembly) or `http://localhost:8000/wiring.html` (wiring). No npm, build step, CDN, API key or backend is required. Keep all relative paths intact when publishing the folder contents to a static host. Nothing is automatically pushed to GitHub.
 
-The 3D page attempts native WebGL 2. If context creation fails, an interactive Canvas 2D software renderer projects the same 3D triangles and retains camera controls and object picking. This is not an image placeholder. The software path may be slower. The test environment could not create a WebGL 2 context; that path is not claimed as GPU-tested. See [QA](docs/QA.md).
+The 3D page exposes only orbit/zoom/pan and component/conductor inspection. WebGL 2 uses materials/shadows; failed context creation falls back to interactive Canvas 2D projection of the same geometry. Rendering quality is not identical. The wiring page offers 14 illustrated sheets and 14 schematic sheets, selection, search/filter, SVG/CSV/JSON exports and manual checklist notes. 108 component references, 246 connection records and 379 registered functional terminals (378 wired plus one spare) are not a procurement count or individual conductor count.
 
-## Features
+## Review
 
-The wiring page contains six views: overview, drive power, emergency stop, 5 V/USB, SPI/I²C, and UART. Zoom, pan, select a module or connection, inspect ports and nets, search/filter the connection table, export CSV/SVG, and follow the same ID into the 3D scene. Checklist notes are stored locally where browser storage is available; completion never changes the engineering release from HOLD.
+[Regression results](docs/QA.md) · [Change log](docs/CHANGELOG.md) · [Engineering holds](docs/SAFETY-REVIEW-KR.md) · [Evidence and unresolved conflicts](docs/EVIDENCE-KR.md) · [Pin mapping](docs/PIN-MAP-KR.md) · [Sources](docs/SOURCES.md) · [CAD limitations](cad/README-KR.md)
 
-The 3D page includes chassis and electrical detail, separate module IDs, 131 harness paths, six camera presets, orbit/pan/zoom, searchable components, cover visibility, exploded inspection, explanatory sensor graphics, and PNG/GLB export. Exploding the geometry hides harnesses to avoid suggesting that fixed routes remain connected to moved parts. Scan graphics are not measured sensing coverage or a safe zone.
+The FCStd preserves the original 262 objects and adds 998 D4 BRep features. STEP and a rebuild macro are included. OpenCascade validation does not prove native FreeCAD GUI open/save, manufacturing dimensions, collision clearance, steering kinematics, stress capacity or electrical safety. Consult the QA report for actual executed vs unavailable tests.
 
-## Electrical redesign is conditional
-
-The proposed D2 topology replaces the B1 self-hold contactor circuit with dual-channel E-stop input, monitored manual reset, EDM, and two series DC contactors. Precharge is downstream of both contactors. Each controller link has its own conditional regeneration clamp/dump and bleeder path. The exact modules, their internal control, thresholds, fuse ratings, and cable sizes still require selection and test.
-
-D2 excludes the unvalidated steering servo option, replaces the 12 V coil supply with a regulated 24 V buck-boost safety supply and matching coils, adds independent 5 V OVP and reverse-feed checks, preserves USB-only ESP32 power, separates UART signal power domains, and routes the two ToF units through independent mux channels. A mux is not a long-distance bus buffer. Power removal is not a mechanical brake. Low obstacles and load occlusion require separate sensing and stopping validation.
-
-The old procurement BOM is not an approved drop-in D2 shopping list. See [changes](docs/CHANGELOG.md), [review](docs/SAFETY-REVIEW-KR.md), [pin map](docs/PIN-MAP-KR.md), and [sources](docs/SOURCES.md).
-
-## Data / exports / validation
-
-- `data/design.json`, `js/design-data.js`: identical shared design data.
-- `data/point-to-point.csv`: every logical connection and its hold conditions.
-- `data/component-register.csv`: electrical reference register, not a full procurement BOM.
-- `assets/models/Smart-Cart-D2.glb`: assembled metre/Y-up scene with reference and net metadata.
-- `assets/drawings/D2-*.svg`: vector schematic views.
+## Reproduce
 
 ```sh
-python tools/build_data.py
-node tests/validate.mjs
+python tools/sync_data.py
+node tests/static_regression.mjs
+python tests/package_regression.py
+python tests/browser_regression.py
+python tests/cad_regression.py
+python tests/shader_regression.py
 ```
 
-The tests inspect source/data consistency, endpoints, coverage, mesh geometry and GLB structure. They do **not** verify electrical safety, thermal performance, EMC, stopping distance, structural strength, reliability, PL or SIL. The optional standalone HTML files are snapshots and must be re-bundled after source changes.
+Browser tests require Python Playwright and Chromium (`CHROMIUM_PATH` can override its path). CAD tests require cadquery/OCP. Application runtime has no such dependencies. `--fixture` executes the unchanged shipped scripts in local browser documents when navigation is restricted; asset embedding and storage/export test doubles are explicitly recorded and are not native browser persistence/download tests.
 
-See [source notice](SOURCE-NOTICE.md). No new licence is assigned to third-party documentation, prior repository content, product names, or manufacturer drawings.
+Use `data/design.json` as the source of truth. `SHA256SUMS.txt` contains package file hashes. See [source notice](SOURCE-NOTICE.md); no new license is granted to upstream code or third-party imagery.
+
+The optional shader test uses Linux EGL/OpenGL ES for source compilation/linking and test-triangle pixel checks. It is not execution of the browser WebGL renderer or a full-scene visual certification.
+
+To rebuild the release after regression tests, run `python tools/package_release.py --output ../Smart-Cart-D4-Final.zip`. It writes an internal SHA-256 manifest, an external ZIP checksum and a separate archive-integrity report. See [QA](docs/QA.md) for 197 passed checks and five explicitly unexecuted environment-dependent checks; these are not fabrication or hardware-safety approval.

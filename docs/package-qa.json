@@ -1,0 +1,94 @@
+{
+  "scope": "Package file/path/content checks and standard-library local HTTP requests, not managed Chromium navigation or public deployment.",
+  "checks": [
+    {
+      "name": "Static app entry points and deployment marker",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All relative HTML/Markdown links resolve",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "No runtime absolute-root paths",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All JSON files parse",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Favicon and all 28 SVG sheets parse as XML",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Packaged CSV equals 246 canonical connection records",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Terminal CSV equals all 379 registered ports",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Component CSV matches 108 IDs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CSV BOM for Korean spreadsheet interoperability",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All product-reference and preview images decode",
+      "status": "PASS",
+      "detail": {
+        "count": 30,
+        "errors": []
+      }
+    },
+    {
+      "name": "All 18 restored reference images present",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No bundled system font files",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Python tools and FreeCAD macro syntax",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Original prototype ZIP CRC",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Original prototype BReps preserved byte-for-byte in D4",
+      "status": "PASS",
+      "detail": {
+        "compared": 249,
+        "mismatched": []
+      }
+    },
+    {
+      "name": "Local HTTP repository-subpath resources return exact bytes",
+      "status": "PASS",
+      "detail": {
+        "resources": 48,
+        "errors": []
+      }
+    }
+  ]
+}

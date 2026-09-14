@@ -1,10 +1,10 @@
-/* D3 spatial reconstruction of JTech-CO/Smart-Cart (2b4b8fe).
+/* D4 spatial reconstruction of JTech-CO/Smart-Cart (2b4b8fe).
  * Metres; Y up, +Z front. Product envelopes and connector positions are illustrative,
  * NOT manufacturer CAD or a drilling / fabrication drawing. */
 'use strict';
 window.buildSmartCart = function(){
  const {Builder,material:mat,V}=CartGL,B=new Builder(),PI=Math.PI;
- const p={paint:mat('#343d40',.18,.37),edge:mat('#1b2528',.12,.39),steel:mat('#94a3ab',.85,.27),chrome:mat('#d3e1e5',.95,.19),rubber:mat('#161d21',.04,.85),tread:mat('#293438',.04,.8),orange:mat('#dd652d',.28,.34),pcb:mat('#267763',.18,.54),gold:mat('#cab779',.85,.29),black:mat('#11191f',.05,.6),glass:mat('#273e44',.45,.18),red:mat('#e0524f',.12,.4),teal:mat('#57dbc2',.1,.3,1,.32),yellow:mat('#e5bc4a',.2,.45),white:mat('#dfe7e5',.12,.55)};
+ const p={paint:mat('#343d40',.18,.37),edge:mat('#1b2528',.12,.39),steel:mat('#94a3ab',.85,.27),chrome:mat('#d3e1e5',.95,.19),rubber:mat('#161d21',.04,.85),tread:mat('#293438',.04,.8),orange:mat('#dd652d',.28,.34),magenta:mat('#be0a52',.58,.24),blue:mat('#164c79',.12,.51),pcb:mat('#267763',.18,.54),gold:mat('#cab779',.85,.29),black:mat('#11191f',.05,.6),glass:mat('#273e44',.45,.18),red:mat('#e0524f',.12,.4),teal:mat('#57dbc2',.1,.3,1,.32),yellow:mat('#e5bc4a',.2,.45),white:mat('#dfe7e5',.12,.55)};
  const XR=[0,0,PI/2],ZR=[PI/2,0,0];
  function bolt(q,id='FRAME',r=.003,axis='y') {let rot=axis==='x'?XR:axis==='z'?ZR:[0,0,0];B.cyl(r,.003,q,p.chrome,id,rot,6);q=q.slice();q['xyz'.indexOf(axis)]+=.0018;B.cyl(r*.42,.0004,q,p.black,id,rot,6)}
  function plate(size,pos,id='FRAME',m=p.paint){B.box(size,pos,m,id,.002);for(let a of [-1,1])for(let b of [-1,1])bolt([pos[0]+a*(size[0]/2-.008),pos[1]+size[1]/2+.001,pos[2]+b*(size[2]/2-.008)],id,.0025)}
@@ -28,10 +28,29 @@ window.buildSmartCart = function(){
   B.lathe([[.075,-.041],[.095,-.041],[.114,-.037],[.123,-.028],[.129,-.014],[.129,.014],[.123,.028],[.114,.037],[.095,.041],[.075,.041]],[x,y,z],p.rubber,id,XR,88);
   for(let a of [-1,1]){B.cyl(.078,.008,[x+a*.04,y,z],p.steel,id,XR,48);B.ring(.070,.004,[x+a*.045,y,z],p.chrome,id,XR,48,8);B.cyl(.029,.024,[x+a*.05,y,z],p.edge,id,XR,24);B.cyl(.011,.028,[x+a*.053,y,z],p.orange,id,XR,6);for(let j=0;j<6;j++){let t=j*PI/3;B.cyl(.012,.001,[x+a*.045,y+.052*Math.cos(t),z+.052*Math.sin(t)],p.black,id,XR,14);bolt([x+a*.046,y+.038*Math.cos(t),z+.038*Math.sin(t)],id,.0033,'x')}}
   for(let j=0;j<48;j++)for(let a of [-1,1]){let t=j/48*PI*2;B.box([.030,.004,.011],[x+a*.018,y+.127*Math.cos(t),z+.127*Math.sin(t)],p.tread,id,.0006,[t,a*.27,0]);}
-  plate([.10,.009,.085],[s*.34,.268,-.379],id);B.box([.066,.087,.087],[s*.272,.166,-.376],p.paint,mid,.005);B.cyl(.012,.10,[s*.32,.131,-.379],p.chrome,mid,XR,24);
-  B.cyl(.038,.162,[s*.251,.171,-.255],p.steel,mid,ZR,40);for(let j=0;j<8;j++)B.cyl(.040,.0025,[s*.251,.171,-.304+j*.013],p.edge,mid,ZR,32);B.cyl(.040,.022,[s*.251,.171,-.174],p.black,mid,ZR,32);plate([.079,.011,.183],[s*.251,.222,-.26],mid);B.box([.039,.001,.034],[s*.251,.211,-.251],p.orange,mid,.001);
+  plate([.10,.009,.085],[s*.34,.268,-.379],id);
+  // MY1016Z-120: parallel motor/gear output axes; 17 mm output shaft, 44 mm visual protrusion.
+  // 198 mm axial envelope is only the low-resolution drawing interpretation in the attachment.
+  B.box([.036,.142,.103],[s*.308,.172,-.379],p.steel,mid,.018);
+  B.box([.003,.133,.096],[s*.3275,.172,-.379],p.chrome,mid,.017);
+  B.cyl(.031,.004,[s*.330,.131,-.379],p.edge,mid,XR,48);
+  B.cyl(.025,.005,[s*.332,.131,-.379],p.steel,mid,XR,48);
+  B.cyl(.0085,.044,[s*.348,.131,-.379],p.chrome,mid,XR,40);
+  B.box([.032,.002,.006],[s*.348,.139,-.379],p.gold,mid,.0004);
+  B.cyl(.045,.104,[s*.238,.180,-.379],p.steel,mid,XR,64);
+  B.cyl(.043,.014,[s*.179,.180,-.379],p.edge,mid,XR,56);
+  B.cyl(.031,.006,[s*.169,.180,-.379],p.paint,mid,XR,40);
+  for(let xx of [.188,.285])B.cyl(.046,.003,[s*xx,.180,-.379],p.chrome,mid,XR,56);
+  for(let [yy,zz] of [[.229,-.416],[.229,-.342],[.113,-.416],[.113,-.342]]){
+    B.cyl(.011,.040,[s*.308,yy,zz],p.steel,mid,XR,24);bolt([s*.330,yy,zz],mid,.004,'x');
+  }
+  for(let j=0;j<7;j++){let t=j*2*PI/7;bolt([s*.330,.177+Math.cos(t)*.053,-.379+Math.sin(t)*.037],mid,.0028,'x');}
+  B.box([.040,.015,.080],[s*.300,.253,-.379],p.steel,mid,.002);
+  B.box([.022,.014,.015],[s*.181,.183,-.329],p.black,mid,.002);
+  B.decal('MY1016Z','24V / 13.4A / 120rpm no-load',[.075,.023],[s*.234,.226,-.379],[-PI/2,0,0],mid,{bg:'#d9dfdd',ink:'#222e32'});
+
  }
- // D3 front steering: wheel loads pass into a bearing-supported kingpin, not a servo shaft.
+ // D4 front steering: wheel loads pass into a bearing-supported kingpin, not a servo shaft.
  for(let s of [-1,1]){
   const side=s<0?'L':'R',id='CASTER_'+side,sv='SV'+side,link='LINK_'+side,x=s*.258,z=.364,sx=s*.319;
   plate([.100,.008,.110],[x,.257,z],id,p.steel);
@@ -43,15 +62,21 @@ window.buildSmartCart = function(){
   B.lathe([[.026,-.027],[.048,-.027],[.060,-.020],[.066,-.010],[.066,.010],[.060,.020],[.048,.027],[.026,.027]],[x,.067,z+.025],p.rubber,id,XR,64);
   B.cyl(.028,.054,[x,.067,z+.025],p.steel,id,XR,48);B.cyl(.007,.098,[x,.067,z+.025],p.chrome,id,XR,20);
   for(const a of [-1,1]){B.ring(.045,.0015,[x+a*.027,.067,z+.025],p.tread,id,XR,48);for(let j=0;j<5;j++){let t=j*PI*.4;B.cyl(.005,.003,[x+a*.029,.067+Math.cos(t)*.018,z+.025+Math.sin(t)*.018],p.edge,id,XR,12)}}
-  // Large-format servo, 30 x 48 x 65 mm envelope, bolted under the side rail.
-  plate([.059,.006,.093],[sx,.250,.288],sv,p.steel);
-  B.box([.038,.050,.008],[sx,.221,.250],p.steel,sv,.0015);
-  B.box([.030,.039,.065],[sx,.197,.288],p.edge,sv,.003);
-  B.box([.031,.010,.065],[sx,.220,.288],p.orange,sv,.002);
-  B.box([.031,.006,.065],[sx,.176,.288],p.edge,sv,.002);
-  for(const dx of [-.011,.011])for(const dz of [-.027,.027]){bolt([sx+dx,.227,.288+dz],sv,.0025);B.cyl(.002,.044,[sx+dx,.198,.288+dz],p.chrome,sv,[0,0,0],10);}
-  for(let k=0;k<8;k++)B.box([.0008,.002,.051],[sx+s*.0158,.185+k*.0038,.288],p.steel,sv,.0002);
-  B.decal('STEER '+side,'12V CLASS / VERIFY MODEL',[.050,.022],[sx+s*.0167,.201,.286],[0,s*PI/2,0],sv,{bg:'#262a2a'});
+  // RDS51150 photograph-derived case; dimension conflicts are preserved in the evidence register.
+  // Custom structural saddle: NOT a claim that either supplied U-bracket fits this wheel assembly.
+  plate([.060,.006,.094],[sx,.250,.288],sv,p.steel);
+  for(let zz of [.248,.328]){B.box([.047,.057,.003],[sx,.220,zz],p.steel,sv,.001);
+   for(let dx of [-.018,.018])bolt([sx+dx,.239,zz+ .002],sv,.0025,'z');}
+  B.box([.030,.0481,.06539],[sx,.198,.288],p.magenta,sv,.0025);
+  B.box([.0306,.012,.0658],[sx,.21605,.288],p.edge,sv,.002);
+  B.box([.0306,.010,.0658],[sx,.17895,.288],p.edge,sv,.002);
+  for(const dx of [-.011,.011])for(const dz of [-.027,.027]){
+   bolt([sx+dx,.223,.288+dz],sv,.0022);B.cyl(.0016,.048,[sx+dx,.198,.288+dz],p.chrome,sv,[0,0,0],10);
+  }
+  B.cyl(.009,.003,[sx,.22355,.310],p.edge,sv,[0,0,0],40);
+  B.cyl(.0055,.01107,[sx,.230585,.310],p.chrome,sv,[0,0,0],40);
+  for(let t=0;t<25;t++){let ang=t/25*2*PI;B.cyl(.00048,.0105,[sx+Math.cos(ang)*.00555,.2306,.310+Math.sin(ang)*.00555],p.steel,sv,[0,0,0],5);}
+  B.decal('150 kgf.cm','RDS51150 / DC10-12.6V',[.054,.019],[sx+s*.0151,.199,.288],[0,s*PI/2,0],sv,{bg:'#ba0a50',ink:'#ffe3ed'});
   // Servo output horn, pushrod with spherical rod ends, kingpin steering arm and stops.
   B.cyl(.009,.010,[sx,.235,.310],p.gold,sv,[0,0,0],24);
   B.rod([sx,.239,.310],[sx-s*.010,.239,.347],.0058,p.chrome,link,16);
@@ -65,7 +90,7 @@ window.buildSmartCart = function(){
  // Battery envelope is deliberately not claimed to fit an unverified 108 Ah pack.
  B.box([.292,.124,.294],[0,.178,-.093],p.edge,'BT1',.006);plate([.303,.01,.304],[0,.246,-.093],'BT1');B.box([.2,.052,.002],[0,.182,.055],p.orange,'BT1',.002);for(let x of [-.108,.108]){B.box([.019,.13,.3],[x,.18,-.093],p.rubber,'BT1',.003);B.box([.023,.01,.313],[x,.109,-.093],p.steel,'BT1',.001)}
  B.decal('BATTERY / BT1','24V CLASS - PACK ENVELOPE TBD',[.180,.042],[0,.185,.0565],[0,0,0],'BT1',{bg:'#d96932',ink:'#182126'});
- for(const side of [-1,1])B.decal('24V / 250W','BRUSHED GEARMOTOR',[.082,.025],[side*.251,.211,-.245],[-PI/2,0,0],side<0?'ML':'MR');
+
  // Removable rear service tray. Raised on insulating standoffs; power left, logic right.
  plate([.572,.006,.764],[0,.333,-.046],'TRAY',p.steel);
  for(let x of [-.285,.285])B.box([.006,.043,.764],[x,.356,-.046],p.paint,'TRAY',.002);
@@ -80,16 +105,20 @@ window.buildSmartCart = function(){
   bolt([x,.798,.466],'LIDAR_MOUNT',.003,'z');
   B.box([.021,.006,.073],[x,.820,.471],p.steel,'LIDAR_MOUNT',.001);
  }
- plate([.113,.006,.087],[0,.824,.489],'LIDAR_MOUNT',p.edge);
- for(const x of [-.037,.037])B.cyl(.005,.009,[x,.832,.479],p.rubber,'LIDAR_MOUNT');
- B.cyl(.038,.016,[0,.839,.489],p.steel,'LD1',[0,0,0],72);
- B.cyl(.046,.024,[0,.855,.489],p.edge,'LD1',[0,0,0],88);
- B.cyl(.0445,.015,[0,.865,.489],p.glass,'LD1',[0,0,0],88);
- B.ring(.0445,.0012,[0,.871,.489],p.chrome,'LD1',[0,0,0],88,8);
- B.cyl(.046,.007,[0,.877,.489],p.edge,'LD1',[0,0,0],88);
- B.cyl(.033,.002,[0,.882,.489],p.paint,'LD1',[0,0,0],64);
- B.decal('RPLIDAR C1','LD1',[.052,.019],[0,.8835,.489],[-PI/2,0,0],'LD1');
- B.sphere(.0018,[.030,.854,.522],p.teal,'LD1');
+ plate([.072,.006,.072],[0,.824,.489],'LIDAR_MOUNT',p.edge);
+ // C1M1-R2 base: 55.6 square, 41.3 high; 43 square M2.5 mounting pattern.
+ for(const x of [-.0215,.0215])for(const z of [-.0215,.0215]){
+  B.cyl(.0031,.003,[x,.8285,.489+z],p.rubber,'LIDAR_MOUNT',[0,0,0],20);
+  B.cyl(.00125,.004,[x,.830,.489+z],p.chrome,'LIDAR_MOUNT',[0,0,0],16);
+ }
+ B.box([.0556,.026,.0556],[0,.843,.489],p.edge,'LD1',.006);
+ for(const x of [-.022,.022])for(const z of [-.022,.022])bolt([x,.856,.489+z],'LD1',.0018);
+ B.cyl(.0246,.0153,[0,.86365,.489],p.glass,'LD1',[0,0,0],96);
+ B.cyl(.0251,.003,[0,.8698,.489],p.edge,'LD1',[0,0,0],96);
+ B.cyl(.0205,.001,[0,.8708,.489],p.paint,'LD1',[0,0,0],72);
+ B.ring(.0246,.0007,[0,.8565,.489],p.steel,'LD1',[0,0,0],80,8);
+ B.decal('RPLIDAR C1','SLAMTEC / 5V',[.034,.013],[0,.8716,.489],[-PI/2,0,0],'LD1');
+ B.decal('C1M1-R2','LD1',[.036,.013],[0,.844,.5171],[0,0,0],'LD1');
  // Lens windows face +Z. No downward ranging cones remain.
  for(let s of [-1,1]){const id=s<0?'TOF1':'TOF2',x=s*.205,q=CartDesign.components.find(c=>c.id===id).position;
   B.box([.045,.005,.054],[x,.294,.528],p.steel,id,.002);
@@ -101,12 +130,66 @@ window.buildSmartCart = function(){
   for(const dx of [-.015,.015])bolt([x+dx,.311,.564],id,.0018,'z');
   B.decal(s<0?'TOF L':'TOF R','FORWARD',[.026,.009],[x,.325,.550],[-PI/2,0,0],id);
  }
+ // Source-grounded boards: schematic pad geometry remains functional, not an unverified mating-face map.
+ for(const id of ['OP1','U1','MDL','MDR','UWL','UWR','TAG']){
+  const c=CartDesign.components.find(c=>c.id===id),q=c.position;
+  if(id==='OP1'){
+   B.box([.089,.0016,.056],q,p.blue,id,.001);
+   for(let x of [-.039,.039])for(let z of [-.024,.024]){B.cyl(.003,.004,[q[0]+x,q[1]-.002,q[2]+z],p.gold,id);bolt([q[0]+x,q[1]+.002,q[2]+z],id,.0017);}
+   B.box([.019,.003,.019],[q[0]-.005,q[1]+.0025,q[2]],p.black,id,.0008);
+   B.box([.018,.002,.018],[q[0]-.005,q[1]+.005,q[2]],p.chrome,id,.0005);
+   for(let x of [-.012,-.007,-.002,.003])B.box([.002,.008,.017],[q[0]+x,q[1]+.010,q[2]],p.steel,id,.0003);
+   for(let z of [-.017,.004]){B.box([.016,.014,.017],[q[0]+.037,q[1]+.007,q[2]+z],p.chrome,id,.0008);B.box([.001,.008,.012],[q[0]+.0452,q[1]+.007,q[2]+z],p.black,id,.0003);}
+   B.box([.009,.004,.007],[q[0]-.040,q[1]+.003,q[2]+.010],p.chrome,id,.0006);
+   B.box([.051,.005,.005],[q[0]-.011,q[1]+.003,q[2]-.023],p.black,id,.0004);
+   for(let j=0;j<20;j++)for(let z of [-.0013,.0013])B.cyl(.00035,.006,[q[0]-.035+j*.00254,q[1]+.004,q[2]-.023+z],p.gold,id,[0,0,0],6);
+   for(let j=0;j<18;j++){let x=q[0]-.031+(j%6)*.008,z=q[2]+.015+Math.floor(j/6)*.003;B.box([.003,.001,.0015],[x,q[1]+.0014,z],j%3===0?p.gold:p.black,id,.0001);}
+   B.decal('ORANGE PI 4 PRO','A733 / 89 x 56 mm',[.037,.010],[q[0]-.016,q[1]+.0011,q[2]+.022],[-PI/2,0,0],id,{bg:'#184d7a'});
+  }else if(id==='U1'){
+   B.box([.028,.0016,.052],q,p.black,id,.001);B.box([.018,.0032,.0192],[q[0],q[1]+.0024,q[2]-.008],p.chrome,id,.0005);
+   B.decal('ESP32','WROOM-32U',[.015,.013],[q[0],q[1]+.0041,q[2]-.008],[-PI/2,0,0],id,{bg:'#b9c6c4',ink:'#263437'});
+   B.cyl(.0016,.0012,[q[0]+.006,q[1]+.0038,q[2]-.021],p.gold,id,[0,0,0],20);
+   B.box([.004,.001,.004],[q[0],q[1]+.0014,q[2]+.013],p.edge,id,.0003);
+   B.box([.008,.003,.006],[q[0],q[1]+.0024,q[2]+.026],p.chrome,id,.0007);
+   for(let side of [-1,1]){B.box([.0032,.003,.049],[q[0]+side*.012,q[1]-.002,q[2]],p.black,id,.0003);for(let j=0;j<19;j++)B.cyl(.00035,.006,[q[0]+side*.012,q[1]+.001,q[2]-.02286+j*.00254],p.gold,id,[0,0,0],6);}
+   for(let x of [-.008,.008])B.box([.003,.002,.004],[q[0]+x,q[1]+.002,q[2]+.019],p.steel,id,.0003);
+   // Coax antenna on a non-metal front mount; radio operation still needs a matched antenna.
+   B.tube([[q[0]+.006,q[1]+.004,q[2]-.021],[q[0]+.022,.376,q[2]-.032],[.288,.390,-.101],[.310,.427,-.101]],.0008,p.black,id,8,'hardware');
+   B.cyl(.0037,.056,[.310,.455,-.101],p.rubber,id,[0,0,0],24);
+  }else if(id.startsWith('MD')){
+   B.box([.050,.0016,.050],q,p.blue,id,.001);
+   B.box([.044,.004,.038],[q[0],q[1]-.004,q[2]],p.steel,id,.001);
+   for(let j=0;j<9;j++)B.box([.002,.009,.038],[q[0]-.019+j*.00475,q[1]-.009,q[2]],p.steel,id,.0003);
+   for(let x of [-.011,.010]){B.box([.012,.002,.011],[q[0]+x,q[1]+.002,q[2]-.002],p.black,id,.0005);for(let j=0;j<7;j++)B.box([.001,.001,.004],[q[0]+x-.005+j*.0016,q[1]+.0015,q[2]+.006],p.chrome,id,.0001);}
+   B.box([.009,.002,.004],[q[0]+.004,q[1]+.002,q[2]+.014],p.black,id,.0003);
+   B.cyl(.0045,.016,[q[0]-.017,q[1]+.009,q[2]-.016],p.edge,id,[0,0,0],24);B.cyl(.0044,.0007,[q[0]-.017,q[1]+.017,q[2]-.016],p.steel,id);
+   B.box([.027,.010,.008],[q[0]+.009,q[1]+.006,q[2]-.021],p.pcb,id,.0008);
+   for(let j=0;j<4;j++)bolt([q[0]-.001+j*.006,q[1]+.012,q[2]-.021],id,.002);
+   for(let x of [-.021,.021])for(let z of [-.021,.021])B.ring(.002,.0007,[q[0]+x,q[1]+.001,q[2]+z],p.gold,id,[0,0,0],16,6);
+   for(let j=0;j<4;j++)for(let k=0;k<2;k++)B.cyl(.00035,.006,[q[0]-.010+j*.00254,q[1]+.004,q[2]+.022+k*.00254],p.gold,id,[0,0,0],6);
+   B.decal('IBT_2','BTS7960B x 2',[.022,.008],[q[0]-.002,q[1]+.0012,q[2]-.014],[-PI/2,0,0],id,{bg:'#174b75'});
+  }else if(id==='TAG'){
+   B.box([.03556,.0016,.055],q,p.black,id,.001);B.box([.018,.003,.014],[q[0],q[1]+.002,q[2]-.01],p.chrome,id,.0004);B.box([.007,.003,.008],[q[0],q[1]+.002,q[2]-.024],p.white,id,.0004);B.box([.006,.002,.006],[q[0],q[1]+.002,q[2]+.010],p.edge,id,.0002);B.box([.008,.003,.006],[q[0],q[1]+.002,q[2]+.025],p.chrome,id,.0005);
+   B.decal('BU03 KIT','USER TAG / SEPARATE POWER',[.030,.016],[q[0],q[1]+.0039,q[2]+.008],[-PI/2,0,0],id);
+   B.box([.052,.010,.075],[q[0],q[1]-.008,q[2]],p.edge,id,.003);
+  }else{
+   B.box([.046,.052,.0016],q,p.black,id,.001);
+   B.box([.026,.021,.003],[q[0],q[1]-.004,q[2]+.002],p.chrome,id,.0005);
+   B.decal('BU04','Ai-Thinker',[.022,.015],[q[0],q[1]-.004,q[2]+.0036],[0,0,0],id,{bg:'#a9b5b3',ink:'#263434'});
+   for(let side of [-1,1])for(let j=0;j<7;j++)B.box([.004,.0013,.001],[q[0]+side*.017,q[1]-.02+j*.004,q[2]+.001],p.gold,id,.0001);
+   B.box([.010,.009,.002],[q[0],q[1]-.019,q[2]+.002],p.edge,id,.0003);
+   B.box([.008,.004,.006],[q[0],q[1]-.026,q[2]-.002],p.chrome,id,.0006);
+   for(let x of [-.012,.012])B.box([.007,.010,.0005],[q[0]+x,q[1]+.019,q[2]+.001],p.gold,id,.0002);
+   B.box([.050,.003,.018],[q[0],.832,q[2]],p.edge,id,.001);
+   for(let x of [-.017,.017])B.rod([q[0]+x,.818,q[2]],[q[0]+x,.838,q[2]],.002,p.white,id,12);
+  }
+ }
  // Vendor envelopes: illustrative PCB/connector shapes. Ports map to exact logical net IDs.
- const custom=new Set(['BT1','ML','MR','LD1','SVL','SVR','TOF1','TOF2']);
+ const custom=new Set(['BT1','ML','MR','LD1','SVL','SVR','TOF1','TOF2','OP1','U1','MDL','MDR','UWL','UWR','TAG']);
  const dimensions={fuse:[.025,.016,.04],contactor:[.052,.060,.049],suppressor:[.019,.012,.019],terminal:[.022,.013,.040],precharge:[.032,.015,.030],driver:[.056,.023,.039],clamp:[.040,.020,.022],resistor:[.011,.009,.027],capacitor:[.009,.013,.006],converter:[.066,.026,.071],safety:[.044,.082,.055],estop:[.042,.03,.038],button:[.034,.023,.030],protector:[.038,.016,.035],board:[.085,.018,.055],hub:[.08,.020,.042],isolator:[.020,.010,.029],adapter:[.03,.013,.031],uwb:[.052,.070,.032],tag:[.048,.07,.018],imu:[.026,.006,.020],mux:[.027,.006,.025],tof:[.03,.025,.030],servo:[.03,.048,.065],connector:[.018,.014,.020],switch:[.029,.038,.035],charge:[.026,.026,.025]};
- for(const c of CartDesign.components){const q=c.position,kind=c.kind,id=c.id;let d=(dimensions[kind]||[.03,.02,.03]).slice();if(id==='U1')d=[.028,.009,.052];if(id==='X3')d=[.03,.008,.04];if(id==='DC1')d=[.052,.023,.072];if(id==='DC3')d=[.072,.029,.075];if(id==='DC4')d=[.041,.019,.038];if(id==='X12')d=[.063,.014,.035];if(id==='U2')d=[.032,.012,.038];
+ for(const c of CartDesign.components){const q=c.position,kind=c.kind,id=c.id;let d=(dimensions[kind]||[.03,.02,.03]).slice();if(id==='U1')d=[.028,.009,.052];if(id==='X3')d=[.03,.008,.04];if(id==='DC1')d=[.052,.023,.072];if(id==='DC3')d=[.072,.029,.075];if(id==='DC4')d=[.041,.019,.038];if(id==='X12')d=[.063,.014,.035];if(id==='U2')d=[.032,.012,.038];if(c.renderDimensionsMm)d=c.renderDimensionsMm.map(v=>v/1000);if(kind==='resistor'&&!id.startsWith('RB'))d=[.003,.003,.008];if(kind==='buffer')d=[.014,.007,.032];if(kind==='openlink')d=[.047,.014,.027];
   if(!custom.has(id)){
-   if(['board','imu','mux','isolator','adapter','precharge','protector'].includes(kind)){
+   if(['board','imu','mux','isolator','adapter','precharge','protector','buffer'].includes(kind)){
     B.box([d[0],.002,d[2]],q,p.pcb,id,.0007);B.box([d[0]*.40,.005,d[2]*.34],[q[0],q[1]+.004,q[2]],p.black,id,.0005);
     for(let a of [-1,1])for(let b of [-1,1]){B.cyl(.0017,.005,[q[0]+a*(d[0]/2-.003),q[1]-.002,q[2]+b*(d[2]/2-.003)],p.gold,id,[0,0,0],10)}
     if(id==='OP1'){for(let x of [-.022,-.014,-.006,.002,.010])B.box([.003,.009,.026],[q[0]+x,q[1]+.009,q[2]-.005],p.steel,id,.0004);for(let z of [-.014,.008])B.box([.017,.012,.014],[q[0]+.036,q[1]+.006,q[2]+z],p.chrome,id,.001)}
@@ -118,6 +201,7 @@ window.buildSmartCart = function(){
    }else if(kind==='driver'||kind==='converter'){B.box([d[0],.003,d[2]],q,p.pcb,id,.001);B.box([d[0]*.72,d[1],d[2]*.65],[q[0],q[1]+d[1]/2,q[2]],p.edge,id,.002);for(let i=-3;i<=3;i++)B.box([.003,d[1]*.95,d[2]*.6],[q[0]+i*d[0]/10,q[1]+d[1],q[2]],p.steel,id,.0004);}
    else if(kind==='estop'){B.box(d,q,p.yellow,id,.004);B.cyl(.012,.021,[q[0],q[1]+.027,q[2]],p.black,id);B.cyl(.025,.014,[q[0],q[1]+.044,q[2]],p.red,id,[0,0,0],32);}
    else if(kind==='button'){B.box(d,q,p.edge,id,.003);B.cyl(.012,.008,[q[0],q[1]+.017,q[2]],p.teal,id);}
+   else if(kind==='openlink'){B.box(d,q,p.edge,id,.002);for(const x of [-.016,.016]){B.cyl(.004,.008,[q[0]+x,q[1]+.011,q[2]],p.gold,id);bolt([q[0]+x,q[1]+.016,q[2]],id,.003);}B.box([.008,.002,.020],[q[0],q[1]+.009,q[2]],p.red,id,.001);B.decal('OPEN','NO LINK',[.034,.013],[q[0],q[1]+.020,q[2]],[-PI/2,0,0],id,{bg:'#962f36'});}
    else if(kind==='contactor'){B.box(d,q,p.edge,id,.003);B.box([d[0]*.78,.002,d[2]*.48],[q[0],q[1]+d[1]/2+.002,q[2]],p.white,id,.001);for(let x of [-.017,.017]){B.cyl(.005,.013,[q[0]+x,q[1]+d[1]/2+.007,q[2]-.016],p.gold,id,[0,0,0],12);bolt([q[0]+x,q[1]+d[1]/2+.014,q[2]-.016],id,.004)}}
    else if(kind==='safety'){B.box(d,q,p.yellow,id,.002);B.box([d[0]*.8,.033,.001],[q[0],q[1]+.003,q[2]+d[2]/2+.001],p.edge,id,.001);for(let z of [-.016,.016])B.box([.035,.005,.012],[q[0],q[1]+d[1]/2,q[2]+z],p.pcb,id,.001);}
    else if(kind==='clamp'||kind==='resistor'){B.box(d,q,kind==='clamp'?p.orange:p.gold,id,.001);for(let z of [-.009,-.005,-.001,.003,.007])B.box([d[0]*.9,.003,.001],[q[0],q[1]+d[1]/2,q[2]+z],p.steel,id);}
@@ -127,15 +211,15 @@ window.buildSmartCart = function(){
    else{B.box(d,q,kind==='terminal'?p.pcb:p.edge,id,.002);B.box([d[0]*.55,.001,d[2]*.45],[q[0],q[1]+d[1]/2+.001,q[2]],p.white,id,.0006);}
   }
   // Actual printed reference marks stay on surfaces, not floating UI billboards.
-  if(!custom.has(id)&&!['resistor','capacitor','uwb','tag','board','imu','mux','isolator','adapter'].includes(kind)){
+  if(!custom.has(id)&&!['resistor','capacitor','uwb','tag','board','imu','mux','isolator','adapter','openlink'].includes(kind)){
    let ly=q[1]+d[1]/2+.003;if(kind==='converter'||kind==='driver')ly=q[1]+d[1]*1.53;
    const title=kind==='converter'?id:kind==='fuse'?id:kind==='contactor'?id:id;
    B.decal(title,kind==='converter'?(id==='DC3'?'12V STEER':id==='DC4'?'5V PWM':id==='DC1'?'24V SAFETY':'5V CTRL'):'',[Math.min(d[0]*.8,.052),Math.min(d[2]*.43,.022)],[q[0],ly,q[2]],[-PI/2,0,0],id,{bg:kind==='fuse'?'#d96932':'#2c373a'});
   }
-  if(kind==='uwb'){B.decal(id,'UWB',[.031,.016],[q[0],q[1]-.010,q[2]+.018],[0,0,0],id);for(let x of [-.021,.021])for(let y of [-.027,.027])bolt([q[0]+x,q[1]+y,q[2]+.018],id,.0017,'z');}
+  if(kind==='uwb'&&!custom.has(id)){B.decal(id,'UWB',[.031,.016],[q[0],q[1]-.010,q[2]+.018],[0,0,0],id);for(let x of [-.021,.021])for(let y of [-.027,.027])bolt([q[0]+x,q[1]+y,q[2]+.018],id,.0017,'z');}
   if(id==='U2')B.decal('ISO7720F','U2 / PWM',[.022,.014],[q[0],q[1]+.007,q[2]],[-PI/2,0,0],id);
   const ports=Object.keys(c.ports);ports.forEach((port,i)=>{const row=i<Math.ceil(ports.length/2)?-1:1,k=i%Math.ceil(ports.length/2),n=Math.ceil(ports.length/2);let pt=[q[0]+(k-(n-1)/2)*Math.min(.007,d[0]/(n+1)),q[1]+d[1]/2+.006,q[2]+row*(d[2]/2+.003)];
-   if(id==='BT1')pt=[-.055+i*.036,.248,.045];if(id==='ML'||id==='MR')pt=[q[0]+(i?-.01:.01),.182,-.159];if(id==='LD1')pt=[0,.840,.455];if(id==='A1')pt=[q[0]+(i?-.009:.009),q[1]+.009,q[2]];if(id==='SVL'||id==='SVR')pt=[q[0]+(i-1)*.003,q[1]-.008,q[2]-.033];if(kind==='tof')pt=[q[0]+(i-1.5)*.004,q[1],q[2]-.014];
+   if(id==='BT1')pt=[-.055+i*.036,.248,.045];if(id==='ML'||id==='MR')pt=[(id==='ML'?-1:1)*.181,.181+i*.005,-.329];if(id==='LD1')pt=[0,.842,.4605];if(id==='OP1')pt=port==='HOST'?[q[0]+.045,.359,q[2]-.017]:[q[0]-.0445,.353,q[2]+.01+(i*.003)];if(id==='U1'){if(port==='USB')pt=[q[0],q[1]+.003,q[2]+.029];else pt=[q[0]+(i%2?-.012:.012),q[1]+.005,q[2]-.022+Math.floor(i/2)*.0044];}if(id==='UWL'||id==='UWR')pt=[q[0],q[1]-.027,q[2]-.002];if(id==='MDL'||id==='MDR'){const power=['B+','B-','M+','M-'];if(power.includes(port))pt=[q[0]-.001+power.indexOf(port)*.006,q[1]+.012,q[2]-.021];else{const pp=['VCC','GND','R_EN','L_EN','RPWM','LPWM'].indexOf(port);pt=[q[0]-.010+Math.floor(pp/2)*.00254,q[1]+.007,q[2]+.022+(pp%2)*.00254];}}if(id==='A1')pt=[q[0]+(i?-.009:.009),q[1]+.009,q[2]];if(id==='SVL'||id==='SVR')pt=[q[0]+(i-1)*.0025,q[1]-.008,q[2]-.033];if(kind==='tof')pt=[q[0]+(i-1.5)*.004,q[1],q[2]-.014];
    B.ports[id+':'+port]=pt;let nnet=c.ports[port];const positive=/5|24|BAT|VIN|3V3|CHG\+/.test(nnet)&&!/0V|GND/.test(nnet);B.box([.005,.004,.006],pt,positive?p.orange:/0V|GND/.test(nnet)?p.black:p.gold,id,.0006);
   });
  }
@@ -166,8 +250,8 @@ window.buildSmartCart = function(){
  for(let y of [.403,.58,.765])for(let s of [-1,1]){B.box([.027,.005,.031],[s*.301,y,.437],p.rubber,'CLAMPS',.001);B.box([.009,.009,.035],[s*.315,y,.437],p.edge,'CLAMPS',.001);}
  for(let z of [-.345,-.13,.177])for(let x of [-.281,.282]){B.box([.015,.006,.024],[x,.392,z],p.rubber,'CLAMPS',.001);bolt([x,.396,z],'CLAMPS',.002);}
  // Front guard plate identification; no floating part labels are drawn by the viewer.
- B.decal('SMART CART','D3 / FRONT STEERING',[.145,.046],[0,.680,.4655],[0,0,0],'FRAME',{bg:'#243036',ink:'#d8dfdc'});
+ B.decal('SMART CART','D4 / FRONT STEERING',[.145,.046],[0,.680,.4655],[0,0,0],'FRAME',{bg:'#243036',ink:'#d8dfdc'});
  B.box([18,.012,18],[0,-.012,0],mat('#c8ccca',0,.83),'FLOOR');
  B.labels=[];
- B.metadata={units:'m',revision:'D3',scanHeight:.865,uwbHeight:.865,lidarMount:'front-upper-rail',hasMast:false,tofAxes:[[0,0,1],[0,0,1]],frontServoIds:['SVL','SVR'],sourceCommit:CartDesign.sourceCommit,notFabricationCAD:true};return B;
+ B.metadata={units:'m',revision:'D4',scanHeight:.862,uwbHeight:.865,lidarMount:'front-upper-rail',hasMast:false,tofAxes:[[0,0,1],[0,0,1]],frontServoIds:['SVL','SVR'],sourceCommit:CartDesign.sourceCommit,sourceGrounded:true,notFabricationCAD:true,driverType:'IBT-2 / PWM+EN',servoEnvelopeSource:'photo65.39x30x48.10 / conflict preserved'};return B;
 };

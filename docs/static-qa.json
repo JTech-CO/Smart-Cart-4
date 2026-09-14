@@ -1,83 +1,468 @@
 {
-  "date": "2026-09-14",
-  "scope": "Static software/graph/mesh only. Not physical electrical safety validation.",
-  "components": 55,
-  "connections": 131,
-  "triangles": 125806,
-  "batches": 430,
-  "glbBytes": 9057800,
-  "tests": [
+  "scope": "Structural source/NET/geometry/SVG and asset regression, not hardware ERC or safety certification.",
+  "counts": {
+    "components": 108,
+    "connections": 246,
+    "ports": 379,
+    "drawBatches": 1063,
+    "triangles": 286536,
+    "primitives": 3107,
+    "cadPrimitives": 3042
+  },
+  "sheets": [
     {
-      "name": "55 component references / 131 point-to-point records",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "overview",
+      "nodes": 14,
+      "wires": 0
     },
     {
-      "name": "unique component and connection IDs",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "power",
+      "nodes": 12,
+      "wires": 12
     },
     {
-      "name": "every connection endpoint exists and has the same NET",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "driveL",
+      "nodes": 9,
+      "wires": 13
     },
     {
-      "name": "every electrical component has a 3D object",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "driveR",
+      "nodes": 9,
+      "wires": 13
     },
     {
-      "name": "every connection has 3D path with exact shared endpoint anchors",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "safety",
+      "nodes": 11,
+      "wires": 25
     },
     {
-      "name": "finite mesh positions and normals, aligned triangle records",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "usb",
+      "nodes": 15,
+      "wires": 19
     },
     {
-      "name": "upper LiDAR only, scan centre 1.15 m",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "sensor",
+      "nodes": 4,
+      "wires": 14
     },
     {
-      "name": "two downward ToF units / one mux / isolated user tag",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "ranging",
+      "nodes": 8,
+      "wires": 24
     },
     {
-      "name": "motor A/B not fixed ground, power outputs not 3.3V",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "steering",
+      "nodes": 15,
+      "wires": 24
     },
     {
-      "name": "contactors in series; precharge downstream of both contactors",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "pwm",
+      "nodes": 16,
+      "wires": 24
     },
     {
-      "name": "local clamp and bleeder on each driver link, not only upstream",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "bufferpower",
+      "nodes": 12,
+      "wires": 19
     },
     {
-      "name": "six schematic sheets render and cover all 131 IDs",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "enable",
+      "nodes": 9,
+      "wires": 19
     },
     {
-      "name": "schematic modules fit within each page without overlapping bodies",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "signal",
+      "nodes": 14,
+      "wires": 22
     },
     {
-      "name": "HOLD release and ten unresolved gates cannot be auto-approved",
-      "result": "PASS"
+      "mode": "CartSchematic",
+      "key": "signalR",
+      "nodes": 14,
+      "wires": 22
     },
     {
-      "name": "plain local scripts / no CDN or root-absolute asset paths",
-      "result": "PASS"
+      "mode": "CartPictorial",
+      "key": "power",
+      "nodes": 12,
+      "wires": 12
     },
     {
-      "name": "routed schematic wires do not pass through unrelated module bodies",
-      "result": "PASS"
+      "mode": "CartPictorial",
+      "key": "driveL",
+      "nodes": 9,
+      "wires": 13
     },
     {
-      "name": "authored outward normals match mesh winding",
-      "result": "PASS"
+      "mode": "CartPictorial",
+      "key": "driveR",
+      "nodes": 9,
+      "wires": 13
     },
     {
-      "name": "GLB magic, version, length, schema, mesh references",
-      "result": "PASS"
+      "mode": "CartPictorial",
+      "key": "safety",
+      "nodes": 11,
+      "wires": 25
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "usb",
+      "nodes": 15,
+      "wires": 19
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "sensor",
+      "nodes": 4,
+      "wires": 14
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "ranging",
+      "nodes": 8,
+      "wires": 24
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "steering",
+      "nodes": 15,
+      "wires": 24
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "pwm",
+      "nodes": 16,
+      "wires": 24
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "bufferpower",
+      "nodes": 12,
+      "wires": 19
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "enable",
+      "nodes": 9,
+      "wires": 19
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "signal",
+      "nodes": 14,
+      "wires": 22
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "signalR",
+      "nodes": 14,
+      "wires": 22
+    },
+    {
+      "mode": "CartPictorial",
+      "key": "overview",
+      "nodes": 12,
+      "wires": 12
+    }
+  ],
+  "checks": [
+    {
+      "name": "JavaScript syntax: cart-model.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: common.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: cpu-renderer.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: design-data.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: engine.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: model-app.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: pictorial.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: schematic.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JavaScript syntax: wiring-app.js",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "JSON / JS data mirror",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "D4.1 preserves the input D4 electrical graph and part placements",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "D4.1 package / D4 design revision",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Component inventory 108 unique IDs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Connection inventory 246 unique IDs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "11 HOLD gates and 11 manual checklist entries",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Required component fields and all connection endpoints exist",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Both endpoints match declared NET on all connections",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "No self-connection wires",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Finite component placements",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Every terminal is connected or explicitly marked spare",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "JDRV remains an open separation with distinct nets",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "IBT-2 PWM and enable ports replace old UART",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No motor output connected to 0V",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unverified ESP32 GND/CMD and flash pins remain unconnected",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "ESP32 USB single supply / no 5V header lead",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "BU03 tag remains cable-free",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Two separately named servo rails",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3.3V to 5V motor buffers retain all 14 functional pins",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D build succeeds / 379 ports",
+      "status": "PASS",
+      "detail": {
+        "components": 108,
+        "connections": 246,
+        "ports": 379,
+        "drawBatches": 1063,
+        "triangles": 286536,
+        "primitives": 3107,
+        "cadPrimitives": 3042
+      }
+    },
+    {
+      "name": "All 108 component IDs render geometry",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 246 wires render geometry and hold route IDs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All vertex arrays finite and whole triangles",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wire route endpoints equal registered 3D ports",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wire routes finite / radius positive",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "LiDAR lowered to front rail / no mast",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Both ToF optical axes point forward",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Two front servo assemblies and independent links exist",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartSchematic: all 14 sheets generate",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartSchematic: complete 246-wire coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartSchematic: paths match drawing ports",
+      "status": "PASS",
+      "detail": {
+        "portsMissing": [],
+        "pathsMismatch": []
+      }
+    },
+    {
+      "name": "CartSchematic: no nodes outside sheet bounds",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "CartSchematic: SVG has no NaN/undefined",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartSchematic: every deep-linked component and wire resolves a valid sheet",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartPictorial: all 14 sheets generate",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartPictorial: complete 246-wire coverage",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartPictorial: paths match drawing ports",
+      "status": "PASS",
+      "detail": {
+        "portsMissing": [],
+        "pathsMismatch": []
+      }
+    },
+    {
+      "name": "CartPictorial: no nodes outside sheet bounds",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "CartPictorial: SVG has no NaN/undefined",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CartPictorial: every deep-linked component and wire resolves a valid sheet",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All local source/photo assets exist",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "index.html: relative local dependency files exist",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "index.html: no CDN scripts/styles",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "wiring.html: relative local dependency files exist",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "wiring.html: no CDN scripts/styles",
+      "status": "PASS",
+      "detail": null
     }
   ]
 }

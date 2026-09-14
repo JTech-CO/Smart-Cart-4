@@ -1,7 +1,7 @@
-# Source notice
+# Source and rights notice
 
-This package was prepared for the owner of the referenced JTech-CO repositories. It reconstructs the original approximate cart proportions and updates the electrical/spatial concept. It does not redistribute manufacturer CAD, font files, vendor PDF contents, or an imported FreeCAD/STEP assembly.
+Base code: JTech-CO/Smart-Cart-3, frozen snapshot `688dbda586c06510763cf9cc42d9b45c1e14094f`, and the D4 files produced earlier in this conversation. The package does not claim a new license over upstream code.
 
-Original reference: `JTech-CO/Smart-Cart` commit `2b4b8fea6909e4f76b4a52b02c5075c3f478097b`; wiring `3ac3f1d793caba6494d27df6f0b9ba2eee8606d5`; BOM `26c5061ff08912abb77f7fafcdc5e83a1018ac98`.
+The attached specification, servo photographs, source FreeCAD document and extracted product imagery were provided by the user. Product photos, logos and any third-party markings retain their original rights. No watermark or rights notice has been removed. Public redistribution rights must be confirmed separately. No system font files are distributed. Original upstream license metadata in FCStd is preserved.
 
-No new licence is assigned to previous repository content, manufacturer documentation, trademarks or third-party materials. Preserve any applicable upstream notices when incorporating these files. The project owner should choose an appropriate licence for the new implementation after reviewing upstream rights. No third-party font files or runtime libraries are bundled.
+D4.1 changes are local packaging, integrity, user-interface correction and test work. No remote repository was modified. Shape and connector depictions are placement aids, not manufacturer CAD or production drawings. No fabrication or energization release is granted.
