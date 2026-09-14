@@ -1,3 +1,13 @@
+# D4.2 - FCStd load-order repair
+
+- Fixed physical ZIP ordering so all application-owned BReps precede GuiDocument.xml.
+- Added a D4-only document; preserved every BRep byte and the unchanged STEP.
+- Recentered the saved camera, replaced the stale prototype thumbnail with a web-preview thumbnail.
+- Added forward-reader negative-fixture regression and optional native FreeCAD open/save/reopen macro.
+- Recorded the user-confirmed browser results and the prior native FreeCAD failure separately.
+- Browser source, data and assets unchanged (79 files compared). Electrical design remains D4 / HOLD.
+- Native FreeCAD GUI validation of this repair remains NOT_RUN.
+
 # Change log
 
 ## D4.1 - final package regression revision

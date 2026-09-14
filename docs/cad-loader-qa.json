@@ -1,0 +1,155 @@
+{
+  "scope": "FCStd forward-only loader-order replay and payload invariants. Not native FreeCAD execution.",
+  "freecad_source": "https://github.com/FreeCAD/FreeCAD/blob/main/src/Base/Reader.cpp",
+  "native_GUI_status": "NOT_RUN",
+  "checks": [
+    {
+      "name": "Smart-Cart-D4.FCStd: archive CRC",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: every app payload reached by monotone loader",
+      "status": "PASS",
+      "detail": 1331
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: all 998 D4 shapes reached",
+      "status": "PASS",
+      "detail": 998
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: every GUI payload reached",
+      "status": "PASS",
+      "detail": 1745
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: object/data counts",
+      "status": "PASS",
+      "detail": {
+        "declared": 1267,
+        "records": 1267
+      }
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: every D4 feature declared",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: no dangling group links",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: same 998 geometry payloads as full repaired file",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: D4 visibility and hidden cover preserved",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4.FCStd: wrong-order fixture rejected (998 D4 shapes skipped)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: archive CRC",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: every app payload reached by monotone loader",
+      "status": "PASS",
+      "detail": 998
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: all 998 D4 shapes reached",
+      "status": "PASS",
+      "detail": 998
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: every GUI payload reached",
+      "status": "PASS",
+      "detail": 998
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: object/data counts",
+      "status": "PASS",
+      "detail": {
+        "declared": 1004,
+        "records": 1004
+      }
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: every D4 feature declared",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: no dangling group links",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: same 998 geometry payloads as full repaired file",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: D4 visibility and hidden cover preserved",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: no prototype objects or payloads",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Smart-Cart-D4-Only.FCStd: wrong-order fixture rejected (998 D4 shapes skipped)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Original reported file reproduces 0/998 restored D4 shapes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All original and D4 BRep bytes preserved",
+      "status": "PASS",
+      "detail": {
+        "unchanged": 1247,
+        "total": 1247
+      }
+    }
+  ],
+  "restoration": {
+    "Smart-Cart-D4.FCStd": {
+      "application_registered": 1331,
+      "application_restored": 1331,
+      "application_skipped": [],
+      "d4_registered": 998,
+      "d4_restored": 998,
+      "d4_skipped": [],
+      "gui_registered": 1745,
+      "gui_restored": 1745,
+      "method": "Source-aligned monotone cursor replay, not native FreeCAD execution"
+    },
+    "Smart-Cart-D4-Only.FCStd": {
+      "application_registered": 998,
+      "application_restored": 998,
+      "application_skipped": [],
+      "d4_registered": 998,
+      "d4_restored": 998,
+      "d4_skipped": [],
+      "gui_registered": 998,
+      "gui_restored": 998,
+      "method": "Source-aligned monotone cursor replay, not native FreeCAD execution"
+    }
+  }
+}

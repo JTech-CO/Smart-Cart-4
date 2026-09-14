@@ -1,0 +1,30 @@
+{
+  "source": "User report in this conversation; screenshot of FreeCAD 1.1.3",
+  "classification": "User-confirmed, not assistant-run tests",
+  "browser": [
+    {
+      "name": "Browser WebGL 2 complete rendering",
+      "status": "USER_CONFIRMED_PASS"
+    },
+    {
+      "name": "Actual HTTP and file navigation",
+      "status": "USER_CONFIRMED_PASS"
+    },
+    {
+      "name": "Native localStorage persistence",
+      "status": "USER_CONFIRMED_PASS"
+    },
+    {
+      "name": "Actual completed file downloads",
+      "status": "USER_CONFIRMED_PASS"
+    }
+  ],
+  "FreeCAD_prior_D4_1": {
+    "status": "USER_CONFIRMED_FAIL",
+    "symptom": "D4 groups present but no new shapes displayed; prototype only"
+  },
+  "FreeCAD_repaired_D4_2": {
+    "status": "NOT_RUN",
+    "note": "No FreeCAD executable or module available in this runtime; native verification macro included."
+  }
+}

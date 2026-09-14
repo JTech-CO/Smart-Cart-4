@@ -1,26 +1,18 @@
 {
-  "packageVersion": "D4.1",
-  "designRevision": "D4",
-  "date": "2026-09-14",
-  "softwareRegression": {
-    "PASS": 197,
-    "NOT_RUN": 5
+  "packageVersion": "D4.2",
+  "designRevision": "D4 (unchanged)",
+  "purpose": "FCStd sequential archive restore order repair",
+  "executedChecksThisRevision": {
+    "PASS": 110,
+    "NOT_RUN": 1
   },
   "suites": [
     {
-      "report": "static-qa.json",
+      "report": "cad-loader-qa.json",
       "counts": {
-        "PASS": 54
+        "PASS": 23
       },
-      "scope": "Structural source/NET/geometry/SVG and asset regression, not hardware ERC or safety certification."
-    },
-    {
-      "report": "browser-qa.json",
-      "counts": {
-        "PASS": 104,
-        "NOT_RUN": 4
-      },
-      "scope": "Actual browser DOM/canvas interaction of shipped scripts. Fixture boundary adapters are not native hosting/storage/download certification. No physical hardware tests."
+      "scope": "FCStd forward-only loader-order replay and payload invariants. Not native FreeCAD execution."
     },
     {
       "report": "cad-qa.json",
@@ -31,11 +23,11 @@
       "scope": "FCStd archive/XML and OpenCascade shape / STEP import checks; no manufacturing, collision, stress or native GUI approval."
     },
     {
-      "report": "shader-qa.json",
+      "report": "static-qa.json",
       "counts": {
-        "PASS": 7
+        "PASS": 54
       },
-      "scope": "Exact VS/FS source compile/link and test-triangle drawing in EGL GLES, not browser WebGL, full-scene rendering or hardware GPU performance."
+      "scope": "Structural source/NET/geometry/SVG and asset regression, not hardware ERC or safety certification."
     },
     {
       "report": "package-qa.json",
@@ -43,41 +35,24 @@
         "PASS": 16
       },
       "scope": "Package file/path/content checks and standard-library local HTTP requests, not managed Chromium navigation or public deployment."
+    },
+    {
+      "report": "web-unchanged-qa.json",
+      "counts": {
+        "PASS": 1
+      },
+      "files_compared": 79
     }
   ],
-  "notRun": [
-    {
-      "report": "browser-qa.json",
-      "name": "Native WebGL 2 rendering path",
-      "status": "NOT_RUN",
-      "detail": "Chromium returned null for WebGL2 in this execution environment; real Canvas 2D fallback tested."
-    },
-    {
-      "report": "browser-qa.json",
-      "name": "Native HTTP/file navigation in browser",
-      "status": "NOT_RUN",
-      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
-    },
-    {
-      "report": "browser-qa.json",
-      "name": "Native localStorage persistence",
-      "status": "NOT_RUN",
-      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
-    },
-    {
-      "report": "browser-qa.json",
-      "name": "Native browser file download",
-      "status": "NOT_RUN",
-      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
-    },
-    {
-      "report": "cad-qa.json",
-      "name": "Native FreeCAD GUI open/save",
-      "status": "NOT_RUN",
-      "detail": "FreeCAD executable not installed in this runtime; OpenCascade validation does not replace this test."
-    }
-  ],
-  "physicalRelease": "ENGINEERING HOLD",
-  "remoteDeploymentPerformed": false,
-  "zipIntegrity": "See the external Final-Verification.json produced after packaging."
+  "userConfirmedBrowserScenarios": {
+    "count": 4,
+    "status": "USER_CONFIRMED_PASS",
+    "includedInAutomatedCount": false,
+    "report": "user-environment-confirmation.json"
+  },
+  "previousNativeFreeCAD": "USER_CONFIRMED_FAIL on D4.1 in FreeCAD 1.1.3",
+  "repairedNativeFreeCAD": "NOT_RUN in assistant runtime",
+  "previousReport": "QA-D4.1-HISTORICAL.md",
+  "archiveIntegrity": "Separate ZIP verification JSON and checksum sidecar",
+  "hardwareApproval": false
 }

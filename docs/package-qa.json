@@ -86,7 +86,7 @@
       "name": "Local HTTP repository-subpath resources return exact bytes",
       "status": "PASS",
       "detail": {
-        "resources": 48,
+        "resources": 57,
         "errors": []
       }
     }

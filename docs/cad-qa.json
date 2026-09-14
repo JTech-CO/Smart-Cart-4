@@ -1,6 +1,6 @@
 {
   "scope": "FCStd archive/XML and OpenCascade shape / STEP import checks; no manufacturing, collision, stress or native GUI approval.",
-  "seconds": 37.09,
+  "seconds": 25.62,
   "checks": [
     {
       "name": "FCStd ZIP CRC",

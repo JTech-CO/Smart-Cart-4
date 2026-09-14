@@ -1,0 +1,89 @@
+> HISTORICAL REPORT. Superseded for FCStd compatibility by D4.2. The previous tests missed sequential ZIP member ordering.
+
+# D4.1 최종 패키지 회귀검증 기록
+
+기준일: 2026-09-14. 대상: 이 패키지의 `index.html`, `wiring.html`, 공용 D4 데이터, 모델, 정적 자산, CAD 및 배포 파일. 이전 D2/D3의 시험 결과를 이번 통과 수에 합산하지 않았습니다.
+
+**자동화 회귀검사 197개 통과, 실패 0개, 환경 제약으로 미실행 5개입니다.** 이는 정의한 소프트웨어·데이터·형상 검사 사례의 결과입니다. 모든 환경에서의 동작 보증이나 실물 전장·조향·제동·강도·제조 안전성 검증이 아닙니다. 설계 상태는 **ENGINEERING HOLD**, 구동 분리 지점 **JDRV OPEN**으로 유지됩니다.
+
+## 1. 시험 결과
+
+| 영역 | 통과 | 실패 | 미실행 | 원시 기록 |
+| --- | ---: | ---: | ---: | --- |
+| 소스·데이터·3D 메시·SVG 정적 회귀 | 54 | 0 | 0 | [static-qa.json](static-qa.json) |
+| 브라우저 DOM·Canvas 3D·배선 UI | 104 | 0 | 4 | [browser-qa.json](browser-qa.json) |
+| FCStd 구조·BRep·STEP | 16 | 0 | 1 | [cad-qa.json](cad-qa.json) |
+| 실제 GLSL ES 셰이더 컴파일·시험 픽셀 | 7 | 0 | 0 | [shader-qa.json](shader-qa.json) |
+| 파일 경로·CSV·이미지·로컬 HTTP | 16 | 0 | 0 | [package-qa.json](package-qa.json) |
+| **합계** | **197** | **0** | **5** | [QA-summary.json](QA-summary.json) |
+
+한 검사 사례가 전체 레지스터를 순회하는 경우도 있습니다. 예를 들어 부품·전선 설명 검사는 354개 ID를 모두 점검하지만 이를 354개의 독립 시험으로 부풀려 집계하지 않았습니다. ZIP의 CRC·SHA-256·추출 왕복 검사는 위 합계와 별도이며, `tools/package_release.py`가 ZIP 생성 후 외부 `Smart-Cart-D4-Final-Verification.json`을 작성합니다. ZIP 내부 모든 파일의 체크섬은 루트 `SHA256SUMS.txt`에 있습니다. 체크섬 목록 자체는 자기 해시의 순환을 피하려고 내부 목록에서 제외됩니다.
+
+## 2. 브라우저에서 실행한 범위와 제약
+
+시험 환경은 [test-environment.json](test-environment.json)에 기록했습니다. Chromium 144와 Python Playwright를 사용했습니다. 관리형 브라우저에서 HTTP와 `file://` 탐색이 차단되어 있으므로, **실제 배포 JS·CSS의 내용을 변경하지 않고 `about:blank` 문서에 인라인으로 넣는 `--fixture` 방식**으로 시험했습니다. 제품 사진은 같은 패키지의 이미지 바이트를 시험 경계에서 내장했습니다. 브라우저 정책을 변경하지 않았습니다.
+
+기능 시험은 실제 브라우저 DOM 이벤트와 Canvas 2D 소프트웨어 3D 경로를 사용합니다. 다음 항목을 확인했습니다.
+
+- 108개 부품과 246개 연결의 설명 표시, SVG 실제 클릭·키보드 선택, 3D 메시 히트테스트와 실제 포인터 클릭에 따른 부품·전선 선택, 올바른 상세 링크 및 잘못된 ID 복구.
+- 부품형 14개 시트와 회로형 14개 시트의 생성·전환, 각 시트의 연결 수, 전체 연결 포함, 선 ID·0V 귀환 표시, 확대·이동·맞춤·선택 해제, 검색·필터·검색 결과 없음 상태.
+- 11개 로컬 점검 기록의 직렬화·복구·초기화·입력 이스케이프, 잘못된 JSON/null/배열/타입/ID와 저장소 실패 처리. 점검 항목을 전부 체크해도 통전 HOLD는 해제되지 않습니다.
+- SVG의 XML 유효성과 선택 표시 제거, CSV 246행이 패키지 CSV와 동일한지, 점검 JSON의 기록·HOLD 보존 여부.
+- 데스크톱 1440px, 태블릿 768px, 모바일 390px와 320px의 가로 넘침·선택 패널·시트 조작, 모바일 두 손가락 핀치 확대. 회귀 중 포착된 처리되지 않은 JavaScript 예외는 없습니다.
+
+단, 로컬 기록 저장과 다운로드의 경계에는 시험용 어댑터를 두었습니다. **직렬화한 내용·재로딩·오류 처리 및 내보내기 Blob의 내용을 검증한 것이며, 실제 브라우저 저장소의 영속성과 다운로드 완료를 검증한 것은 아닙니다.** 교차 페이지 URL 문자열과 각 페이지의 쿼리 초기화는 시험했으나 실제 브라우저 네트워크 전환은 아래 미실행 항목에 포함됩니다.
+
+## 3. 미실행 5개 항목
+
+| 항목 | 미실행 사유 | 이번에 대신 확인한 범위 |
+| --- | --- | --- |
+| 브라우저 WebGL 2 전체 렌더링 경로 | Chromium의 WebGL 2 컨텍스트 생성 결과가 null | 실제 Canvas 2D 폴백, 모델 버퍼·좌표·선택, 별도 EGL 셰이더 시험 |
+| 브라우저 HTTP/로컬 파일 탐색 | 관리형 브라우저 탐색 제한 | 배포 스크립트의 인라인 DOM 시험, Python HTTP 요청으로 상대 경로와 응답 바이트 검증 |
+| 네이티브 localStorage 영속 저장 | 동일 브라우저 탐색 제약 | 경계 어댑터에서 직렬화·복구·차단 오류 처리 검증 |
+| 네이티브 브라우저 다운로드 | 동일 브라우저 탐색 제약 | 실제 생성한 SVG·CSV·JSON Blob의 내용 검증 |
+| FreeCAD 네이티브 GUI 열기·다시 저장 | FreeCAD 실행 파일·Python 모듈 미설치 | FCStd ZIP/XML, OpenCascade BRep 및 STEP 읽기·형상 검증, 매크로 구문 검사 |
+
+이 항목들은 PASS가 아닙니다. 사용자의 일반 브라우저 환경에서 `python tests/browser_regression.py`를 `--fixture` 없이 실행하면 네이티브 경로를 다시 시험할 수 있습니다. FreeCAD에서는 FCStd 직접 열기·재저장·STEP 불러오기 및 매크로 실행을 추가 확인해야 합니다. 실제 GPU·브라우저에서 WebGL 장면과 재질이 동일하게 보이는지, 성능이 충분한지도 별도 확인 대상입니다.
+
+## 4. 데이터·소스·셰이더
+
+공용 데이터에는 부품 참조번호 **108개**, 연결 레코드 **246개**, 등록 단자 **379개**가 있습니다. 외부 배선에 참여하는 단자는 378개이고 나머지 `X12:SIG0`는 0V 분배의 예비 단자입니다. 이를 전기적으로 절연된 NC라고 표기하지 않았습니다. 구매 수량·전선 가닥 수로 해석하지 않습니다.
+
+입력 D4와 현재 데이터의 부품 ID·단자·NET·배치 위치·연결 그래프가 동일함을 확인했습니다. 정격이나 연결을 임의로 바꾸어 통과시키지 않았습니다. `data/input-d4-topology.json`이 비교 기준입니다. 명시적 예비 단자 메타데이터, 설명, 출처 및 화면 수정과 전기적 그래프 변경을 구분했습니다.
+
+3D 생성 결과는 **1,063개 드로 배치, 286,536개 삼각형, 3,107개 구성 기본 형상**입니다. 정점·법선·인덱스·범위가 유효하고, 전선 경로의 양 끝이 지정한 단자 위치와 일치하는지 확인했습니다. 두 ToF의 전방 광축과 전면 상단 LiDAR 위치는 공유 메타데이터와 대조했습니다. CAD 기본 형상 수는 바닥·데칼 제외 조건 때문에 별도 값입니다.
+
+`engine.js`에 실제 포함된 GLSL ES 정점/프래그먼트 소스를 추출해 Linux EGL + Mesa llvmpipe에서 컴파일·링크하고 작은 삼각형을 그렸습니다. 선택용 RGB 인코딩과 조명 셰이더 출력 픽셀 및 API 오류를 검사했습니다. **별도의 OpenGL ES 시험이지 JavaScript WebGL 렌더러·전체 장면·실제 GPU 성능 시험이 아닙니다.**
+
+## 5. CAD 검증
+
+D4 FCStd의 ZIP CRC, `Document.xml`과 `GuiDocument.xml`, 1,267개 문서 객체 레코드, 998개 D4 BRep 피처 및 파일 참조를 확인했습니다. OpenCascade에서 **998개 BRep 모두 유효**했고 경계 치수는 manifest와 0.01mm 이내에서 일치했습니다. CAD에 모든 부품 참조와 연결 ID가 포함되어 있습니다. 원본 프로토타입의 249개 BRep payload가 D4 문서에서 바이트 단위로 보존된 것도 대조했습니다.
+
+D4 FCStd 전체에는 4,664개 solid가 있습니다. STEP은 전장 정비 상태의 교환 모델이므로 숨김 커버 그룹 `COVER`의 9개 solid와 원본 프로토타입을 제외합니다. 동일 범위인 커버 제외 BRep와 STEP에는 각각 **4,655개 solid**가 있고, 부피 상대 차이는 **약 2.48×10⁻¹³**입니다. 처음의 전체/부분 모델 비교에서 발견한 개수 차이는 이 포함 범위를 확인하고 문서화한 뒤 동일 범위로 재검증했습니다. 맞추기 위해 원본 STEP 형상을 바꾸지 않았습니다.
+
+FCStd는 원본 문서 구조를 참고해 구성된 직렬화 결과이며, 위 구조·형상 검증만으로 FreeCAD GUI 호환성을 승인하지 않습니다. [CAD 안내](../cad/README-KR.md)의 재구성 매크로도 이번 환경에서는 실제 실행하지 않았습니다. 완전 구속된 파라메트릭 스케치, 간섭·공차·허브 가공·조향 운동학·하중·강도·제동의 검증은 포함되지 않습니다.
+
+## 6. 발견해 수정한 회귀 문제
+
+누락된 부품 사진 18개·favicon·문서·정적 배포 표식을 복구했습니다. 이전 77/179/0.865m 표시를 현재 데이터의 **108/246/0.862m 제안**으로 동기화하고 11개 보류 조건 수를 표시했습니다. 구매 WROOM-32U의 단자를 공식 V4 J2/J3와 동일하다고 단정하던 문구는 GPIO 기능명과 실물 확인 조건으로 수정했습니다.
+
+잘못된 배선 URL이 요약 시트로 바뀌는 문제, CSV 내보내기와 패키지 CSV의 열 순서 불일치, 선택된 선의 귀환 표시가 필터 복구 후 남는 문제, SVG 저장 시 선택 스타일 잔존, 손상된 점검 기록으로 페이지가 실패하는 경우를 수정했습니다. 실물 사양의 상충값과 통전 보류 조건은 그대로 보존했습니다. 자세한 파일 수준 변경은 [CHANGELOG.md](CHANGELOG.md)에 있습니다.
+
+## 7. 재현 명령
+
+프로젝트 루트에서 실행합니다. 앱 자체에는 npm·Python·검사용 라이브러리 설치가 필요하지 않으며, 아래 도구는 개발용 시험입니다.
+
+```sh
+node tests/static_regression.mjs
+python tests/browser_regression.py
+python tests/cad_regression.py
+python tests/shader_regression.py
+python tests/package_regression.py
+python tools/package_release.py --output ../Smart-Cart-D4-Final.zip
+```
+
+현재 제한 환경에서 실제 사용한 브라우저 명령은 `python tests/browser_regression.py --fixture`입니다. Node.js, Python Playwright/Chromium, Pillow, cadquery/OCP 및 Linux EGL/GLES 환경 의존성을 [test-environment.json](test-environment.json)에서 확인하세요. 파일이나 데이터를 수정하면 관련 검사를 다시 실행하고 마지막에 ZIP·체크섬을 새로 생성해야 합니다.
+
+## 8. 실물·배포 상태
+
+원격 저장소 커밋·푸시·GitHub Pages 배포는 수행하지 않았습니다. 부품 정격·실물 극성·회생·안전정지·전류·발열·조향·센서 사각 시험도 수행하지 않았습니다. [안전 검토](SAFETY-REVIEW-KR.md), [근거 및 충돌값](EVIDENCE-KR.md), [수동 통전 시험 조건](COMMISSIONING-KR.md)을 유지해야 합니다. 화면의 모든 점검 체크박스는 사용자 기록 기능이지 승인 또는 시험 자동실행 기능이 아닙니다.

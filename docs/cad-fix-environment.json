@@ -1,0 +1,9 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "FreeCADModuleInstalled": false,
+  "OCPModuleInstalled": true,
+  "nativeGuiExecuted": false,
+  "sourceReader": "FreeCAD src/Base/Reader.cpp: XMLReader::readFiles (forward cursor, nested GUI reader)",
+  "note": "No browser rerun claimed for this CAD-only repair; 79 runtime files compared byte-for-byte."
+}
