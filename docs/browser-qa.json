@@ -1,185 +1,798 @@
 {
-  "date": "2026-09-14",
-  "browser": "Chromium /usr/bin/chromium (headless)",
-  "navigationMethod": "Actual files loaded with set_content + local scripts. Managed URLBlocklist blocked normal HTTP/file navigation. No policy changed.",
-  "rendererTested": "Canvas 2D software 3D",
-  "initialSoftwareRenderMs": 262,
-  "nativeStorageAvailableAtTestOrigin": false,
-  "webglRuntimeVerified": false,
-  "scopeLimits": [
-    "No actual hardware, battery, motor, temperature, stopping or EMC tests.",
-    "No GPU rendering assertion when WebGL context was unavailable.",
-    "No native HTTP-origin localStorage persistence or OS download completion assertion. Generated export payloads were tested via interception.",
-    "Touch layout and controls checked at mobile/tablet sizes; no physical touchscreen device tested."
-  ],
+  "fixture": true,
+  "browser": "Chromium via Playwright",
+  "seconds": 76.95,
+  "scope": "Actual browser DOM/canvas interaction of shipped scripts. Fixture boundary adapters are not native hosting/storage/download certification. No physical hardware tests.",
   "checks": [
     {
-      "name": "wiring initial render and 131 table rows",
-      "result": "PASS"
+      "name": "Wiring boots in default illustrated power view",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "desktop wiring no horizontal page overflow",
-      "result": "PASS"
+      "name": "Counters use current data: 108 / 246 / 0.862 / 11",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "click schematic sheet: overview",
-      "result": "PASS"
+      "name": "Connection table has 246 rows",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "click schematic sheet: power",
-      "result": "PASS"
+      "name": "physical/power: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "power",
+        "mode": "physical",
+        "nodes": 12,
+        "wires": 12,
+        "expected": 12,
+        "svg": true
+      }
     },
     {
-      "name": "click schematic sheet: safety",
-      "result": "PASS"
+      "name": "physical/driveL: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "driveL",
+        "mode": "physical",
+        "nodes": 9,
+        "wires": 13,
+        "expected": 13,
+        "svg": true
+      }
     },
     {
-      "name": "click schematic sheet: usb",
-      "result": "PASS"
+      "name": "physical/driveR: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "driveR",
+        "mode": "physical",
+        "nodes": 9,
+        "wires": 13,
+        "expected": 13,
+        "svg": true
+      }
     },
     {
-      "name": "click schematic sheet: sensor",
-      "result": "PASS"
+      "name": "physical/safety: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "safety",
+        "mode": "physical",
+        "nodes": 11,
+        "wires": 25,
+        "expected": 25,
+        "svg": true
+      }
     },
     {
-      "name": "click schematic sheet: signal",
-      "result": "PASS"
+      "name": "physical/usb: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "usb",
+        "mode": "physical",
+        "nodes": 15,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "keyboard selection inspects W099 endpoint",
-      "result": "PASS"
+      "name": "physical/sensor: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "sensor",
+        "mode": "physical",
+        "nodes": 4,
+        "wires": 14,
+        "expected": 14,
+        "svg": true
+      }
     },
     {
-      "name": "schematic zoom changes viewBox",
-      "result": "PASS"
+      "name": "physical/ranging: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "ranging",
+        "mode": "physical",
+        "nodes": 8,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "wire labels toggle",
-      "result": "PASS"
+      "name": "physical/steering: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "steering",
+        "mode": "physical",
+        "nodes": 15,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "point-to-point search",
-      "result": "PASS"
+      "name": "physical/pwm: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "pwm",
+        "mode": "physical",
+        "nodes": 16,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "USB filter produces 6 cable-assembly records",
-      "result": "PASS"
+      "name": "physical/bufferpower: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "bufferpower",
+        "mode": "physical",
+        "nodes": 12,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "local checklist progress without approving gates",
-      "result": "PASS"
+      "name": "physical/enable: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "enable",
+        "mode": "physical",
+        "nodes": 9,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "inspection JSON serializer keeps HOLD",
-      "result": "PASS"
+      "name": "physical/signal: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "signal",
+        "mode": "physical",
+        "nodes": 14,
+        "wires": 22,
+        "expected": 22,
+        "svg": true
+      }
     },
     {
-      "name": "checklist reset confirmation",
-      "result": "PASS"
+      "name": "physical/signalR: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "signalR",
+        "mode": "physical",
+        "nodes": 14,
+        "wires": 22,
+        "expected": 22,
+        "svg": true
+      }
     },
     {
-      "name": "all ten hold gates visible",
-      "result": "PASS"
+      "name": "physical/overview: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "overview",
+        "mode": "physical",
+        "nodes": 12,
+        "wires": 12,
+        "expected": 12,
+        "svg": true
+      }
     },
     {
-      "name": "13 source links visible",
-      "result": "PASS"
+      "name": "schematic/power: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "power",
+        "mode": "schematic",
+        "nodes": 12,
+        "wires": 12,
+        "expected": 12,
+        "svg": true
+      }
     },
     {
-      "name": "SVG serializer includes root SVG and HOLD",
-      "result": "PASS"
+      "name": "schematic/driveL: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "driveL",
+        "mode": "schematic",
+        "nodes": 9,
+        "wires": 13,
+        "expected": 13,
+        "svg": true
+      }
     },
     {
-      "name": "3D renderer initialized rather than error placeholder",
-      "result": "PASS"
+      "name": "schematic/driveR: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "driveR",
+        "mode": "schematic",
+        "nodes": 9,
+        "wires": 13,
+        "expected": 13,
+        "svg": true
+      }
     },
     {
-      "name": "desktop 3D no horizontal page overflow",
-      "result": "PASS"
+      "name": "schematic/safety: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "safety",
+        "mode": "schematic",
+        "nodes": 11,
+        "wires": 25,
+        "expected": 25,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: electrical",
-      "result": "PASS"
+      "name": "schematic/usb: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "usb",
+        "mode": "schematic",
+        "nodes": 15,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: top",
-      "result": "PASS"
+      "name": "schematic/sensor: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "sensor",
+        "mode": "schematic",
+        "nodes": 4,
+        "wires": 14,
+        "expected": 14,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: front",
-      "result": "PASS"
+      "name": "schematic/ranging: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "ranging",
+        "mode": "schematic",
+        "nodes": 8,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: under",
-      "result": "PASS"
+      "name": "schematic/steering: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "steering",
+        "mode": "schematic",
+        "nodes": 15,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: sensor",
-      "result": "PASS"
+      "name": "schematic/pwm: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "pwm",
+        "mode": "schematic",
+        "nodes": 16,
+        "wires": 24,
+        "expected": 24,
+        "svg": true
+      }
     },
     {
-      "name": "3D camera preset: home",
-      "result": "PASS"
+      "name": "schematic/bufferpower: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "bufferpower",
+        "mode": "schematic",
+        "nodes": 12,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "LiDAR marker focuses upper sensor",
-      "result": "PASS"
+      "name": "schematic/enable: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "enable",
+        "mode": "schematic",
+        "nodes": 9,
+        "wires": 19,
+        "expected": 19,
+        "svg": true
+      }
     },
     {
-      "name": "3D component search",
-      "result": "PASS"
+      "name": "schematic/signal: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "signal",
+        "mode": "schematic",
+        "nodes": 14,
+        "wires": 22,
+        "expected": 22,
+        "svg": true
+      }
     },
     {
-      "name": "3D component inspector has functional terminals",
-      "result": "PASS"
+      "name": "schematic/signalR: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "signalR",
+        "mode": "schematic",
+        "nodes": 14,
+        "wires": 22,
+        "expected": 22,
+        "svg": true
+      }
     },
     {
-      "name": "shared wire ID selection shows route in 3D",
-      "result": "PASS"
+      "name": "schematic/overview: display and wire count",
+      "status": "PASS",
+      "detail": {
+        "sheet": "overview",
+        "mode": "schematic",
+        "nodes": 14,
+        "wires": 0,
+        "expected": 0,
+        "svg": true
+      }
     },
     {
-      "name": "exploded mode hides and locks fixed harness drawing",
-      "result": "PASS"
+      "name": "SVG component keyboard selection",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "cover visibility control",
-      "result": "PASS"
+      "name": "SVG wire keyboard selection",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "PNG export produces a binary image blob",
-      "result": "PASS"
+      "name": "Wire ID toggle shows labels",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "GLB export handler produces an actual binary model",
-      "result": "PASS"
+      "name": "Return toggle hides 0V wires",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "mobile page has no horizontal overflow: wiring.html",
-      "result": "PASS"
+      "name": "Wiring zoom-in reduces viewBox",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "mobile tabs and zoom work",
-      "result": "PASS"
+      "name": "Wiring zoom-out increases viewBox",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "mobile page has no horizontal overflow: index.html",
-      "result": "PASS"
+      "name": "Wiring fit restores sheet extents",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "mobile parts panel and selection",
-      "result": "PASS"
+      "name": "Wiring keyboard pan changes origin",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "tablet 3D no horizontal overflow",
-      "result": "PASS"
+      "name": "Wiring keyboard Home resets",
+      "status": "PASS",
+      "detail": null
     },
     {
-      "name": "no uncaught browser exceptions",
-      "result": "PASS"
+      "name": "Wiring Escape clears selection",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wiring actual pointer drag pans",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wiring ID search",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wiring no-results state",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wiring type filter",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Table selection locates sheet and conductor",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Cross-page conductor URL",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 108 component + 246 wire wiring inspectors",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Sources dialog renders full registry",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Modal Escape close",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Gate dialog lists all 11 holds",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Modal focus stays inside",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "SVG export XML and neutral selection",
+      "status": "PASS",
+      "detail": "Smart-Cart-D4-physical-power.svg"
+    },
+    {
+      "name": "CSV export covers all 246 records",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CSV export agrees with packaged CSV data",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Checklist progress updates",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All manual checks do not release engineering HOLD",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Inspection JSON preserves HOLD and typed notes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Checklist serialization restores prior checks (adapter in fixture)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Stored markup remains escaped",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Checklist reset confirmation clears records",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Storage recovery: null",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Storage recovery: []",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Storage recovery: 123",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Storage recovery: {oops",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Storage recovery: {\"UNKNOWN\":{\"done\":true},\"",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Blocked storage degrades to export warning",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wiring deep link applies mode and wire",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Invalid wiring query does not crash",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D initializes with WebGL or software fallback",
+      "status": "PASS",
+      "detail": "software"
+    },
+    {
+      "name": "Minimal 3D UI: no old control deck",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D scene contains both servos / forward ToF / rail LiDAR",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D pointer orbit changes camera",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D wheel zoom",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D right drag pan",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D Home restores camera",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D keyboard orbit",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 108 component + 246 wire 3D inspectors",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Servo evidence photo resolves in fixture",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Servo inspector retains dimension conflict",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D close inspector clears selection",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Wire endpoint opens component inspector",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D Escape closes inspector",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CPU 3D hit-test finds a real rendered part",
+      "status": "PASS",
+      "detail": {
+        "x": 691.6197668066825,
+        "y": 402.0411869326313,
+        "id": "FRAME"
+      }
+    },
+    {
+      "name": "Actual 3D part click opens matching inspector",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "CPU 3D wire hit-test finds a conductor",
+      "status": "PASS",
+      "detail": {
+        "x": 692.344184641113,
+        "y": 379.7653385078873,
+        "id": "W075"
+      }
+    },
+    {
+      "name": "Actual 3D conductor click opens matching description",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D deep link: part=SVL",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D deep link: wire=W246",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3D deep link: part=does-not-exist",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "tablet/wiring.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "tablet/wiring: touch-sized mode and sheet controls work",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "tablet/index.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "tablet/3D: selection panel inside viewport",
+      "status": "PASS",
+      "detail": {
+        "x": 442,
+        "y": 82,
+        "width": 310,
+        "height": 879
+      }
+    },
+    {
+      "name": "mobile/wiring.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "mobile/wiring: touch-sized mode and sheet controls work",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "mobile/index.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "mobile/3D: selection panel inside viewport",
+      "status": "PASS",
+      "detail": {
+        "x": 12,
+        "y": 475.53125,
+        "width": 366,
+        "height": 354.46875
+      }
+    },
+    {
+      "name": "Mobile 3D two-finger pinch zoom",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "small-mobile/wiring.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "small-mobile/wiring: touch-sized mode and sheet controls work",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "small-mobile/index.html: no page horizontal overflow",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "small-mobile/3D: selection panel inside viewport",
+      "status": "PASS",
+      "detail": {
+        "x": 12,
+        "y": 415.203125,
+        "width": 296,
+        "height": 310.796875
+      }
+    },
+    {
+      "name": "No uncaught JavaScript errors across regression",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Native WebGL 2 rendering path",
+      "status": "NOT_RUN",
+      "detail": "Chromium returned null for WebGL2 in this execution environment; real Canvas 2D fallback tested."
+    },
+    {
+      "name": "Native HTTP/file navigation in browser",
+      "status": "NOT_RUN",
+      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
+    },
+    {
+      "name": "Native localStorage persistence",
+      "status": "NOT_RUN",
+      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
+    },
+    {
+      "name": "Native browser file download",
+      "status": "NOT_RUN",
+      "detail": "Managed browser blocks navigation. Fixtures use unchanged shipped scripts, embedded local assets, storage/export boundary adapters. See independent HTTP/package checks."
     }
   ],
-  "errors": [],
-  "warnings": [
-    "WebGL 2 unavailable; interactive CPU 3D fallback enabled. WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+  "uncaughtErrors": [],
+  "console": [
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    },
+    {
+      "type": "warning",
+      "text": "Interactive software fallback: WebGL 2를 사용할 수 없습니다. 그래픽 가속을 확인해 주세요."
+    }
   ]
 }

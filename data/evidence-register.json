@@ -1,0 +1,93 @@
+{
+  "basis": "User-provided specification document and four servo images; no new physical measurements.",
+  "items": [
+    {
+      "part": "SVL / SVR",
+      "field": "body dimensions mm",
+      "document_reference": [
+        65,
+        30,
+        48
+      ],
+      "user_text": [
+        52,
+        30,
+        65
+      ],
+      "photo_labels": [
+        65.39,
+        48.1,
+        62.17
+      ],
+      "model_body": [
+        65.39,
+        30,
+        48.1
+      ],
+      "status": "HOLD: axis / protrusion definitions differ; model is a placement choice."
+    },
+    {
+      "part": "SVL / SVR",
+      "field": "lead length mm",
+      "user_text": 320,
+      "photo": 307,
+      "status": "HOLD: not a cut length or manufacturing tolerance."
+    },
+    {
+      "part": "SVL / SVR",
+      "field": "connector",
+      "photo_2": "JST-ZHR label",
+      "photo_3": "JR 3-pin 2.54mm label",
+      "status": "HOLD: use supplier pinout, voltage and current rating; never identify by colour alone."
+    },
+    {
+      "part": "SVL / SVR",
+      "field": "stall current",
+      "document": "8A per servo is a DS51150-family reference only",
+      "status": "Unconfirmed for supplied RDS51150."
+    },
+    {
+      "part": "ML / MR",
+      "field": "shaft protrusion mm",
+      "drawing": 44,
+      "photo": 45,
+      "status": "Measure before hub fabrication."
+    },
+    {
+      "part": "U1",
+      "field": "board / connector",
+      "document": "Type-C and Micro-B photographs mixed; whole PCB dimensions not supplied",
+      "model": "Micro-B appearance; 28x52mm illustrative PCB",
+      "status": "GND/CMD between D3 and 5V unresolved; pin kept unused."
+    },
+    {
+      "part": "MDL / MDR",
+      "field": "voltage and current",
+      "document": "Module seller limit 27V; 43A is not a proven continuous rating",
+      "comparison": "8S LiFePO4 charged at 3.65V per cell would reach 29.2V",
+      "status": "JDRV OPEN; no build/energization release."
+    },
+    {
+      "part": "LD1",
+      "field": "body and mount mm",
+      "document": "55.6x55.6x41.3; 43x43 M2.5; max internal screw penetration 4mm",
+      "model_scan_height_m": 0.862,
+      "status": "Body values from document; height is a proposed layout, not supplier requirement."
+    },
+    {
+      "part": "FRAME / DECK",
+      "field": "prototype vs rebuilt geometry",
+      "prototype_xyz_mm": [
+        900,
+        600,
+        6
+      ],
+      "web_deck_xyz_mm": [
+        602,
+        14,
+        901
+      ],
+      "status": "D4 coordinates differ from preserved prototype; not a fabrication drawing."
+    }
+  ]
+}

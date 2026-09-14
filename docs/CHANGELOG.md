@@ -1,22 +1,22 @@
-# D2 변경 이력 / BOM 영향
+# Change log
 
-2026-09-14. 원본 전기적 인증이나 실제 부품 선정이 아니라 시각화·기능 배선 설계 리비전이다.
+## D4.1 - final package regression revision
 
-| 구분 | B1/C1 또는 원본 상태 | D2 변경 | 기존 부품 재사용 판단 |
-| --- | --- | --- | --- |
-| LiDAR | 스캔 중심 약 0.383m | 상단 1.15m 제안, 마스트/클램프/어댑터/하네스 | 센서 유지 후보, 지지/케이블은 새 실측 |
-| 정지 | K1 단일 자기유지 | SR1, K1/K2 직렬, 2채널 NC, 수동 리셋, EDM | 기존 코일/접점/버튼 미러 특성 확인 전 재사용 금지 |
-| 안전전원 | DC1 12V/20A 서보/코일 | regulated 24V buck-boost + 24V 코일 | 드롭인 교체 아님; 퓨즈·코일 억제기도 재검토 |
-| 서보 | 자유 캐스터와 별도 옵션 | 기본 서보 없음 | SVL/SVR, PWM 버퍼, F5/F6/F10은 기본 실장하지 않음 |
-| 모터 전원 | 접촉기/분기 후 드라이버 | PPL/PPR, 로컬 CLL/CLR와 RBL/RBR 제안 | 모듈 내부 결선·회생·프리차지 제어가 미확정 |
-| 모터 드라이버 | SMC G2 24v19 조건부 | 후보 유지, 단자/전류/방열 보류 명시 | 25A 퓨즈 표기를 근거로 해당 단자 승인 금지 |
-| 5V 전원 | DC2/F7/F8 | OV5 독립 과전압 차단·역급전 검증 추가 | 최대 고장 입력·출력 오버슈트 시험 필요 |
-| UART | 1kΩ 직렬 저항 | ISOL/ISOR 전원 도메인 분리 | 저항을 절연/역급전 차단으로 승인하지 않음 |
-| ToF | 모델2 / B1배선1 | ToF2개 + MUX CH0/1 | C1의 MUX 제안을 반영하되 장거리 신호 시험 필요 |
-| 3.3V | 브레드보드 활용 | X3 분리 단자군, 필요한 pull-up 표시 | 동력 회로를 브레드보드로 구성하지 않음 |
-| 충전 | 별도 구매/미정 | FCH/CH1/BMS 기능 포트 표시 | 실포트·화학계·동시 충방전 미확정 |
-| 웹 | 별도 모델/배선 참조 | 하나의 55-ref/131-record 데이터 | 2페이지 / 상대 링크 / JS·CSS 분리 |
+- Restored 14 document-image references, four supplied servo images, favicon and `.nojekyll`.
+- Replaced stale 77/179/0.865m and 12-gate UI counters with 108/246/0.862m and 11 gates read from shared design data.
+- Removed the obsolete official J2/J3 pin-number assertion from the WROOM-32U component inspector; retained functional GPIO names and verified GND requirement.
+- Corrected inherited LiDAR adapter location wording to the existing tray-mounted model; geometry and circuit topology were not changed.
+- Hardened manual checklist loading for invalid JSON, null, arrays and unknown IDs. User content remains escaped. Storage failure is reported without blocking export.
+- Added keyboard pan/zoom/reset/clear to the wiring canvas; neutralized stale selection styling in exported SVGs.
+- Regenerated CSV mirrors and the full 28-sheet SVG set from the shared data.
+- Added source/evidence/CAD/run instructions, test scripts, QA logs and checksums. Restored the unmodified prototype FCStd alongside the D4 document.
+- Kept JDRV OPEN, all 11 engineering holds, unresolved physical ratings and dimensional conflicts. No firmware, fabrication approval, live control, topology change or remote Git commit was added.
 
-신규/변경 레코드의 전체 명세와 수량은 `data/component-register.csv`에 있다. 한 개 참조번호는 하나의 완성 모듈/어셈블리를 뜻할 수 있다. 내부 저항·홀더·단자·볼트·마스트·브래킷·케이블 길이·기계식 브레이크를 포함한 **전체 구매 수량 확정 BOM이 아니다**. 기존 Smart-Cart-BOM은 보존할 원본 근거이며, D2에 승인 없이 그대로 발주/결선하지 않는다.
+The detailed executed test matrix and environmental limitations are in [QA.md](QA.md). Earlier D2/D3 test results are not reused as D4.1 passes.
 
-SVG 배선선, 단자별 결선표, 3D 케이블은 동일한 W번호에서 생성한다. 실제 단자 위치는 기능 포트와 분리해 표시한다. 분해 보기에는 정적인 하네스를 숨겨 어긋난 연결로 보이지 않게 했다. WebGL 실패 시 같은 메시를 조작하는 소프트웨어 3D 대체 렌더러를 추가했다.
+- Recorded X12:SIG0 as a spare 0V terminal with no external conductor, not an isolated NC. No new wire was silently added.
+- Documented the STEP open-service export policy: COVER is retained in FCStd but excluded from STEP. Regression compares matching scopes instead of misreporting the deliberate nine-solid difference as data loss.
+
+- Invalid wiring deep-link IDs now clear selection without unexpectedly switching to the overview sheet.
+- Browser CSV export now uses the same column order and labels as the packaged point-to-point.csv.
+- The FreeCAD rebuild macro explicitly imports the GUI module, validates BRep names/shapes, uses a new document, and asks for a save location rather than silently overwriting the package. Native macro execution remains untested here.

@@ -1,0 +1,4032 @@
+{
+  "components": [
+    {
+      "id": "BT1",
+      "kind": "battery",
+      "position": [
+        0,
+        0.178,
+        -0.07
+      ],
+      "ports": {
+        "+": "BAT+",
+        "-": "0V",
+        "CHG+": "CHG+",
+        "CHG-": "CHG-"
+      }
+    },
+    {
+      "id": "F0",
+      "kind": "fuse",
+      "position": [
+        -0.08,
+        0.33,
+        -0.19
+      ],
+      "ports": {
+        "IN": "BAT+",
+        "OUT": "BAT_FUSED"
+      }
+    },
+    {
+      "id": "S0",
+      "kind": "switch",
+      "position": [
+        -0.24,
+        0.367,
+        -0.445
+      ],
+      "ports": {
+        "IN": "BAT_FUSED",
+        "OUT": "BUS24"
+      }
+    },
+    {
+      "id": "X24",
+      "kind": "terminal",
+      "position": [
+        -0.25,
+        0.36,
+        -0.26
+      ],
+      "ports": {
+        "IN": "BUS24",
+        "DRIVE": "BUS24",
+        "AUX24": "BUS24",
+        "AUX5": "BUS24"
+      }
+    },
+    {
+      "id": "X0",
+      "kind": "terminal",
+      "position": [
+        -0.25,
+        0.36,
+        -0.08
+      ],
+      "ports": {
+        "BAT": "0V",
+        "ML": "0V",
+        "MR": "0V",
+        "DC1": "0V",
+        "DC2": "0V",
+        "SR": "0V",
+        "K1": "0V",
+        "K2": "0V",
+        "STEER": "0V"
+      }
+    },
+    {
+      "id": "K1",
+      "kind": "contactor",
+      "position": [
+        -0.185,
+        0.385,
+        -0.31
+      ],
+      "ports": {
+        "L1": "BUS24",
+        "T1": "K_MID",
+        "A1": "K1_COIL",
+        "A2": "0V",
+        "EDM_IN": "EDM_START",
+        "EDM_OUT": "EDM_MID"
+      }
+    },
+    {
+      "id": "Z1",
+      "kind": "suppressor",
+      "position": [
+        -0.185,
+        0.375,
+        -0.255
+      ],
+      "ports": {
+        "+": "K1_COIL",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "K2",
+      "kind": "contactor",
+      "position": [
+        -0.105,
+        0.385,
+        -0.31
+      ],
+      "ports": {
+        "L1": "K_MID",
+        "T1": "DRIVE24",
+        "A1": "K2_COIL",
+        "A2": "0V",
+        "EDM_IN": "EDM_MID",
+        "EDM_OUT": "EDM_END"
+      }
+    },
+    {
+      "id": "Z2",
+      "kind": "suppressor",
+      "position": [
+        -0.105,
+        0.375,
+        -0.255
+      ],
+      "ports": {
+        "+": "K2_COIL",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "F1",
+      "kind": "fuse",
+      "position": [
+        -0.205,
+        0.345,
+        -0.17
+      ],
+      "ports": {
+        "IN": "IBT_BUS",
+        "OUT": "FUSED_L"
+      }
+    },
+    {
+      "id": "PPL",
+      "kind": "precharge",
+      "position": [
+        -0.205,
+        0.351,
+        -0.1
+      ],
+      "ports": {
+        "IN+": "FUSED_L",
+        "OUT+": "LINK_L",
+        "0V": "0V"
+      }
+    },
+    {
+      "id": "MDL",
+      "kind": "driver",
+      "position": [
+        -0.205,
+        0.352,
+        -0.02
+      ],
+      "ports": {
+        "B+": "LINK_L",
+        "B-": "0V",
+        "M+": "ML_A",
+        "M-": "ML_B",
+        "VCC": "5V_MOTOR_IO",
+        "GND": "0V",
+        "RPWM": "MDL_RPWM",
+        "LPWM": "MDL_LPWM",
+        "R_EN": "MDL_REN",
+        "L_EN": "MDL_LEN"
+      }
+    },
+    {
+      "id": "CLL",
+      "kind": "clamp",
+      "position": [
+        -0.205,
+        0.353,
+        0.06
+      ],
+      "ports": {
+        "+": "LINK_L",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "RBL",
+      "kind": "resistor",
+      "position": [
+        -0.16999999999999998,
+        0.354,
+        0.065
+      ],
+      "ports": {
+        "+": "LINK_L",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "ML",
+      "kind": "motor",
+      "position": [
+        -0.251,
+        0.171,
+        -0.255
+      ],
+      "ports": {
+        "A": "ML_A",
+        "B": "ML_B"
+      }
+    },
+    {
+      "id": "CML",
+      "kind": "capacitor",
+      "position": [
+        -0.251,
+        0.196,
+        -0.155
+      ],
+      "ports": {
+        "1": "ML_A",
+        "2": "ML_B"
+      }
+    },
+    {
+      "id": "F2",
+      "kind": "fuse",
+      "position": [
+        -0.075,
+        0.345,
+        -0.17
+      ],
+      "ports": {
+        "IN": "IBT_BUS",
+        "OUT": "FUSED_R"
+      }
+    },
+    {
+      "id": "PPR",
+      "kind": "precharge",
+      "position": [
+        -0.075,
+        0.351,
+        -0.1
+      ],
+      "ports": {
+        "IN+": "FUSED_R",
+        "OUT+": "LINK_R",
+        "0V": "0V"
+      }
+    },
+    {
+      "id": "MDR",
+      "kind": "driver",
+      "position": [
+        -0.075,
+        0.352,
+        -0.02
+      ],
+      "ports": {
+        "B+": "LINK_R",
+        "B-": "0V",
+        "M+": "MR_A",
+        "M-": "MR_B",
+        "VCC": "5V_MOTOR_IO",
+        "GND": "0V",
+        "RPWM": "MDR_RPWM",
+        "LPWM": "MDR_LPWM",
+        "R_EN": "MDR_REN",
+        "L_EN": "MDR_LEN"
+      }
+    },
+    {
+      "id": "CLR",
+      "kind": "clamp",
+      "position": [
+        -0.075,
+        0.353,
+        0.06
+      ],
+      "ports": {
+        "+": "LINK_R",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "RBR",
+      "kind": "resistor",
+      "position": [
+        -0.039999999999999994,
+        0.354,
+        0.065
+      ],
+      "ports": {
+        "+": "LINK_R",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "MR",
+      "kind": "motor",
+      "position": [
+        0.251,
+        0.171,
+        -0.255
+      ],
+      "ports": {
+        "A": "MR_A",
+        "B": "MR_B"
+      }
+    },
+    {
+      "id": "CMR",
+      "kind": "capacitor",
+      "position": [
+        0.251,
+        0.196,
+        -0.155
+      ],
+      "ports": {
+        "1": "MR_A",
+        "2": "MR_B"
+      }
+    },
+    {
+      "id": "F3",
+      "kind": "fuse",
+      "position": [
+        0.015,
+        0.344,
+        -0.4
+      ],
+      "ports": {
+        "IN": "BUS24",
+        "OUT": "DC1_IN"
+      }
+    },
+    {
+      "id": "DC1",
+      "kind": "converter",
+      "position": [
+        0.04,
+        0.351,
+        -0.31
+      ],
+      "ports": {
+        "IN+": "DC1_IN",
+        "IN-": "0V",
+        "OUT+": "SAFE24",
+        "OUT-": "0V"
+      }
+    },
+    {
+      "id": "F9",
+      "kind": "fuse",
+      "position": [
+        0.04,
+        0.35,
+        -0.225
+      ],
+      "ports": {
+        "IN": "SAFE24",
+        "OUT": "SAFE24_F"
+      }
+    },
+    {
+      "id": "SR1",
+      "kind": "safety",
+      "position": [
+        0.03,
+        0.389,
+        -0.15
+      ],
+      "ports": {
+        "24V": "SAFE24_F",
+        "0V": "0V",
+        "TEST_A": "ESTOP_A_OUT",
+        "RETURN_A": "ESTOP_A_IN",
+        "TEST_B": "ESTOP_B_OUT",
+        "RETURN_B": "ESTOP_B_IN",
+        "RESET_OUT": "RESET_OUT",
+        "RESET_IN": "RESET_IN",
+        "EDM_OUT": "EDM_START",
+        "EDM_IN": "EDM_END",
+        "O1_FEED": "SAFE24_F",
+        "O1": "K1_COIL",
+        "O2_FEED": "SAFE24_F",
+        "O2": "K2_COIL"
+      }
+    },
+    {
+      "id": "S1",
+      "kind": "estop",
+      "position": [
+        -0.17,
+        0.987,
+        -0.627
+      ],
+      "ports": {
+        "A_IN": "ESTOP_A_OUT",
+        "A_OUT": "ESTOP_A_IN",
+        "B_IN": "ESTOP_B_OUT",
+        "B_OUT": "ESTOP_B_IN"
+      }
+    },
+    {
+      "id": "S2",
+      "kind": "button",
+      "position": [
+        0.17,
+        0.987,
+        -0.627
+      ],
+      "ports": {
+        "IN": "RESET_OUT",
+        "OUT": "RESET_IN"
+      }
+    },
+    {
+      "id": "F4",
+      "kind": "fuse",
+      "position": [
+        0.12,
+        0.344,
+        -0.4
+      ],
+      "ports": {
+        "IN": "BUS24",
+        "OUT": "DC2_IN"
+      }
+    },
+    {
+      "id": "DC2",
+      "kind": "converter",
+      "position": [
+        0.175,
+        0.351,
+        -0.33
+      ],
+      "ports": {
+        "IN+": "DC2_IN",
+        "IN-": "0V",
+        "OUT+": "5V_RAW",
+        "OUT-": "0V"
+      }
+    },
+    {
+      "id": "OV5",
+      "kind": "protector",
+      "position": [
+        0.22,
+        0.35,
+        -0.24
+      ],
+      "ports": {
+        "IN+": "5V_RAW",
+        "OUT+": "5V_PROT",
+        "0V": "0V"
+      }
+    },
+    {
+      "id": "F7",
+      "kind": "fuse",
+      "position": [
+        0.14,
+        0.351,
+        -0.205
+      ],
+      "ports": {
+        "IN": "5V_PROT",
+        "OUT": "OPI5"
+      }
+    },
+    {
+      "id": "F8",
+      "kind": "fuse",
+      "position": [
+        0.24,
+        0.351,
+        -0.205
+      ],
+      "ports": {
+        "IN": "5V_PROT",
+        "OUT": "HUB5"
+      }
+    },
+    {
+      "id": "OP1",
+      "kind": "board",
+      "position": [
+        0.17,
+        0.35,
+        -0.11
+      ],
+      "ports": {
+        "PWR5": "OPI5",
+        "PWR0": "0V",
+        "HOST": "USB_UP"
+      }
+    },
+    {
+      "id": "H1",
+      "kind": "hub",
+      "position": [
+        0.17,
+        0.348,
+        0.015
+      ],
+      "ports": {
+        "DC5": "HUB5",
+        "DC0": "0V",
+        "UP": "USB_UP",
+        "P1": "USB_ESP",
+        "P2": "USB_LIDAR",
+        "P3": "USB_UWL",
+        "P4": "USB_UWR"
+      }
+    },
+    {
+      "id": "U1",
+      "kind": "board",
+      "position": [
+        0.065,
+        0.35,
+        0.015
+      ],
+      "ports": {
+        "USB": "USB_ESP",
+        "3V3_OUT": "3V3",
+        "GND_VERIFIED": "0V",
+        "GPIO17": "PWM_ML_R_3V3",
+        "GPIO16": "PWM_ML_L_3V3",
+        "GPIO25": "PWM_MR_R_3V3",
+        "GPIO26": "PWM_MR_L_3V3",
+        "GPIO18": "IMU_SCK",
+        "GPIO23": "IMU_MOSI",
+        "GPIO19": "IMU_MISO",
+        "GPIO27": "IMU_CS",
+        "GPIO34": "IMU_INT",
+        "GPIO32": "IMU_RST",
+        "GPIO21": "SDA",
+        "GPIO22": "SCL",
+        "GPIO33": "MUX_RST",
+        "GPIO13": "PWM_L_3V3",
+        "GPIO14": "PWM_R_3V3",
+        "GPIO4": "DRIVE_ARM_3V3"
+      }
+    },
+    {
+      "id": "A1",
+      "kind": "adapter",
+      "position": [
+        0.23,
+        0.353,
+        0.077
+      ],
+      "ports": {
+        "USB": "USB_LIDAR",
+        "HARNESS": "C1_HARNESS"
+      }
+    },
+    {
+      "id": "LD1",
+      "kind": "lidar",
+      "position": [
+        0,
+        0.865,
+        0.489
+      ],
+      "ports": {
+        "HARNESS": "C1_HARNESS"
+      }
+    },
+    {
+      "id": "UWL",
+      "kind": "uwb",
+      "position": [
+        -0.313,
+        0.865,
+        0.446
+      ],
+      "ports": {
+        "USB_RANGE": "USB_UWL"
+      }
+    },
+    {
+      "id": "UWR",
+      "kind": "uwb",
+      "position": [
+        0.313,
+        0.865,
+        0.446
+      ],
+      "ports": {
+        "USB_RANGE": "USB_UWR"
+      }
+    },
+    {
+      "id": "TAG",
+      "kind": "tag",
+      "position": [
+        0.61,
+        0.029,
+        0.18
+      ],
+      "ports": {}
+    },
+    {
+      "id": "X3",
+      "kind": "terminal",
+      "position": [
+        0.09,
+        0.346,
+        0.1
+      ],
+      "ports": {
+        "3V3_IN": "3V3",
+        "0V_IN": "0V",
+        "3V3_IMU": "3V3",
+        "0V_IMU": "0V",
+        "3V3_MUX": "3V3",
+        "0V_MUX": "0V",
+        "3V3_T1": "3V3",
+        "0V_T1": "0V",
+        "3V3_T2": "3V3",
+        "0V_T2": "0V",
+        "3V3_PWM": "3V3",
+        "0V_PWM": "0V"
+      }
+    },
+    {
+      "id": "IMU1",
+      "kind": "imu",
+      "position": [
+        0.05,
+        0.249,
+        0.09
+      ],
+      "ports": {
+        "VIN": "3V3",
+        "GND": "0V",
+        "SCL_SCK": "IMU_SCK",
+        "DI_MOSI": "IMU_MOSI",
+        "SDA_MISO": "IMU_MISO",
+        "CS": "IMU_CS",
+        "INT": "IMU_INT",
+        "RST": "IMU_RST",
+        "P0": "3V3",
+        "P1": "3V3"
+      }
+    },
+    {
+      "id": "MUX1",
+      "kind": "mux",
+      "position": [
+        0.175,
+        0.348,
+        0.1
+      ],
+      "ports": {
+        "VCC": "3V3",
+        "GND": "0V",
+        "SDA": "SDA",
+        "SCL": "SCL",
+        "SD0": "SDA_T1",
+        "SC0": "SCL_T1",
+        "SD1": "SDA_T2",
+        "SC1": "SCL_T2",
+        "A0": "0V",
+        "A1": "0V",
+        "A2": "0V",
+        "RESET": "MUX_RST"
+      }
+    },
+    {
+      "id": "TOF1",
+      "kind": "tof",
+      "position": [
+        -0.205,
+        0.311,
+        0.551
+      ],
+      "ports": {
+        "VIN": "3V3",
+        "GND": "0V",
+        "SDA": "SDA_T1",
+        "SCL": "SCL_T1"
+      }
+    },
+    {
+      "id": "TOF2",
+      "kind": "tof",
+      "position": [
+        0.205,
+        0.311,
+        0.551
+      ],
+      "ports": {
+        "VIN": "3V3",
+        "GND": "0V",
+        "SDA": "SDA_T2",
+        "SCL": "SCL_T2"
+      }
+    },
+    {
+      "id": "RP_SDA",
+      "kind": "resistor",
+      "position": [
+        0.15,
+        0.35,
+        0.127
+      ],
+      "ports": {
+        "1": "3V3",
+        "2": "SDA"
+      }
+    },
+    {
+      "id": "RP_SCL",
+      "kind": "resistor",
+      "position": [
+        0.17,
+        0.35,
+        0.127
+      ],
+      "ports": {
+        "1": "3V3",
+        "2": "SCL"
+      }
+    },
+    {
+      "id": "RP_RST",
+      "kind": "resistor",
+      "position": [
+        0.19,
+        0.35,
+        0.127
+      ],
+      "ports": {
+        "1": "3V3",
+        "2": "MUX_RST"
+      }
+    },
+    {
+      "id": "RP_INT",
+      "kind": "resistor",
+      "position": [
+        0.05,
+        0.256,
+        0.1
+      ],
+      "ports": {
+        "1": "3V3",
+        "2": "IMU_INT"
+      }
+    },
+    {
+      "id": "CH1",
+      "kind": "charge",
+      "position": [
+        0.27,
+        0.188,
+        -0.1
+      ],
+      "ports": {
+        "+": "CHG_FUSED",
+        "-": "CHG-"
+      }
+    },
+    {
+      "id": "FCH",
+      "kind": "fuse",
+      "position": [
+        0.18,
+        0.21,
+        -0.1
+      ],
+      "ports": {
+        "IN": "CHG+",
+        "OUT": "CHG_FUSED"
+      }
+    },
+    {
+      "id": "F11",
+      "kind": "fuse",
+      "position": [
+        -0.255,
+        0.35,
+        0.185
+      ],
+      "ports": {
+        "IN": "DRIVE24",
+        "OUT": "STEER_IN"
+      }
+    },
+    {
+      "id": "DC3",
+      "kind": "converter",
+      "position": [
+        -0.185,
+        0.352,
+        0.213
+      ],
+      "ports": {
+        "IN+": "STEER_IN",
+        "IN-": "0V",
+        "OUT+": "12V_RAW",
+        "OUT-": "0V"
+      }
+    },
+    {
+      "id": "OV12",
+      "kind": "protector",
+      "position": [
+        -0.098,
+        0.352,
+        0.198
+      ],
+      "ports": {
+        "IN+": "12V_RAW",
+        "OUT+": "12V_STEER",
+        "0V": "0V"
+      }
+    },
+    {
+      "id": "X12",
+      "kind": "terminal",
+      "position": [
+        -0.012,
+        0.352,
+        0.195
+      ],
+      "ports": {
+        "IN": "12V_STEER",
+        "L": "12V_STEER",
+        "R": "12V_STEER",
+        "LOGIC": "12V_STEER",
+        "ABS+": "12V_STEER",
+        "RETURN": "0V",
+        "L0": "0V",
+        "R0": "0V",
+        "LOGIC0": "0V",
+        "SIG0": "0V",
+        "ABS-": "0V"
+      }
+    },
+    {
+      "id": "CL12",
+      "kind": "clamp",
+      "position": [
+        -0.02,
+        0.352,
+        0.27
+      ],
+      "ports": {
+        "+": "12V_STEER",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "F5",
+      "kind": "fuse",
+      "position": [
+        -0.12,
+        0.35,
+        0.291
+      ],
+      "ports": {
+        "IN": "12V_STEER",
+        "OUT": "SVL_12"
+      }
+    },
+    {
+      "id": "SVL",
+      "kind": "servo",
+      "position": [
+        -0.319,
+        0.198,
+        0.288
+      ],
+      "ports": {
+        "V+": "SVL_12",
+        "GND": "0V",
+        "PWM": "SVL_PWM"
+      }
+    },
+    {
+      "id": "JSL",
+      "kind": "connector",
+      "position": [
+        -0.245,
+        0.244,
+        0.25
+      ],
+      "ports": {
+        "PWR": "SVL_12",
+        "GND": "0V",
+        "SIG": "SVL_PWM"
+      }
+    },
+    {
+      "id": "F6",
+      "kind": "fuse",
+      "position": [
+        0.11,
+        0.35,
+        0.291
+      ],
+      "ports": {
+        "IN": "12V_STEER",
+        "OUT": "SVR_12"
+      }
+    },
+    {
+      "id": "SVR",
+      "kind": "servo",
+      "position": [
+        0.319,
+        0.198,
+        0.288
+      ],
+      "ports": {
+        "V+": "SVR_12",
+        "GND": "0V",
+        "PWM": "SVR_PWM"
+      }
+    },
+    {
+      "id": "JSR",
+      "kind": "connector",
+      "position": [
+        0.245,
+        0.244,
+        0.25
+      ],
+      "ports": {
+        "PWR": "SVR_12",
+        "GND": "0V",
+        "SIG": "SVR_PWM"
+      }
+    },
+    {
+      "id": "F10",
+      "kind": "fuse",
+      "position": [
+        0.055,
+        0.353,
+        0.235
+      ],
+      "ports": {
+        "IN": "12V_STEER",
+        "OUT": "PWM_SUP_IN"
+      }
+    },
+    {
+      "id": "DC4",
+      "kind": "converter",
+      "position": [
+        0.113,
+        0.354,
+        0.211
+      ],
+      "ports": {
+        "IN+": "PWM_SUP_IN",
+        "IN-": "0V",
+        "OUT+": "5V_SERVO_IO",
+        "OUT-": "0V"
+      }
+    },
+    {
+      "id": "U2",
+      "kind": "isolator",
+      "position": [
+        0.207,
+        0.353,
+        0.211
+      ],
+      "ports": {
+        "1_VCC1": "3V3",
+        "2_INA": "PWM_L_3V3",
+        "3_INB": "PWM_R_3V3",
+        "4_GND1": "0V",
+        "5_GND2": "0V",
+        "6_OUTB": "PWM_R_5V",
+        "7_OUTA": "PWM_L_5V",
+        "8_VCC2": "5V_SERVO_IO"
+      }
+    },
+    {
+      "id": "R21",
+      "kind": "resistor",
+      "position": [
+        0.171,
+        0.356,
+        0.167
+      ],
+      "ports": {
+        "1": "PWM_L_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "R22",
+      "kind": "resistor",
+      "position": [
+        0.184,
+        0.356,
+        0.167
+      ],
+      "ports": {
+        "1": "PWM_R_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "R23",
+      "kind": "resistor",
+      "position": [
+        0.208,
+        0.355,
+        0.258
+      ],
+      "ports": {
+        "1": "PWM_L_5V",
+        "2": "SVL_PWM"
+      }
+    },
+    {
+      "id": "R24",
+      "kind": "resistor",
+      "position": [
+        0.231,
+        0.355,
+        0.258
+      ],
+      "ports": {
+        "1": "PWM_R_5V",
+        "2": "SVR_PWM"
+      }
+    },
+    {
+      "id": "R25",
+      "kind": "resistor",
+      "position": [
+        -0.231,
+        0.252,
+        0.263
+      ],
+      "ports": {
+        "1": "SVL_PWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "R26",
+      "kind": "resistor",
+      "position": [
+        0.231,
+        0.252,
+        0.263
+      ],
+      "ports": {
+        "1": "SVR_PWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "C21",
+      "kind": "capacitor",
+      "position": [
+        0.198,
+        0.356,
+        0.185
+      ],
+      "ports": {
+        "+": "3V3",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "C22",
+      "kind": "capacitor",
+      "position": [
+        0.232,
+        0.356,
+        0.225
+      ],
+      "ports": {
+        "+": "5V_SERVO_IO",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "JDRV",
+      "kind": "openlink",
+      "position": [
+        -0.22,
+        0.36,
+        -0.225
+      ],
+      "ports": {
+        "IN": "DRIVE24",
+        "OUT": "IBT_BUS"
+      }
+    },
+    {
+      "id": "F12",
+      "kind": "fuse",
+      "position": [
+        0.005,
+        0.354,
+        -0.04
+      ],
+      "ports": {
+        "IN": "5V_PROT",
+        "OUT": "5V_MOTOR_IO"
+      }
+    },
+    {
+      "id": "X5",
+      "kind": "terminal",
+      "position": [
+        0.045,
+        0.354,
+        -0.047
+      ],
+      "ports": {
+        "IN": "5V_MOTOR_IO",
+        "0V": "0V",
+        "L": "5V_MOTOR_IO",
+        "R": "5V_MOTOR_IO",
+        "BL": "5V_MOTOR_IO",
+        "BR": "5V_MOTOR_IO",
+        "OE_L": "5V_MOTOR_IO",
+        "OE_R": "5V_MOTOR_IO",
+        "CAP_L": "5V_MOTOR_IO",
+        "CAP_R": "5V_MOTOR_IO"
+      }
+    },
+    {
+      "id": "QEN",
+      "kind": "transistor",
+      "position": [
+        -0.021,
+        0.354,
+        0.093
+      ],
+      "ports": {
+        "B": "QEN_BASE",
+        "C": "MOTOR_OE_N",
+        "E": "0V"
+      }
+    },
+    {
+      "id": "RBE",
+      "kind": "resistor",
+      "position": [
+        -0.006,
+        0.356,
+        0.111
+      ],
+      "ports": {
+        "1": "QEN_BASE",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RARM",
+      "kind": "resistor",
+      "position": [
+        -0.018,
+        0.356,
+        0.125
+      ],
+      "ports": {
+        "1": "DRIVE_ARM_3V3",
+        "2": "QEN_BASE"
+      }
+    },
+    {
+      "id": "RARM_PD",
+      "kind": "resistor",
+      "position": [
+        0.002,
+        0.356,
+        0.126
+      ],
+      "ports": {
+        "1": "DRIVE_ARM_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "U3",
+      "kind": "buffer",
+      "position": [
+        -0.203,
+        0.355,
+        0.135
+      ],
+      "ports": {
+        "1_OE": "MOTOR_OE_N",
+        "2_A1": "PWM_ML_R_3V3",
+        "3_Y1": "MDL_RPWM_RAW",
+        "4_OE": "MOTOR_OE_N",
+        "5_A2": "PWM_ML_L_3V3",
+        "6_Y2": "MDL_LPWM_RAW",
+        "7_GND": "0V",
+        "8_Y3": "MDL_REN_RAW",
+        "9_A3": "3V3",
+        "10_OE": "MOTOR_OE_N",
+        "11_Y4": "MDL_LEN_RAW",
+        "12_A4": "3V3",
+        "13_OE": "MOTOR_OE_N",
+        "14_VCC": "5V_MOTOR_IO"
+      }
+    },
+    {
+      "id": "COL",
+      "kind": "capacitor",
+      "position": [
+        -0.18400000000000002,
+        0.356,
+        0.152
+      ],
+      "ports": {
+        "+": "5V_MOTOR_IO",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "ROL",
+      "kind": "resistor",
+      "position": [
+        -0.223,
+        0.356,
+        0.152
+      ],
+      "ports": {
+        "1": "5V_MOTOR_IO",
+        "2": "MOTOR_OE_N"
+      }
+    },
+    {
+      "id": "RSL1",
+      "kind": "resistor",
+      "position": [
+        -0.233,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDL_RPWM_RAW",
+        "2": "MDL_RPWM"
+      }
+    },
+    {
+      "id": "RDL1",
+      "kind": "resistor",
+      "position": [
+        -0.233,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDL_RPWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSL2",
+      "kind": "resistor",
+      "position": [
+        -0.21500000000000002,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDL_LPWM_RAW",
+        "2": "MDL_LPWM"
+      }
+    },
+    {
+      "id": "RDL2",
+      "kind": "resistor",
+      "position": [
+        -0.21500000000000002,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDL_LPWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSL3",
+      "kind": "resistor",
+      "position": [
+        -0.197,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDL_REN_RAW",
+        "2": "MDL_REN"
+      }
+    },
+    {
+      "id": "RDL3",
+      "kind": "resistor",
+      "position": [
+        -0.197,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDL_REN",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSL4",
+      "kind": "resistor",
+      "position": [
+        -0.17900000000000002,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDL_LEN_RAW",
+        "2": "MDL_LEN"
+      }
+    },
+    {
+      "id": "RDL4",
+      "kind": "resistor",
+      "position": [
+        -0.17900000000000002,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDL_LEN",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RIL1",
+      "kind": "resistor",
+      "position": [
+        -0.21400000000000002,
+        0.356,
+        0.115
+      ],
+      "ports": {
+        "1": "PWM_ML_R_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RIL2",
+      "kind": "resistor",
+      "position": [
+        -0.19400000000000003,
+        0.356,
+        0.115
+      ],
+      "ports": {
+        "1": "PWM_ML_L_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "U4",
+      "kind": "buffer",
+      "position": [
+        -0.074,
+        0.355,
+        0.135
+      ],
+      "ports": {
+        "1_OE": "MOTOR_OE_N",
+        "2_A1": "PWM_MR_R_3V3",
+        "3_Y1": "MDR_RPWM_RAW",
+        "4_OE": "MOTOR_OE_N",
+        "5_A2": "PWM_MR_L_3V3",
+        "6_Y2": "MDR_LPWM_RAW",
+        "7_GND": "0V",
+        "8_Y3": "MDR_REN_RAW",
+        "9_A3": "3V3",
+        "10_OE": "MOTOR_OE_N",
+        "11_Y4": "MDR_LEN_RAW",
+        "12_A4": "3V3",
+        "13_OE": "MOTOR_OE_N",
+        "14_VCC": "5V_MOTOR_IO"
+      }
+    },
+    {
+      "id": "COR",
+      "kind": "capacitor",
+      "position": [
+        -0.05499999999999999,
+        0.356,
+        0.152
+      ],
+      "ports": {
+        "+": "5V_MOTOR_IO",
+        "-": "0V"
+      }
+    },
+    {
+      "id": "ROR",
+      "kind": "resistor",
+      "position": [
+        -0.094,
+        0.356,
+        0.152
+      ],
+      "ports": {
+        "1": "5V_MOTOR_IO",
+        "2": "MOTOR_OE_N"
+      }
+    },
+    {
+      "id": "RSR1",
+      "kind": "resistor",
+      "position": [
+        -0.104,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDR_RPWM_RAW",
+        "2": "MDR_RPWM"
+      }
+    },
+    {
+      "id": "RDR1",
+      "kind": "resistor",
+      "position": [
+        -0.104,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDR_RPWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSR2",
+      "kind": "resistor",
+      "position": [
+        -0.086,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDR_LPWM_RAW",
+        "2": "MDR_LPWM"
+      }
+    },
+    {
+      "id": "RDR2",
+      "kind": "resistor",
+      "position": [
+        -0.086,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDR_LPWM",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSR3",
+      "kind": "resistor",
+      "position": [
+        -0.068,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDR_REN_RAW",
+        "2": "MDR_REN"
+      }
+    },
+    {
+      "id": "RDR3",
+      "kind": "resistor",
+      "position": [
+        -0.068,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDR_REN",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RSR4",
+      "kind": "resistor",
+      "position": [
+        -0.05,
+        0.356,
+        0.172
+      ],
+      "ports": {
+        "1": "MDR_LEN_RAW",
+        "2": "MDR_LEN"
+      }
+    },
+    {
+      "id": "RDR4",
+      "kind": "resistor",
+      "position": [
+        -0.05,
+        0.356,
+        0.19
+      ],
+      "ports": {
+        "1": "MDR_LEN",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RIR1",
+      "kind": "resistor",
+      "position": [
+        -0.08499999999999999,
+        0.356,
+        0.115
+      ],
+      "ports": {
+        "1": "PWM_MR_R_3V3",
+        "2": "0V"
+      }
+    },
+    {
+      "id": "RIR2",
+      "kind": "resistor",
+      "position": [
+        -0.06499999999999999,
+        0.356,
+        0.115
+      ],
+      "ports": {
+        "1": "PWM_MR_L_3V3",
+        "2": "0V"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "W001",
+      "from": "BT1:+",
+      "to": "F0:IN",
+      "net": "BAT+",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W002",
+      "from": "F0:OUT",
+      "to": "S0:IN",
+      "net": "BAT_FUSED",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W003",
+      "from": "S0:OUT",
+      "to": "X24:IN",
+      "net": "BUS24",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W004",
+      "from": "BT1:-",
+      "to": "X0:BAT",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W005",
+      "from": "X24:DRIVE",
+      "to": "K1:L1",
+      "net": "BUS24",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W006",
+      "from": "K1:T1",
+      "to": "K2:L1",
+      "net": "K_MID",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W007",
+      "from": "JDRV:OUT",
+      "to": "F1:IN",
+      "net": "IBT_BUS",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W008",
+      "from": "F1:OUT",
+      "to": "PPL:IN+",
+      "net": "FUSED_L",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W009",
+      "from": "PPL:OUT+",
+      "to": "MDL:B+",
+      "net": "LINK_L",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W010",
+      "from": "MDL:B+",
+      "to": "CLL:+",
+      "net": "LINK_L",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W011",
+      "from": "MDL:B+",
+      "to": "RBL:+",
+      "net": "LINK_L",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W012",
+      "from": "X0:ML",
+      "to": "MDL:B-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W013",
+      "from": "MDL:B-",
+      "to": "CLL:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W014",
+      "from": "MDL:B-",
+      "to": "RBL:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W015",
+      "from": "MDL:B-",
+      "to": "PPL:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W016",
+      "from": "MDL:M+",
+      "to": "ML:A",
+      "net": "ML_A",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W017",
+      "from": "MDL:M-",
+      "to": "ML:B",
+      "net": "ML_B",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W018",
+      "from": "ML:A",
+      "to": "CML:1",
+      "net": "ML_A",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W019",
+      "from": "ML:B",
+      "to": "CML:2",
+      "net": "ML_B",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W020",
+      "from": "JDRV:OUT",
+      "to": "F2:IN",
+      "net": "IBT_BUS",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W021",
+      "from": "F2:OUT",
+      "to": "PPR:IN+",
+      "net": "FUSED_R",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W022",
+      "from": "PPR:OUT+",
+      "to": "MDR:B+",
+      "net": "LINK_R",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W023",
+      "from": "MDR:B+",
+      "to": "CLR:+",
+      "net": "LINK_R",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W024",
+      "from": "MDR:B+",
+      "to": "RBR:+",
+      "net": "LINK_R",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W025",
+      "from": "X0:MR",
+      "to": "MDR:B-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W026",
+      "from": "MDR:B-",
+      "to": "CLR:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W027",
+      "from": "MDR:B-",
+      "to": "RBR:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W028",
+      "from": "MDR:B-",
+      "to": "PPR:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W029",
+      "from": "MDR:M+",
+      "to": "MR:A",
+      "net": "MR_A",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W030",
+      "from": "MDR:M-",
+      "to": "MR:B",
+      "net": "MR_B",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W031",
+      "from": "MR:A",
+      "to": "CMR:1",
+      "net": "MR_A",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W032",
+      "from": "MR:B",
+      "to": "CMR:2",
+      "net": "MR_B",
+      "kind": "motor",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W033",
+      "from": "X24:AUX24",
+      "to": "F3:IN",
+      "net": "BUS24",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W034",
+      "from": "F3:OUT",
+      "to": "DC1:IN+",
+      "net": "DC1_IN",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W035",
+      "from": "DC1:OUT+",
+      "to": "F9:IN",
+      "net": "SAFE24",
+      "kind": "safety",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W036",
+      "from": "F9:OUT",
+      "to": "SR1:24V",
+      "net": "SAFE24_F",
+      "kind": "safety",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W037",
+      "from": "F9:OUT",
+      "to": "SR1:O1_FEED",
+      "net": "SAFE24_F",
+      "kind": "safety",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W038",
+      "from": "F9:OUT",
+      "to": "SR1:O2_FEED",
+      "net": "SAFE24_F",
+      "kind": "safety",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W039",
+      "from": "X24:AUX5",
+      "to": "F4:IN",
+      "net": "BUS24",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W040",
+      "from": "F4:OUT",
+      "to": "DC2:IN+",
+      "net": "DC2_IN",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W041",
+      "from": "DC2:OUT+",
+      "to": "OV5:IN+",
+      "net": "5V_RAW",
+      "kind": "logic",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W042",
+      "from": "OV5:OUT+",
+      "to": "F7:IN",
+      "net": "5V_PROT",
+      "kind": "logic",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W043",
+      "from": "OV5:OUT+",
+      "to": "F8:IN",
+      "net": "5V_PROT",
+      "kind": "logic",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W044",
+      "from": "F7:OUT",
+      "to": "OP1:PWR5",
+      "net": "OPI5",
+      "kind": "logic",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W045",
+      "from": "F8:OUT",
+      "to": "H1:DC5",
+      "net": "HUB5",
+      "kind": "logic",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W046",
+      "from": "X0:DC1",
+      "to": "DC1:IN-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W047",
+      "from": "DC1:IN-",
+      "to": "DC1:OUT-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W048",
+      "from": "X0:DC2",
+      "to": "DC2:IN-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W049",
+      "from": "DC2:IN-",
+      "to": "DC2:OUT-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W050",
+      "from": "DC2:OUT-",
+      "to": "OV5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W051",
+      "from": "DC2:OUT-",
+      "to": "OP1:PWR0",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W052",
+      "from": "DC2:OUT-",
+      "to": "H1:DC0",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W053",
+      "from": "X0:SR",
+      "to": "SR1:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W054",
+      "from": "SR1:TEST_A",
+      "to": "S1:A_IN",
+      "net": "ESTOP_A_OUT",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W055",
+      "from": "S1:A_OUT",
+      "to": "SR1:RETURN_A",
+      "net": "ESTOP_A_IN",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W056",
+      "from": "SR1:TEST_B",
+      "to": "S1:B_IN",
+      "net": "ESTOP_B_OUT",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W057",
+      "from": "S1:B_OUT",
+      "to": "SR1:RETURN_B",
+      "net": "ESTOP_B_IN",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W058",
+      "from": "SR1:RESET_OUT",
+      "to": "S2:IN",
+      "net": "RESET_OUT",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W059",
+      "from": "S2:OUT",
+      "to": "SR1:RESET_IN",
+      "net": "RESET_IN",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W060",
+      "from": "SR1:EDM_OUT",
+      "to": "K1:EDM_IN",
+      "net": "EDM_START",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W061",
+      "from": "K1:EDM_OUT",
+      "to": "K2:EDM_IN",
+      "net": "EDM_MID",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W062",
+      "from": "K2:EDM_OUT",
+      "to": "SR1:EDM_IN",
+      "net": "EDM_END",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W063",
+      "from": "SR1:O1",
+      "to": "K1:A1",
+      "net": "K1_COIL",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W064",
+      "from": "SR1:O2",
+      "to": "K2:A1",
+      "net": "K2_COIL",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W065",
+      "from": "K1:A1",
+      "to": "Z1:+",
+      "net": "K1_COIL",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W066",
+      "from": "K2:A1",
+      "to": "Z2:+",
+      "net": "K2_COIL",
+      "kind": "safety",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W067",
+      "from": "X0:K1",
+      "to": "K1:A2",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W068",
+      "from": "K1:A2",
+      "to": "Z1:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W069",
+      "from": "X0:K2",
+      "to": "K2:A2",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W070",
+      "from": "K2:A2",
+      "to": "Z2:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "safety",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W071",
+      "from": "OP1:HOST",
+      "to": "H1:UP",
+      "net": "USB_UP",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "hold"
+    },
+    {
+      "id": "W072",
+      "from": "H1:P1",
+      "to": "U1:USB",
+      "net": "USB_ESP",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "hold"
+    },
+    {
+      "id": "W073",
+      "from": "H1:P2",
+      "to": "A1:USB",
+      "net": "USB_LIDAR",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "hold"
+    },
+    {
+      "id": "W074",
+      "from": "H1:P3",
+      "to": "UWL:USB_RANGE",
+      "net": "USB_UWL",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "hold"
+    },
+    {
+      "id": "W075",
+      "from": "H1:P4",
+      "to": "UWR:USB_RANGE",
+      "net": "USB_UWR",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "hold"
+    },
+    {
+      "id": "W076",
+      "from": "A1:HARNESS",
+      "to": "LD1:HARNESS",
+      "net": "C1_HARNESS",
+      "kind": "usb",
+      "sheet": "signal",
+      "gauge": "제조사 케이블",
+      "status": "review"
+    },
+    {
+      "id": "W077",
+      "from": "U1:3V3_OUT",
+      "to": "X3:3V3_IN",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "신호전류/거리 검토",
+      "status": "review"
+    },
+    {
+      "id": "W078",
+      "from": "U1:GND_VERIFIED",
+      "to": "X3:0V_IN",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "신호전류/거리 검토",
+      "status": "review"
+    },
+    {
+      "id": "W079",
+      "from": "X3:3V3_IMU",
+      "to": "IMU1:VIN",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W080",
+      "from": "X3:0V_IMU",
+      "to": "IMU1:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W081",
+      "from": "X3:3V3_MUX",
+      "to": "MUX1:VCC",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W082",
+      "from": "X3:0V_MUX",
+      "to": "MUX1:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W083",
+      "from": "X3:3V3_T1",
+      "to": "TOF1:VIN",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W084",
+      "from": "X3:0V_T1",
+      "to": "TOF1:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W085",
+      "from": "X3:3V3_T2",
+      "to": "TOF2:VIN",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W086",
+      "from": "X3:0V_T2",
+      "to": "TOF2:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W091",
+      "from": "U1:GPIO18",
+      "to": "IMU1:SCL_SCK",
+      "net": "IMU_SCK",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W092",
+      "from": "U1:GPIO23",
+      "to": "IMU1:DI_MOSI",
+      "net": "IMU_MOSI",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W093",
+      "from": "U1:GPIO19",
+      "to": "IMU1:SDA_MISO",
+      "net": "IMU_MISO",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W094",
+      "from": "U1:GPIO27",
+      "to": "IMU1:CS",
+      "net": "IMU_CS",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W095",
+      "from": "U1:GPIO34",
+      "to": "IMU1:INT",
+      "net": "IMU_INT",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W096",
+      "from": "U1:GPIO32",
+      "to": "IMU1:RST",
+      "net": "IMU_RST",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W097",
+      "from": "U1:GPIO21",
+      "to": "MUX1:SDA",
+      "net": "SDA",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W098",
+      "from": "U1:GPIO22",
+      "to": "MUX1:SCL",
+      "net": "SCL",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W099",
+      "from": "U1:GPIO33",
+      "to": "MUX1:RESET",
+      "net": "MUX_RST",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "짧은 3.3V 신호 하네스",
+      "status": "review"
+    },
+    {
+      "id": "W100",
+      "from": "IMU1:VIN",
+      "to": "IMU1:P0",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W101",
+      "from": "IMU1:VIN",
+      "to": "IMU1:P1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W102",
+      "from": "MUX1:GND",
+      "to": "MUX1:A0",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W103",
+      "from": "MUX1:GND",
+      "to": "MUX1:A1",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W104",
+      "from": "MUX1:GND",
+      "to": "MUX1:A2",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W105",
+      "from": "MUX1:SD0",
+      "to": "TOF1:SDA",
+      "net": "SDA_T1",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W106",
+      "from": "MUX1:SC0",
+      "to": "TOF1:SCL",
+      "net": "SCL_T1",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W107",
+      "from": "MUX1:SD1",
+      "to": "TOF2:SDA",
+      "net": "SDA_T2",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W108",
+      "from": "MUX1:SC1",
+      "to": "TOF2:SCL",
+      "net": "SCL_T2",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W109",
+      "from": "X3:3V3_IN",
+      "to": "RP_SDA:1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W110",
+      "from": "RP_SDA:2",
+      "to": "MUX1:SDA",
+      "net": "SDA",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W111",
+      "from": "X3:3V3_IN",
+      "to": "RP_SCL:1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W112",
+      "from": "RP_SCL:2",
+      "to": "MUX1:SCL",
+      "net": "SCL",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W113",
+      "from": "X3:3V3_IN",
+      "to": "RP_RST:1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W114",
+      "from": "RP_RST:2",
+      "to": "MUX1:RESET",
+      "net": "MUX_RST",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W115",
+      "from": "X3:3V3_IN",
+      "to": "RP_INT:1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W116",
+      "from": "RP_INT:2",
+      "to": "IMU1:INT",
+      "net": "IMU_INT",
+      "kind": "signal",
+      "sheet": "sensor",
+      "gauge": "실측 후 선정",
+      "status": "review"
+    },
+    {
+      "id": "W129",
+      "from": "BT1:CHG+",
+      "to": "FCH:IN",
+      "net": "CHG+",
+      "kind": "charge",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W130",
+      "from": "FCH:OUT",
+      "to": "CH1:+",
+      "net": "CHG_FUSED",
+      "kind": "charge",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W131",
+      "from": "BT1:CHG-",
+      "to": "CH1:-",
+      "net": "CHG-",
+      "kind": "charge",
+      "sheet": "power",
+      "gauge": "실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W132",
+      "from": "K2:T1",
+      "to": "F11:IN",
+      "net": "DRIVE24",
+      "kind": "power",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W133",
+      "from": "F11:OUT",
+      "to": "DC3:IN+",
+      "net": "STEER_IN",
+      "kind": "power",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W134",
+      "from": "X0:STEER",
+      "to": "DC3:IN-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W135",
+      "from": "DC3:IN-",
+      "to": "DC3:OUT-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W136",
+      "from": "DC3:OUT+",
+      "to": "OV12:IN+",
+      "net": "12V_RAW",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W137",
+      "from": "DC3:OUT-",
+      "to": "OV12:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W138",
+      "from": "OV12:OUT+",
+      "to": "X12:IN",
+      "net": "12V_STEER",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W139",
+      "from": "DC3:OUT-",
+      "to": "X12:RETURN",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W140",
+      "from": "X12:ABS+",
+      "to": "CL12:+",
+      "net": "12V_STEER",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W141",
+      "from": "X12:ABS-",
+      "to": "CL12:-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W142",
+      "from": "X12:L",
+      "to": "F5:IN",
+      "net": "12V_STEER",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W143",
+      "from": "X12:R",
+      "to": "F6:IN",
+      "net": "12V_STEER",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W144",
+      "from": "F5:OUT",
+      "to": "JSL:PWR",
+      "net": "SVL_12",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W145",
+      "from": "F6:OUT",
+      "to": "JSR:PWR",
+      "net": "SVR_12",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W146",
+      "from": "X12:L0",
+      "to": "JSL:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W147",
+      "from": "X12:R0",
+      "to": "JSR:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W148",
+      "from": "JSL:PWR",
+      "to": "SVL:V+",
+      "net": "SVL_12",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W149",
+      "from": "JSL:GND",
+      "to": "SVL:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W150",
+      "from": "JSR:PWR",
+      "to": "SVR:V+",
+      "net": "SVR_12",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W151",
+      "from": "JSR:GND",
+      "to": "SVR:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W152",
+      "from": "X12:LOGIC",
+      "to": "F10:IN",
+      "net": "12V_STEER",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W153",
+      "from": "F10:OUT",
+      "to": "DC4:IN+",
+      "net": "PWM_SUP_IN",
+      "kind": "steerpower",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W154",
+      "from": "X12:LOGIC0",
+      "to": "DC4:IN-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W155",
+      "from": "DC4:IN-",
+      "to": "DC4:OUT-",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "steering",
+      "gauge": "정격·실측 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W156",
+      "from": "X3:3V3_PWM",
+      "to": "U2:1_VCC1",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W157",
+      "from": "X3:0V_PWM",
+      "to": "U2:4_GND1",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W158",
+      "from": "DC4:OUT+",
+      "to": "U2:8_VCC2",
+      "net": "5V_SERVO_IO",
+      "kind": "logic",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W159",
+      "from": "DC4:OUT-",
+      "to": "U2:5_GND2",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W160",
+      "from": "U1:GPIO13",
+      "to": "U2:2_INA",
+      "net": "PWM_L_3V3",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W161",
+      "from": "U1:GPIO14",
+      "to": "U2:3_INB",
+      "net": "PWM_R_3V3",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W162",
+      "from": "U2:2_INA",
+      "to": "R21:1",
+      "net": "PWM_L_3V3",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W163",
+      "from": "R21:2",
+      "to": "U2:4_GND1",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W164",
+      "from": "U2:3_INB",
+      "to": "R22:1",
+      "net": "PWM_R_3V3",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W165",
+      "from": "R22:2",
+      "to": "U2:4_GND1",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W166",
+      "from": "U2:7_OUTA",
+      "to": "R23:1",
+      "net": "PWM_L_5V",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W167",
+      "from": "U2:6_OUTB",
+      "to": "R24:1",
+      "net": "PWM_R_5V",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W168",
+      "from": "R23:2",
+      "to": "JSL:SIG",
+      "net": "SVL_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W169",
+      "from": "R24:2",
+      "to": "JSR:SIG",
+      "net": "SVR_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W170",
+      "from": "JSL:SIG",
+      "to": "R25:1",
+      "net": "SVL_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W171",
+      "from": "R25:2",
+      "to": "JSL:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W172",
+      "from": "JSR:SIG",
+      "to": "R26:1",
+      "net": "SVR_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W173",
+      "from": "R26:2",
+      "to": "JSR:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W174",
+      "from": "JSL:SIG",
+      "to": "SVL:PWM",
+      "net": "SVL_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W175",
+      "from": "JSR:SIG",
+      "to": "SVR:PWM",
+      "net": "SVR_PWM",
+      "kind": "signal",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W176",
+      "from": "U2:1_VCC1",
+      "to": "C21:+",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W177",
+      "from": "C21:-",
+      "to": "U2:4_GND1",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W178",
+      "from": "U2:8_VCC2",
+      "to": "C22:+",
+      "net": "5V_SERVO_IO",
+      "kind": "logic",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W179",
+      "from": "C22:-",
+      "to": "U2:5_GND2",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "pwm",
+      "gauge": "짧은 신호 하네스 / 파형 확인",
+      "status": "hold"
+    },
+    {
+      "id": "W180",
+      "from": "K2:T1",
+      "to": "JDRV:IN",
+      "net": "DRIVE24",
+      "kind": "power",
+      "sheet": "power",
+      "gauge": "전류/온도/길이 측정 후 선정",
+      "status": "hold"
+    },
+    {
+      "id": "W181",
+      "from": "OV5:OUT+",
+      "to": "F12:IN",
+      "net": "5V_PROT",
+      "kind": "logic",
+      "sheet": "usb",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W182",
+      "from": "F12:OUT",
+      "to": "X5:IN",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W183",
+      "from": "X0:SR",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W184",
+      "from": "U1:GPIO4",
+      "to": "RARM:1",
+      "net": "DRIVE_ARM_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W185",
+      "from": "RARM:2",
+      "to": "QEN:B",
+      "net": "QEN_BASE",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W186",
+      "from": "QEN:B",
+      "to": "RBE:1",
+      "net": "QEN_BASE",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W187",
+      "from": "RBE:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W188",
+      "from": "QEN:E",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W189",
+      "from": "U1:GPIO4",
+      "to": "RARM_PD:1",
+      "net": "DRIVE_ARM_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W190",
+      "from": "RARM_PD:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W191",
+      "from": "X5:BL",
+      "to": "U3:14_VCC",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W192",
+      "from": "X5:L",
+      "to": "MDL:VCC",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W193",
+      "from": "X5:0V",
+      "to": "MDL:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W194",
+      "from": "X5:0V",
+      "to": "U3:7_GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W195",
+      "from": "X5:CAP_L",
+      "to": "COL:+",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W196",
+      "from": "COL:-",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W197",
+      "from": "X5:OE_L",
+      "to": "ROL:1",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W198",
+      "from": "ROL:2",
+      "to": "U3:1_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W199",
+      "from": "QEN:C",
+      "to": "U3:1_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W200",
+      "from": "U3:1_OE",
+      "to": "U3:4_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W201",
+      "from": "U3:1_OE",
+      "to": "U3:10_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W202",
+      "from": "U3:1_OE",
+      "to": "U3:13_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W203",
+      "from": "X3:3V3_IN",
+      "to": "U3:9_A3",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W204",
+      "from": "X3:3V3_IN",
+      "to": "U3:12_A4",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W205",
+      "from": "U1:GPIO17",
+      "to": "U3:2_A1",
+      "net": "PWM_ML_R_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W206",
+      "from": "U1:GPIO16",
+      "to": "U3:5_A2",
+      "net": "PWM_ML_L_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W207",
+      "from": "U3:3_Y1",
+      "to": "RSL1:1",
+      "net": "MDL_RPWM_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W208",
+      "from": "RSL1:2",
+      "to": "MDL:RPWM",
+      "net": "MDL_RPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W209",
+      "from": "MDL:RPWM",
+      "to": "RDL1:1",
+      "net": "MDL_RPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W210",
+      "from": "RDL1:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W211",
+      "from": "U3:6_Y2",
+      "to": "RSL2:1",
+      "net": "MDL_LPWM_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W212",
+      "from": "RSL2:2",
+      "to": "MDL:LPWM",
+      "net": "MDL_LPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W213",
+      "from": "MDL:LPWM",
+      "to": "RDL2:1",
+      "net": "MDL_LPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W214",
+      "from": "RDL2:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W215",
+      "from": "U3:8_Y3",
+      "to": "RSL3:1",
+      "net": "MDL_REN_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W216",
+      "from": "RSL3:2",
+      "to": "MDL:R_EN",
+      "net": "MDL_REN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W217",
+      "from": "MDL:R_EN",
+      "to": "RDL3:1",
+      "net": "MDL_REN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W218",
+      "from": "RDL3:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W219",
+      "from": "U3:11_Y4",
+      "to": "RSL4:1",
+      "net": "MDL_LEN_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W220",
+      "from": "RSL4:2",
+      "to": "MDL:L_EN",
+      "net": "MDL_LEN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W221",
+      "from": "MDL:L_EN",
+      "to": "RDL4:1",
+      "net": "MDL_LEN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W222",
+      "from": "RDL4:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W223",
+      "from": "U3:2_A1",
+      "to": "RIL1:1",
+      "net": "PWM_ML_R_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W224",
+      "from": "RIL1:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W225",
+      "from": "U3:5_A2",
+      "to": "RIL2:1",
+      "net": "PWM_ML_L_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W226",
+      "from": "RIL2:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W227",
+      "from": "X5:BR",
+      "to": "U4:14_VCC",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W228",
+      "from": "X5:R",
+      "to": "MDR:VCC",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W229",
+      "from": "X5:0V",
+      "to": "MDR:GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W230",
+      "from": "X5:0V",
+      "to": "U4:7_GND",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W231",
+      "from": "X5:CAP_R",
+      "to": "COR:+",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W232",
+      "from": "COR:-",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W233",
+      "from": "X5:OE_R",
+      "to": "ROR:1",
+      "net": "5V_MOTOR_IO",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W234",
+      "from": "ROR:2",
+      "to": "U4:1_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W235",
+      "from": "QEN:C",
+      "to": "U4:1_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W236",
+      "from": "U4:1_OE",
+      "to": "U4:4_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W237",
+      "from": "U4:1_OE",
+      "to": "U4:10_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W238",
+      "from": "U4:1_OE",
+      "to": "U4:13_OE",
+      "net": "MOTOR_OE_N",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W239",
+      "from": "X3:3V3_IN",
+      "to": "U4:9_A3",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W240",
+      "from": "X3:3V3_IN",
+      "to": "U4:12_A4",
+      "net": "3V3",
+      "kind": "logic",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W241",
+      "from": "U1:GPIO25",
+      "to": "U4:2_A1",
+      "net": "PWM_MR_R_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W242",
+      "from": "U1:GPIO26",
+      "to": "U4:5_A2",
+      "net": "PWM_MR_L_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W243",
+      "from": "U4:3_Y1",
+      "to": "RSR1:1",
+      "net": "MDR_RPWM_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W244",
+      "from": "RSR1:2",
+      "to": "MDR:RPWM",
+      "net": "MDR_RPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W245",
+      "from": "MDR:RPWM",
+      "to": "RDR1:1",
+      "net": "MDR_RPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W246",
+      "from": "RDR1:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W247",
+      "from": "U4:6_Y2",
+      "to": "RSR2:1",
+      "net": "MDR_LPWM_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W248",
+      "from": "RSR2:2",
+      "to": "MDR:LPWM",
+      "net": "MDR_LPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W249",
+      "from": "MDR:LPWM",
+      "to": "RDR2:1",
+      "net": "MDR_LPWM",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W250",
+      "from": "RDR2:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W251",
+      "from": "U4:8_Y3",
+      "to": "RSR3:1",
+      "net": "MDR_REN_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W252",
+      "from": "RSR3:2",
+      "to": "MDR:R_EN",
+      "net": "MDR_REN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W253",
+      "from": "MDR:R_EN",
+      "to": "RDR3:1",
+      "net": "MDR_REN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W254",
+      "from": "RDR3:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W255",
+      "from": "U4:11_Y4",
+      "to": "RSR4:1",
+      "net": "MDR_LEN_RAW",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W256",
+      "from": "RSR4:2",
+      "to": "MDR:L_EN",
+      "net": "MDR_LEN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W257",
+      "from": "MDR:L_EN",
+      "to": "RDR4:1",
+      "net": "MDR_LEN",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W258",
+      "from": "RDR4:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W259",
+      "from": "U4:2_A1",
+      "to": "RIR1:1",
+      "net": "PWM_MR_R_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W260",
+      "from": "RIR1:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W261",
+      "from": "U4:5_A2",
+      "to": "RIR2:1",
+      "net": "PWM_MR_L_3V3",
+      "kind": "signal",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    },
+    {
+      "id": "W262",
+      "from": "RIR2:2",
+      "to": "X5:0V",
+      "net": "0V",
+      "kind": "return",
+      "sheet": "signal",
+      "gauge": "신호 0.22 mm² 후보 / 실측 검증",
+      "status": "conditional"
+    }
+  ]
+}

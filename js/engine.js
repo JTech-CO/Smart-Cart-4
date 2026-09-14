@@ -1,4 +1,4 @@
-/* D3 native WebGL 2 product renderer: GGX/Schlick BRDF, procedural studio reflections,
+/* D4 native WebGL 2 product renderer: GGX/Schlick BRDF, procedural studio reflections,
  * material microtexture, shadow map, printed component labels. No network/device APIs. */
 'use strict';
 window.CartGL = (() => {
@@ -7,7 +7,7 @@ window.CartGL = (() => {
  const color=h=>{if(Array.isArray(h))return h;return [1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255)};
  const material=(hex,metal=.15,rough=.45,alpha=1,emissive=0)=>({color:color(hex),metal,rough,alpha,emissive});
  class Builder{
-  constructor(){this.items=[];this.ports={};this.labels=[];this._batches=new Map();this.decals=[]}
+  constructor(){this.items=[];this.ports={};this.labels=[];this._batches=new Map();this.decals=[];this.primitives=[]}
   add(data,mat,id,transform=M.identity(),layer='hardware'){
    if(!data.length)return;
    // Align winding to authored outward normals (caps / toroidal primitives included).
@@ -61,6 +61,10 @@ window.CartGL = (() => {
   sphere(r,pos,mat,id,N=16,n=10,layer='hardware'){
    let a=[];for(let i=0;i<N;i++)for(let j=0;j<n;j++){let q=[];for(let [u,v] of [[i,j],[i+1,j],[i+1,j+1],[i,j+1]]){u=u/N*2*Math.PI;v=v/n*Math.PI;let norm=[Math.sin(v)*Math.cos(u),Math.cos(v),Math.sin(v)*Math.sin(u)];q.push(...[]);q.push([...V.mul(norm,r),...norm])}for(let k of [0,1,2,0,2,3])a.push(...q[k])}this.add(a,mat,id,M.translate(...pos),layer)
   }
+ }
+ // Shared analytic construction log for CAD build tools; not a browser control feature.
+ for(const method of ['box','cyl','rod','tube','ring','sphere','lathe','decal']){
+  const original=Builder.prototype[method];Builder.prototype[method]=function(...args){this.primitives.push({method,args:JSON.parse(JSON.stringify(args))});return original.apply(this,args);};
  }
  const VS=`#version 300 es
  precision highp float;layout(location=0) in vec3 p;layout(location=1) in vec3 n;

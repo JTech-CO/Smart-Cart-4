@@ -1,0 +1,57 @@
+{
+  "scope": "Exact VS/FS source compile/link and test-triangle drawing in EGL GLES, not browser WebGL, full-scene rendering or hardware GPU performance.",
+  "environment": {
+    "version": "OpenGL ES 3.2 Mesa 25.0.7-2",
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)"
+  },
+  "checks": [
+    {
+      "name": "Headless OpenGL ES context",
+      "status": "PASS",
+      "detail": {
+        "version": "OpenGL ES 3.2 Mesa 25.0.7-2",
+        "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)"
+      }
+    },
+    {
+      "name": "VS GLSL ES source compiles",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "FS GLSL ES source compiles",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "GLSL program links",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Picking shader encodes reference RGB",
+      "status": "PASS",
+      "detail": [
+        17,
+        29,
+        53,
+        255
+      ]
+    },
+    {
+      "name": "Material shader produces lit fragment",
+      "status": "PASS",
+      "detail": [
+        25,
+        41,
+        55,
+        255
+      ]
+    },
+    {
+      "name": "No OpenGL ES API error after shader tests",
+      "status": "PASS",
+      "detail": 0
+    }
+  ]
+}
